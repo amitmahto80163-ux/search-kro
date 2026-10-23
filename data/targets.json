@@ -1,0 +1,36 @@
+{
+  "colleges": [
+    { "id": "iit-madras", "name": "Indian Institute of Technology Madras", "officialWebsite": "https://www.iitm.ac.in" },
+    { "id": "iit-delhi", "name": "Indian Institute of Technology Delhi", "officialWebsite": "https://home.iitd.ac.in" },
+    { "id": "iit-bombay", "name": "Indian Institute of Technology Bombay", "officialWebsite": "https://www.iitb.ac.in" },
+    { "id": "nit-trichy", "name": "National Institute of Technology Tiruchirappalli", "officialWebsite": "https://www.nitt.edu" },
+    { "id": "nit-surathkal", "name": "National Institute of Technology Karnataka Surathkal", "officialWebsite": "https://www.nitk.ac.in" },
+    { "id": "iiit-hyderabad", "name": "International Institute of Information Technology Hyderabad", "officialWebsite": "https://www.iiit.ac.in" },
+    { "id": "bits-pilani", "name": "Birla Institute of Technology and Science Pilani", "officialWebsite": "https://www.bits-pilani.ac.in" },
+    { "id": "dtu-delhi", "name": "Delhi Technological University", "officialWebsite": "http://www.dtu.ac.in" },
+    { "id": "jadavpur-univ", "name": "Jadavpur University", "officialWebsite": "https://jadavpuruniversity.in" },
+    { "id": "vit-vellore", "name": "Vellore Institute of Technology", "officialWebsite": "https://vit.ac.in" },
+    { "id": "srm-chennai", "name": "SRM Institute of Science and Technology", "officialWebsite": "https://www.srmist.edu.in" },
+    { "id": "thapar-patiala", "name": "Thapar Institute of Engineering and Technology", "officialWebsite": "https://www.thapar.edu" },
+    { "id": "pec-chandigarh", "name": "Punjab Engineering College Chandigarh", "officialWebsite": "https://pec.ac.in" },
+    { "id": "coep-pune", "name": "COEP Technological University Pune", "officialWebsite": "https://www.coeptech.ac.in" },
+    { "id": "manipal-mit", "name": "Manipal Institute of Technology", "officialWebsite": "https://www.manipal.edu/mit.html" }
+  ],
+  "exams": [
+    { "id": "jee-main", "name": "JEE Main", "officialUrl": "https://jeemain.nta.nic.in", "refreshFrequency": "weekly" },
+    { "id": "jee-advanced", "name": "JEE Advanced", "officialUrl": "https://jeeadv.ac.in", "refreshFrequency": "weekly" },
+    { "id": "bitsat", "name": "BITSAT", "officialUrl": "https://www.bitsadmission.com", "refreshFrequency": "weekly" },
+    { "id": "viteee", "name": "VITEEE", "officialUrl": "https://viteee.vit.ac.in", "refreshFrequency": "weekly" },
+    { "id": "srmjeee", "name": "SRMJEEE", "officialUrl": "https://www.srmist.edu.in/admission-india/", "refreshFrequency": "weekly" },
+    { "id": "wbjee", "name": "WBJEE", "officialUrl": "https://wbjeeb.nic.in", "refreshFrequency": "weekly" },
+    { "id": "mht-cet", "name": "MHT CET", "officialUrl": "https://cetcell.mahacet.org", "refreshFrequency": "weekly" },
+    { "id": "kcet", "name": "KCET", "officialUrl": "https://cetonline.karnataka.gov.in/kea/", "refreshFrequency": "weekly" },
+    { "id": "comedk-uget", "name": "COMEDK UGET", "officialUrl": "https://www.comedk.org", "refreshFrequency": "weekly" },
+    { "id": "tg-eapcet", "name": "TG EAPCET", "officialUrl": "https://eapcet.tsche.ac.in", "refreshFrequency": "weekly" },
+    { "id": "ap-eapcet", "name": "AP EAPCET", "officialUrl": "https://cets.apsche.ap.gov.in", "refreshFrequency": "weekly" },
+    { "id": "keam", "name": "KEAM", "officialUrl": "https://cee.kerala.gov.in", "refreshFrequency": "weekly" },
+    { "id": "gujcet", "name": "GUJCET", "officialUrl": "https://gujcet.gseb.org", "refreshFrequency": "weekly" },
+    { "id": "met-manipal", "name": "MET Manipal", "officialUrl": "https://manipal.edu/mu/admission.html", "refreshFrequency": "weekly" },
+    { "id": "ugee-iiith", "name": "IIITH UGEE", "officialUrl": "https://ugadmissions.iiit.ac.in/ugee/", "refreshFrequency": "weekly" }
+  ]
+}

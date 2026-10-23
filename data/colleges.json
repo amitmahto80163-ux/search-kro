@@ -1,0 +1,4211 @@
+[
+  {
+    "id": "iit-madras",
+    "name": "Indian Institute of Technology Madras",
+    "shortName": "IIT Madras",
+    "ownership": "Government",
+    "establishedYear": {
+      "value": 1959,
+      "sourceName": "IIT Madras Official Website",
+      "sourceUrl": "https://www.iitm.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialWebsite": "https://www.iitm.ac.in",
+    "isPartner": false,
+    "hasHostel": true,
+    "cityInfo": {
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "costOfLivingMonthlyInr": {
+        "value": 6500,
+        "sourceName": "IITM Hostel & Campus Estimate",
+        "sourceUrl": "https://ccw.iitm.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "estimated"
+      },
+      "hostelFeeRangeAnnualInr": {
+        "value": "₹60,000 – ₹75,000 (including mess advance)",
+        "sourceName": "IITM CCW Fee Circular",
+        "sourceUrl": "https://ccw.iitm.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "transportNotes": {
+        "value": "Connected via Chennai Metro (Little Mount / Guindy) and MTC buses outside Sardar Patel Road gate.",
+        "sourceName": "IITM Visitor Guide",
+        "sourceUrl": "https://www.iitm.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "safetyNotes": {
+        "value": "24x7 gated Deer Park campus with dedicated campus security patrol and medical hospital inside campus.",
+        "sourceName": "IITM Campus Life",
+        "sourceUrl": "https://www.iitm.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "accreditation": {
+      "aicteApproved": {
+        "value": true,
+        "sourceName": "Institute of National Importance Act",
+        "sourceUrl": "https://www.education.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "ugcStatus": {
+        "value": "Institute of National Importance",
+        "sourceName": "Ministry of Education",
+        "sourceUrl": "https://www.education.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "naacGrade": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "nbaAccreditedBranches": {
+        "value": [
+          "CSE",
+          "EE",
+          "ME",
+          "CE",
+          "CH"
+        ],
+        "sourceName": "NBA / Institute Disclosures",
+        "sourceUrl": "https://www.iitm.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfRank": {
+        "value": 1,
+        "sourceName": "NIRF India Rankings 2024 (Engineering)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfYear": 2024
+    },
+    "admissionRoutes": [
+      {
+        "routeType": "national_exam",
+        "label": "All-India Exam (JEE Advanced + JoSAA)",
+        "examsAccepted": [
+          "jee-main",
+          "jee-advanced"
+        ],
+        "explanation": {
+          "value": "Qualify JEE Main, rank in top 2.5 lakh, clear JEE Advanced, and participate in JoSAA centralised counselling.",
+          "sourceName": "JoSAA Portal",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 3200,
+          "sourceName": "JEE Advanced Information Brochure",
+          "sourceUrl": "https://jeeadv.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://jeeadv.ac.in"
+      }
+    ],
+    "courses": [
+      {
+        "id": "iitm-cse",
+        "name": "B.Tech in Computer Science and Engineering",
+        "branchCode": "CSE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 87,
+          "sourceName": "JoSAA Seat Matrix",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "IIT Madras Academics",
+          "sourceUrl": "https://www.iitm.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      },
+      {
+        "id": "iitm-ee",
+        "name": "B.Tech in Electrical Engineering",
+        "branchCode": "ECE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 155,
+          "sourceName": "JoSAA Seat Matrix",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "IIT Madras Academics",
+          "sourceUrl": "https://www.iitm.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      },
+      {
+        "id": "iitm-me",
+        "name": "B.Tech in Mechanical Engineering",
+        "branchCode": "ME",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 215,
+          "sourceName": "JoSAA Seat Matrix",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "IIT Madras Academics",
+          "sourceUrl": "https://www.iitm.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      }
+    ],
+    "fees": {
+      "tuitionPerYearInr": {
+        "value": 200000,
+        "sourceName": "IIT Madras Fee Structure",
+        "sourceUrl": "https://www.iitm.ac.in/academics/academic-services/fees",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "hostelPerYearInr": {
+        "value": 28000,
+        "sourceName": "IITM CCW Hostel Tariff",
+        "sourceUrl": "https://ccw.iitm.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "messPerYearInr": {
+        "value": 42000,
+        "sourceName": "IITM CCW Mess Charges",
+        "sourceUrl": "https://ccw.iitm.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "examAndLabPerYearInr": {
+        "value": 12000,
+        "sourceName": "IIT Madras Fee Structure",
+        "sourceUrl": "https://www.iitm.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "oneTimeAdmissionInr": {
+        "value": 10050,
+        "sourceName": "IIT Madras Fee Structure",
+        "sourceUrl": "https://www.iitm.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "cautionDepositRefundableInr": {
+        "value": 3000,
+        "sourceName": "IIT Madras Fee Structure",
+        "sourceUrl": "https://www.iitm.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "scholarshipNote": {
+        "value": "100% Tuition waiver for SC/ST/PwD and General/OBC students with family income under ₹1 Lakh; 2/3rd waiver for income ₹1L–₹5L.",
+        "sourceName": "MoE IIT Fee Waiver Circular",
+        "sourceUrl": "https://www.iitm.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "placements": {
+      "year": 2024,
+      "medianSalaryInr": {
+        "value": 1663440,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "highestSalaryInr": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "placedPercent": {
+        "value": 81,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "topRecruiters": {
+        "value": [
+          "Texas Instruments",
+          "Qualcomm",
+          "Microsoft",
+          "Google",
+          "Bajaj Auto",
+          "ISRO"
+        ],
+        "sourceName": "IITM Placement Portal",
+        "sourceUrl": "https://placement.iitm.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "reviews": [
+      {
+        "id": "rev-iitm-1",
+        "collegeId": "iit-madras",
+        "source": "NIRF Student Public Feedback Summary",
+        "sourceUrl": "https://www.iitm.ac.in",
+        "category": "placement",
+        "shortSnippet": "Core engineering and research placements in semiconductor and R&D roles are strong alongside software roles.",
+        "rating": 5,
+        "date": "2025-01-14",
+        "authenticityScore": 80,
+        "flags": [
+          "Extreme rating without concrete academic, placement, or campus specifics"
+        ]
+      },
+      {
+        "id": "rev-iitm-2",
+        "collegeId": "iit-madras",
+        "source": "Campus Alumni Survey",
+        "sourceUrl": "https://www.iitm.ac.in",
+        "category": "campus",
+        "shortSnippet": "Green wooded campus with Centre for Innovation (CFI) student labs open late for robotics and hyperloop teams.",
+        "rating": 5,
+        "date": "2025-01-20",
+        "authenticityScore": 98,
+        "flags": [
+          "Specific campus details, natural phrasing, and diverse date/source signals"
+        ]
+      },
+      {
+        "id": "rev-iitm-3",
+        "collegeId": "iit-madras",
+        "source": "Hostel Resident Forum",
+        "sourceUrl": "https://ccw.iitm.ac.in",
+        "category": "hostel",
+        "shortSnippet": "Older hostel blocks have compact rooms and humid summers in Chennai, though mess coupon flexibility is helpful.",
+        "rating": 4,
+        "date": "2025-01-28",
+        "authenticityScore": 98,
+        "flags": [
+          "Specific campus details, natural phrasing, and diverse date/source signals"
+        ]
+      }
+    ],
+    "rankingMetrics": {
+      "affordabilityScore": 48,
+      "placementStrengthScore": 72,
+      "valueForMoneyScore": 98,
+      "roiPaybackYears": 0.68,
+      "trustScore": 80,
+      "overallFairScore": 75,
+      "lastComputed": "2025-02-15"
+    }
+  },
+  {
+    "id": "iit-delhi",
+    "name": "Indian Institute of Technology Delhi",
+    "shortName": "IIT Delhi",
+    "ownership": "Government",
+    "establishedYear": {
+      "value": 1961,
+      "sourceName": "IIT Delhi Official Website",
+      "sourceUrl": "https://home.iitd.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialWebsite": "https://home.iitd.ac.in",
+    "isPartner": false,
+    "hasHostel": true,
+    "cityInfo": {
+      "city": "New Delhi",
+      "state": "Delhi",
+      "costOfLivingMonthlyInr": {
+        "value": 7500,
+        "sourceName": "Hauz Khas Student Estimate",
+        "sourceUrl": "https://home.iitd.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "estimated"
+      },
+      "hostelFeeRangeAnnualInr": {
+        "value": "₹65,000 – ₹82,000 (hostel + mess)",
+        "sourceName": "IIT Delhi BHM",
+        "sourceUrl": "https://bhm.iitd.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "transportNotes": {
+        "value": "Direct IIT Delhi Metro Station (Magenta Line) at main gate.",
+        "sourceName": "IIT Delhi Campus Map",
+        "sourceUrl": "https://home.iitd.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "safetyNotes": {
+        "value": "Gated Hauz Khas campus with 24x7 security control room and internal e-rickshaw shuttle.",
+        "sourceName": "IIT Delhi Security",
+        "sourceUrl": "https://home.iitd.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "accreditation": {
+      "aicteApproved": {
+        "value": true,
+        "sourceName": "Institute of National Importance Act",
+        "sourceUrl": "https://www.education.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "ugcStatus": {
+        "value": "Institute of National Importance",
+        "sourceName": "Ministry of Education",
+        "sourceUrl": "https://www.education.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "naacGrade": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "nbaAccreditedBranches": {
+        "value": [
+          "CSE",
+          "EE",
+          "ME",
+          "CE",
+          "CH"
+        ],
+        "sourceName": "IIT Delhi Disclosures",
+        "sourceUrl": "https://home.iitd.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfRank": {
+        "value": 2,
+        "sourceName": "NIRF India Rankings 2024 (Engineering)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfYear": 2024
+    },
+    "admissionRoutes": [
+      {
+        "routeType": "national_exam",
+        "label": "All-India Exam (JEE Advanced + JoSAA)",
+        "examsAccepted": [
+          "jee-main",
+          "jee-advanced"
+        ],
+        "explanation": {
+          "value": "Admissions strictly through JEE Advanced All-India Rank and JoSAA counselling.",
+          "sourceName": "JoSAA Portal",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 3200,
+          "sourceName": "JEE Advanced Information Brochure",
+          "sourceUrl": "https://jeeadv.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://jeeadv.ac.in"
+      }
+    ],
+    "courses": [
+      {
+        "id": "iitd-cse",
+        "name": "B.Tech in Computer Science and Engineering",
+        "branchCode": "CSE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 99,
+          "sourceName": "JoSAA Seat Matrix",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "IIT Delhi Academics",
+          "sourceUrl": "https://home.iitd.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      },
+      {
+        "id": "iitd-ee",
+        "name": "B.Tech in Electrical Engineering",
+        "branchCode": "ECE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 120,
+          "sourceName": "JoSAA Seat Matrix",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "IIT Delhi Academics",
+          "sourceUrl": "https://home.iitd.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      }
+    ],
+    "fees": {
+      "tuitionPerYearInr": {
+        "value": 200000,
+        "sourceName": "IIT Delhi Academic Fee Circular",
+        "sourceUrl": "https://home.iitd.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "hostelPerYearInr": {
+        "value": 26500,
+        "sourceName": "IIT Delhi BHM Fee Structure",
+        "sourceUrl": "https://bhm.iitd.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "messPerYearInr": {
+        "value": 45000,
+        "sourceName": "IIT Delhi BHM Mess Structure",
+        "sourceUrl": "https://bhm.iitd.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "examAndLabPerYearInr": {
+        "value": 15000,
+        "sourceName": "IIT Delhi Academic Fee Circular",
+        "sourceUrl": "https://home.iitd.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "oneTimeAdmissionInr": {
+        "value": 11500,
+        "sourceName": "IIT Delhi Academic Fee Circular",
+        "sourceUrl": "https://home.iitd.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "cautionDepositRefundableInr": {
+        "value": 8000,
+        "sourceName": "IIT Delhi Academic Fee Circular",
+        "sourceUrl": "https://home.iitd.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "scholarshipNote": {
+        "value": "Full tuition remission for SC/ST/PwD and family income < ₹1 Lakh; 66.6% remission for income ₹1L–₹5L.",
+        "sourceName": "IIT Delhi Scholarships",
+        "sourceUrl": "https://home.iitd.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "placements": {
+      "year": 2024,
+      "medianSalaryInr": {
+        "value": 2000000,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "highestSalaryInr": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "placedPercent": {
+        "value": 84,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "topRecruiters": {
+        "value": [
+          "Microsoft",
+          "Goldman Sachs",
+          "Samsung R&D",
+          "Intel",
+          "TCS Research"
+        ],
+        "sourceName": "IITD OCS",
+        "sourceUrl": "https://ocs.iitd.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "reviews": [
+      {
+        "id": "rev-iitd-1",
+        "collegeId": "iit-delhi",
+        "source": "OCS Student Feedback",
+        "sourceUrl": "https://ocs.iitd.ac.in",
+        "category": "placement",
+        "shortSnippet": "Strong software, consulting, and startup incubation support in NCR with consistent semester internship opportunities.",
+        "rating": 5,
+        "date": "2025-01-12",
+        "authenticityScore": 98,
+        "flags": [
+          "Specific campus details, natural phrasing, and diverse date/source signals"
+        ]
+      },
+      {
+        "id": "rev-iitd-2",
+        "collegeId": "iit-delhi",
+        "source": "BHM Student Notes",
+        "sourceUrl": "https://bhm.iitd.ac.in",
+        "category": "hostel",
+        "shortSnippet": "Old hostels have shared rooms in early years, while newer blocks like Dronagiri and Saptagiri have upgraded facilities.",
+        "rating": 4,
+        "date": "2025-01-19",
+        "authenticityScore": 98,
+        "flags": [
+          "Specific campus details, natural phrasing, and diverse date/source signals"
+        ]
+      }
+    ],
+    "rankingMetrics": {
+      "affordabilityScore": 47,
+      "placementStrengthScore": 81,
+      "valueForMoneyScore": 100,
+      "roiPaybackYears": 0.58,
+      "trustScore": 80,
+      "overallFairScore": 79,
+      "lastComputed": "2025-02-15"
+    }
+  },
+  {
+    "id": "iit-bombay",
+    "name": "Indian Institute of Technology Bombay",
+    "shortName": "IIT Bombay",
+    "ownership": "Government",
+    "establishedYear": {
+      "value": 1958,
+      "sourceName": "IIT Bombay Official Website",
+      "sourceUrl": "https://www.iitb.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialWebsite": "https://www.iitb.ac.in",
+    "isPartner": false,
+    "hasHostel": true,
+    "cityInfo": {
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "costOfLivingMonthlyInr": {
+        "value": 8000,
+        "sourceName": "Powai Student Estimate",
+        "sourceUrl": "https://www.iitb.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "estimated"
+      },
+      "hostelFeeRangeAnnualInr": {
+        "value": "₹62,000 – ₹78,000 (hostel + mess)",
+        "sourceName": "IITB Hostel Affairs",
+        "sourceUrl": "https://www.iitb.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "transportNotes": {
+        "value": "Located in Powai; nearest local rail station is Kanjurmarg (Central Line).",
+        "sourceName": "IITB Reach Us",
+        "sourceUrl": "https://www.iitb.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "safetyNotes": {
+        "value": "Enclosed Powai campus with security checkpoints, campus hospital, and night bus service.",
+        "sourceName": "IITB Campus",
+        "sourceUrl": "https://www.iitb.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "accreditation": {
+      "aicteApproved": {
+        "value": true,
+        "sourceName": "Institute of National Importance Act",
+        "sourceUrl": "https://www.education.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "ugcStatus": {
+        "value": "Institute of National Importance",
+        "sourceName": "Ministry of Education",
+        "sourceUrl": "https://www.education.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "naacGrade": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "nbaAccreditedBranches": {
+        "value": [
+          "CSE",
+          "EE",
+          "ME",
+          "AE",
+          "CH"
+        ],
+        "sourceName": "IIT Bombay Disclosures",
+        "sourceUrl": "https://www.iitb.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfRank": {
+        "value": 3,
+        "sourceName": "NIRF India Rankings 2024 (Engineering)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfYear": 2024
+    },
+    "admissionRoutes": [
+      {
+        "routeType": "national_exam",
+        "label": "All-India Exam (JEE Advanced + JoSAA)",
+        "examsAccepted": [
+          "jee-main",
+          "jee-advanced"
+        ],
+        "explanation": {
+          "value": "Admission solely via JEE Advanced rank and JoSAA counselling.",
+          "sourceName": "JoSAA Portal",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 3200,
+          "sourceName": "JEE Advanced Information Brochure",
+          "sourceUrl": "https://jeeadv.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://jeeadv.ac.in"
+      }
+    ],
+    "courses": [
+      {
+        "id": "iitb-cse",
+        "name": "B.Tech in Computer Science and Engineering",
+        "branchCode": "CSE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 136,
+          "sourceName": "JoSAA Seat Matrix",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "IIT Bombay Academics",
+          "sourceUrl": "https://www.iitb.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      },
+      {
+        "id": "iitb-me",
+        "name": "B.Tech in Mechanical Engineering",
+        "branchCode": "ME",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 169,
+          "sourceName": "JoSAA Seat Matrix",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "IIT Bombay Academics",
+          "sourceUrl": "https://www.iitb.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      }
+    ],
+    "fees": {
+      "tuitionPerYearInr": {
+        "value": 200000,
+        "sourceName": "IIT Bombay Academic Fee Circular",
+        "sourceUrl": "https://www.iitb.ac.in/newacadhome/fees.jsp",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "hostelPerYearInr": {
+        "value": 25800,
+        "sourceName": "IIT Bombay Academic Fee Circular",
+        "sourceUrl": "https://www.iitb.ac.in/newacadhome/fees.jsp",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "messPerYearInr": {
+        "value": 45000,
+        "sourceName": "IITB Hostel Mess Estimate",
+        "sourceUrl": "https://www.iitb.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "examAndLabPerYearInr": {
+        "value": 14200,
+        "sourceName": "IIT Bombay Academic Fee Circular",
+        "sourceUrl": "https://www.iitb.ac.in/newacadhome/fees.jsp",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "oneTimeAdmissionInr": {
+        "value": 10000,
+        "sourceName": "IIT Bombay Academic Fee Circular",
+        "sourceUrl": "https://www.iitb.ac.in/newacadhome/fees.jsp",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "cautionDepositRefundableInr": {
+        "value": 6000,
+        "sourceName": "IIT Bombay Academic Fee Circular",
+        "sourceUrl": "https://www.iitb.ac.in/newacadhome/fees.jsp",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "scholarshipNote": {
+        "value": "MoE income-based tuition waiver plus Merit-cum-Means (MCM) stipend for eligible students.",
+        "sourceName": "IITB Financial Aid",
+        "sourceUrl": "https://www.iitb.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "placements": {
+      "year": 2024,
+      "medianSalaryInr": {
+        "value": 1792000,
+        "sourceName": "IIT Bombay Placement Report / NIRF 2024",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "highestSalaryInr": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "placedPercent": {
+        "value": 82,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "topRecruiters": {
+        "value": [
+          "Sony",
+          "Airbus",
+          "Google",
+          "Tata Steel",
+          "NVIDIA",
+          "Morgan Stanley"
+        ],
+        "sourceName": "IITB Placement Office",
+        "sourceUrl": "https://placements.iitb.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "reviews": [
+      {
+        "id": "rev-iitb-1",
+        "collegeId": "iit-bombay",
+        "source": "IITB Placement Review",
+        "sourceUrl": "https://placements.iitb.ac.in",
+        "category": "placement",
+        "shortSnippet": "Median package around ₹17.9 LPA reflects realistic across-branch outcome; don’t rely on media headlines of single international offers.",
+        "rating": 5,
+        "date": "2025-01-10",
+        "authenticityScore": 94,
+        "flags": [
+          "Specific campus details, natural phrasing, and diverse date/source signals"
+        ]
+      }
+    ],
+    "rankingMetrics": {
+      "affordabilityScore": 48,
+      "placementStrengthScore": 75,
+      "valueForMoneyScore": 99,
+      "roiPaybackYears": 0.64,
+      "trustScore": 80,
+      "overallFairScore": 77,
+      "lastComputed": "2025-02-15"
+    }
+  },
+  {
+    "id": "nit-trichy",
+    "name": "National Institute of Technology Tiruchirappalli",
+    "shortName": "NIT Trichy",
+    "ownership": "Government",
+    "establishedYear": {
+      "value": 1964,
+      "sourceName": "NIT Trichy Official Website",
+      "sourceUrl": "https://www.nitt.edu",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialWebsite": "https://www.nitt.edu",
+    "isPartner": false,
+    "hasHostel": true,
+    "cityInfo": {
+      "city": "Tiruchirappalli",
+      "state": "Tamil Nadu",
+      "costOfLivingMonthlyInr": {
+        "value": 5000,
+        "sourceName": "NIT Trichy Student Estimate",
+        "sourceUrl": "https://www.nitt.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "estimated"
+      },
+      "hostelFeeRangeAnnualInr": {
+        "value": "₹58,000 – ₹68,000 (hostel + mess)",
+        "sourceName": "NITT Hostel Office",
+        "sourceUrl": "https://www.nitt.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "transportNotes": {
+        "value": "Located on Tanjore Highway ~20 km from Trichy Railway Junction; direct town buses stop at NITT main gate.",
+        "sourceName": "NITT Location Guide",
+        "sourceUrl": "https://www.nitt.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "safetyNotes": {
+        "value": "800-acre residential campus with 24x7 hospital, ambulance, and restricted gate entry.",
+        "sourceName": "NITT Campus Facilities",
+        "sourceUrl": "https://www.nitt.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "accreditation": {
+      "aicteApproved": {
+        "value": true,
+        "sourceName": "NIT Act 2007",
+        "sourceUrl": "https://www.education.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "ugcStatus": {
+        "value": "Institute of National Importance",
+        "sourceName": "Ministry of Education",
+        "sourceUrl": "https://www.education.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "naacGrade": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "nbaAccreditedBranches": {
+        "value": [
+          "CSE",
+          "ECE",
+          "EEE",
+          "ME",
+          "CE",
+          "ICE"
+        ],
+        "sourceName": "NITT NBA Status",
+        "sourceUrl": "https://www.nitt.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfRank": {
+        "value": 9,
+        "sourceName": "NIRF India Rankings 2024 (Engineering)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfYear": 2024
+    },
+    "admissionRoutes": [
+      {
+        "routeType": "national_exam",
+        "label": "All-India Exam (JEE Main + JoSAA / CSAB)",
+        "examsAccepted": [
+          "jee-main"
+        ],
+        "explanation": {
+          "value": "50% Home State (Tamil Nadu) and 50% Other State quota allotted strictly through JEE Main Paper 1 rank via JoSAA/CSAB.",
+          "sourceName": "JoSAA Portal",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 1000,
+          "sourceName": "NTA JEE Main Bulletin",
+          "sourceUrl": "https://jeemain.nta.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://josaa.nic.in"
+      }
+    ],
+    "courses": [
+      {
+        "id": "nitt-cse",
+        "name": "B.Tech in Computer Science and Engineering",
+        "branchCode": "CSE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 115,
+          "sourceName": "JoSAA Seat Matrix",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "NITT Academics",
+          "sourceUrl": "https://www.nitt.edu",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      },
+      {
+        "id": "nitt-ece",
+        "name": "B.Tech in Electronics and Communication Engineering",
+        "branchCode": "ECE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 115,
+          "sourceName": "JoSAA Seat Matrix",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "NITT Academics",
+          "sourceUrl": "https://www.nitt.edu",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      }
+    ],
+    "fees": {
+      "tuitionPerYearInr": {
+        "value": 125000,
+        "sourceName": "NITT B.Tech Fee Structure",
+        "sourceUrl": "https://www.nitt.edu/home/academics/fee_details/",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "hostelPerYearInr": {
+        "value": 24000,
+        "sourceName": "NITT Hostel Fee Schedule",
+        "sourceUrl": "https://www.nitt.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "messPerYearInr": {
+        "value": 38000,
+        "sourceName": "NITT Hostel Fee Schedule",
+        "sourceUrl": "https://www.nitt.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "examAndLabPerYearInr": {
+        "value": 18500,
+        "sourceName": "NITT B.Tech Fee Structure",
+        "sourceUrl": "https://www.nitt.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "oneTimeAdmissionInr": {
+        "value": 16950,
+        "sourceName": "NITT B.Tech Fee Structure",
+        "sourceUrl": "https://www.nitt.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "cautionDepositRefundableInr": {
+        "value": 5000,
+        "sourceName": "NITT B.Tech Fee Structure",
+        "sourceUrl": "https://www.nitt.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "scholarshipNote": {
+        "value": "100% Tuition remission for SC/ST/PwD and income < ₹1 Lakh; 2/3rd tuition remission for income ₹1L–₹5L.",
+        "sourceName": "MoE NIT Fee Waiver",
+        "sourceUrl": "https://www.nitt.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "placements": {
+      "year": 2024,
+      "medianSalaryInr": {
+        "value": 1576000,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "highestSalaryInr": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "placedPercent": {
+        "value": 88,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "topRecruiters": {
+        "value": [
+          "Oracle",
+          "Qualcomm",
+          "Caterpillar",
+          "L&T",
+          "SAP Labs",
+          "Cisco"
+        ],
+        "sourceName": "NITT Training & Placement",
+        "sourceUrl": "https://www.nitt.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "reviews": [
+      {
+        "id": "rev-nitt-1",
+        "collegeId": "nit-trichy",
+        "source": "NIRF & Alumni Feedback",
+        "sourceUrl": "https://www.nitt.edu",
+        "category": "fees",
+        "shortSnippet": "Very high ROI for B.Tech students, especially with NIT income-based tuition remission reducing annual tuition significantly.",
+        "rating": 5,
+        "date": "2025-01-11",
+        "authenticityScore": 76,
+        "flags": [
+          "Extreme rating without concrete academic, placement, or campus specifics"
+        ]
+      }
+    ],
+    "rankingMetrics": {
+      "affordabilityScore": 65,
+      "placementStrengthScore": 72,
+      "valueForMoneyScore": 100,
+      "roiPaybackYears": 0.53,
+      "trustScore": 80,
+      "overallFairScore": 79,
+      "lastComputed": "2025-02-15"
+    }
+  },
+  {
+    "id": "nit-surathkal",
+    "name": "National Institute of Technology Karnataka, Surathkal",
+    "shortName": "NIT Surathkal (NITK)",
+    "ownership": "Government",
+    "establishedYear": {
+      "value": 1960,
+      "sourceName": "NITK Official Website",
+      "sourceUrl": "https://www.nitk.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialWebsite": "https://www.nitk.ac.in",
+    "isPartner": false,
+    "hasHostel": true,
+    "cityInfo": {
+      "city": "Mangaluru (Surathkal)",
+      "state": "Karnataka",
+      "costOfLivingMonthlyInr": {
+        "value": 5500,
+        "sourceName": "NITK Student Estimate",
+        "sourceUrl": "https://www.nitk.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "estimated"
+      },
+      "hostelFeeRangeAnnualInr": {
+        "value": "₹55,000 – ₹66,000 (hostel + mess)",
+        "sourceName": "NITK Hostel Office",
+        "sourceUrl": "https://www.nitk.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "transportNotes": {
+        "value": "Situated on NH-66 between Mangaluru and Udupi; Surathkal Railway Station is 3 km away.",
+        "sourceName": "NITK How to Reach",
+        "sourceUrl": "https://www.nitk.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "safetyNotes": {
+        "value": "Gated coastal campus with underpass connecting academic blocks and hostels.",
+        "sourceName": "NITK Campus",
+        "sourceUrl": "https://www.nitk.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "accreditation": {
+      "aicteApproved": {
+        "value": true,
+        "sourceName": "NIT Act 2007",
+        "sourceUrl": "https://www.education.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "ugcStatus": {
+        "value": "Institute of National Importance",
+        "sourceName": "Ministry of Education",
+        "sourceUrl": "https://www.education.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "naacGrade": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "nbaAccreditedBranches": {
+        "value": [
+          "CSE",
+          "IT",
+          "ECE",
+          "EEE",
+          "ME",
+          "CE"
+        ],
+        "sourceName": "NITK NBA Status",
+        "sourceUrl": "https://www.nitk.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfRank": {
+        "value": 17,
+        "sourceName": "NIRF India Rankings 2024 (Engineering)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfYear": 2024
+    },
+    "admissionRoutes": [
+      {
+        "routeType": "national_exam",
+        "label": "All-India Exam (JEE Main + JoSAA / CSAB)",
+        "examsAccepted": [
+          "jee-main"
+        ],
+        "explanation": {
+          "value": "Admission through JEE Main rank via JoSAA/CSAB with 50% Karnataka Home State and 50% Other State seats.",
+          "sourceName": "JoSAA Portal",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 1000,
+          "sourceName": "NTA JEE Main Bulletin",
+          "sourceUrl": "https://jeemain.nta.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://josaa.nic.in"
+      }
+    ],
+    "courses": [
+      {
+        "id": "nitk-cse",
+        "name": "B.Tech in Computer Science and Engineering",
+        "branchCode": "CSE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 115,
+          "sourceName": "JoSAA Seat Matrix",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "NITK Academics",
+          "sourceUrl": "https://www.nitk.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      },
+      {
+        "id": "nitk-it",
+        "name": "B.Tech in Information Technology",
+        "branchCode": "IT",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 114,
+          "sourceName": "JoSAA Seat Matrix",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "NITK Academics",
+          "sourceUrl": "https://www.nitk.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      }
+    ],
+    "fees": {
+      "tuitionPerYearInr": {
+        "value": 125000,
+        "sourceName": "NITK Fee Structure",
+        "sourceUrl": "https://www.nitk.ac.in/Fee_Structure",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "hostelPerYearInr": {
+        "value": 22000,
+        "sourceName": "NITK Hostel Fee Structure",
+        "sourceUrl": "https://www.nitk.ac.in/Fee_Structure",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "messPerYearInr": {
+        "value": 36000,
+        "sourceName": "NITK Hostel Mess Advance",
+        "sourceUrl": "https://www.nitk.ac.in/Fee_Structure",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "examAndLabPerYearInr": {
+        "value": 16800,
+        "sourceName": "NITK Fee Structure",
+        "sourceUrl": "https://www.nitk.ac.in/Fee_Structure",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "oneTimeAdmissionInr": {
+        "value": 14500,
+        "sourceName": "NITK Fee Structure",
+        "sourceUrl": "https://www.nitk.ac.in/Fee_Structure",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "cautionDepositRefundableInr": {
+        "value": 6500,
+        "sourceName": "NITK Fee Structure",
+        "sourceUrl": "https://www.nitk.ac.in/Fee_Structure",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "scholarshipNote": {
+        "value": "NIT statutory tuition fee waiver for SC/ST/PwD and family income under ₹1L / ₹5L.",
+        "sourceName": "NITK Fee Structure",
+        "sourceUrl": "https://www.nitk.ac.in/Fee_Structure",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "placements": {
+      "year": 2024,
+      "medianSalaryInr": {
+        "value": 1421000,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "highestSalaryInr": {
+        "value": 5475000,
+        "sourceName": "NITK Career Development Centre Report",
+        "sourceUrl": "https://cdc.nitk.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "placedPercent": {
+        "value": 86,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "topRecruiters": {
+        "value": [
+          "Uber",
+          "Intuit",
+          "Wells Fargo",
+          "Texas Instruments",
+          "BEL"
+        ],
+        "sourceName": "NITK CDC",
+        "sourceUrl": "https://cdc.nitk.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "reviews": [
+      {
+        "id": "rev-nitk-1",
+        "collegeId": "nit-surathkal",
+        "source": "NITK CDC Summary",
+        "sourceUrl": "https://cdc.nitk.ac.in",
+        "category": "placement",
+        "shortSnippet": "Strong coding culture and technical clubs (IEEE, ACM, WebClub) lead to consistent internships and full-time offers.",
+        "rating": 5,
+        "date": "2025-01-15",
+        "authenticityScore": 94,
+        "flags": [
+          "Specific campus details, natural phrasing, and diverse date/source signals"
+        ]
+      }
+    ],
+    "rankingMetrics": {
+      "affordabilityScore": 67,
+      "placementStrengthScore": 67,
+      "valueForMoneyScore": 100,
+      "roiPaybackYears": 0.57,
+      "trustScore": 80,
+      "overallFairScore": 78,
+      "lastComputed": "2025-02-15"
+    }
+  },
+  {
+    "id": "iiit-hyderabad",
+    "name": "International Institute of Information Technology, Hyderabad",
+    "shortName": "IIIT Hyderabad",
+    "ownership": "Public-Private",
+    "establishedYear": {
+      "value": 1998,
+      "sourceName": "IIIT Hyderabad Official Website",
+      "sourceUrl": "https://www.iiit.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialWebsite": "https://www.iiit.ac.in",
+    "isPartner": false,
+    "hasHostel": true,
+    "cityInfo": {
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "costOfLivingMonthlyInr": {
+        "value": 6500,
+        "sourceName": "Gachibowli Student Estimate",
+        "sourceUrl": "https://www.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "estimated"
+      },
+      "hostelFeeRangeAnnualInr": {
+        "value": "₹72,000 – ₹84,000 (hostel + mess)",
+        "sourceName": "IIITH Admissions Portal",
+        "sourceUrl": "https://ugadmissions.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "transportNotes": {
+        "value": "Located in Gachibowli IT hub; connected via Raidurg Metro + city buses.",
+        "sourceName": "IIITH Campus",
+        "sourceUrl": "https://www.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "safetyNotes": {
+        "value": "Mandatory on-campus residential program with 24x7 biometric access and security.",
+        "sourceName": "IIITH Campus Life",
+        "sourceUrl": "https://www.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "accreditation": {
+      "aicteApproved": {
+        "value": true,
+        "sourceName": "UGC / AICTE Disclosures",
+        "sourceUrl": "https://www.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "ugcStatus": {
+        "value": "Deemed to be University (Not-for-Profit PPP)",
+        "sourceName": "UGC Official List",
+        "sourceUrl": "https://www.ugc.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "naacGrade": {
+        "value": "A++",
+        "sourceName": "IIIT Hyderabad Disclosures",
+        "sourceUrl": "https://www.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nbaAccreditedBranches": {
+        "value": [
+          "CSE",
+          "ECE"
+        ],
+        "sourceName": "IIIT Hyderabad Disclosures",
+        "sourceUrl": "https://www.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfRank": {
+        "value": 47,
+        "sourceName": "NIRF India Rankings 2024 (Engineering)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfYear": 2024
+    },
+    "admissionRoutes": [
+      {
+        "routeType": "national_exam",
+        "label": "All-India Exam (JEE Main Mode)",
+        "examsAccepted": [
+          "jee-main"
+        ],
+        "explanation": {
+          "value": "Direct institute counselling based on JEE Main Paper 1 percentile/rank (no state quota).",
+          "sourceName": "IIITH UG Admissions",
+          "sourceUrl": "https://ugadmissions.iiit.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 2500,
+          "sourceName": "IIITH UG Admissions Portal",
+          "sourceUrl": "https://ugadmissions.iiit.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://ugadmissions.iiit.ac.in"
+      },
+      {
+        "routeType": "college_process",
+        "label": "College's Own Process (UGEE / Olympiad / SPEC)",
+        "examsAccepted": [
+          "ugee-iiith"
+        ],
+        "explanation": {
+          "value": "5-year B.Tech + MS Dual Degree admission via IIITH UGEE exam + interview.",
+          "sourceName": "IIITH UGEE Portal",
+          "sourceUrl": "https://ugadmissions.iiit.ac.in/ugee/",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 3000,
+          "sourceName": "IIITH UGEE Portal",
+          "sourceUrl": "https://ugadmissions.iiit.ac.in/ugee/",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://ugadmissions.iiit.ac.in/ugee/"
+      }
+    ],
+    "courses": [
+      {
+        "id": "iiith-cse",
+        "name": "B.Tech in Computer Science and Engineering",
+        "branchCode": "CSE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 100,
+          "sourceName": "IIITH UG Admissions",
+          "sourceUrl": "https://ugadmissions.iiit.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "IIITH Disclosures",
+          "sourceUrl": "https://www.iiit.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      },
+      {
+        "id": "iiith-ece",
+        "name": "B.Tech in Electronics and Communication Engineering",
+        "branchCode": "ECE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 65,
+          "sourceName": "IIITH UG Admissions",
+          "sourceUrl": "https://ugadmissions.iiit.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "IIITH Disclosures",
+          "sourceUrl": "https://www.iiit.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      }
+    ],
+    "fees": {
+      "tuitionPerYearInr": {
+        "value": 400000,
+        "sourceName": "IIITH UG Fee Notice",
+        "sourceUrl": "https://ugadmissions.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "hostelPerYearInr": {
+        "value": 36000,
+        "sourceName": "IIITH UG Fee Notice",
+        "sourceUrl": "https://ugadmissions.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "messPerYearInr": {
+        "value": 42000,
+        "sourceName": "IIITH UG Fee Notice",
+        "sourceUrl": "https://ugadmissions.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "examAndLabPerYearInr": {
+        "value": 10000,
+        "sourceName": "IIITH UG Fee Notice",
+        "sourceUrl": "https://ugadmissions.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "oneTimeAdmissionInr": {
+        "value": 10000,
+        "sourceName": "IIITH UG Fee Notice",
+        "sourceUrl": "https://ugadmissions.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "cautionDepositRefundableInr": {
+        "value": 10000,
+        "sourceName": "IIITH UG Fee Notice",
+        "sourceUrl": "https://ugadmissions.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "scholarshipNote": {
+        "value": "Alumni-funded pay-it-forward financial assistance and SBI Scholar Loan without collateral.",
+        "sourceName": "IIITH Financial Assistance",
+        "sourceUrl": "https://ugadmissions.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "placements": {
+      "year": 2024,
+      "medianSalaryInr": {
+        "value": 2400000,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "highestSalaryInr": {
+        "value": 6900000,
+        "sourceName": "IIITH Placement Statistics",
+        "sourceUrl": "https://placements.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "placedPercent": {
+        "value": 96,
+        "sourceName": "IIITH Placement Statistics",
+        "sourceUrl": "https://placements.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "topRecruiters": {
+        "value": [
+          "Google",
+          "Apple",
+          "Rubrik",
+          "NVIDIA",
+          "Tower Research",
+          "Adobe"
+        ],
+        "sourceName": "IIITH Placement Cell",
+        "sourceUrl": "https://placements.iiit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "reviews": [
+      {
+        "id": "rev-iiith-1",
+        "collegeId": "iiit-hyderabad",
+        "source": "Student Academic Review",
+        "sourceUrl": "https://www.iiit.ac.in",
+        "category": "faculty",
+        "shortSnippet": "CS and ECE courses start right from Semester 1 instead of generic workshop subjects; heavy coding workload.",
+        "rating": 5,
+        "date": "2025-01-18",
+        "authenticityScore": 94,
+        "flags": [
+          "Specific campus details, natural phrasing, and diverse date/source signals"
+        ]
+      }
+    ],
+    "rankingMetrics": {
+      "affordabilityScore": 10,
+      "placementStrengthScore": 96,
+      "valueForMoneyScore": 95,
+      "roiPaybackYears": 0.82,
+      "trustScore": 100,
+      "overallFairScore": 79,
+      "lastComputed": "2025-02-15"
+    }
+  },
+  {
+    "id": "bits-pilani",
+    "name": "Birla Institute of Technology and Science, Pilani",
+    "shortName": "BITS Pilani",
+    "ownership": "Private",
+    "establishedYear": {
+      "value": 1964,
+      "sourceName": "BITS Pilani Official Website",
+      "sourceUrl": "https://www.bits-pilani.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialWebsite": "https://www.bits-pilani.ac.in",
+    "isPartner": false,
+    "hasHostel": true,
+    "cityInfo": {
+      "city": "Pilani",
+      "state": "Rajasthan",
+      "costOfLivingMonthlyInr": {
+        "value": 5500,
+        "sourceName": "Pilani Campus Estimate",
+        "sourceUrl": "https://www.bits-pilani.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "estimated"
+      },
+      "hostelFeeRangeAnnualInr": {
+        "value": "₹56,000 – ₹68,000 (hostel + mess + electricity)",
+        "sourceName": "BITS Admission Modality",
+        "sourceUrl": "https://www.bitsadmission.com",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "transportNotes": {
+        "value": "Nearest railway station is Loharu (~24 km) or Chirawa (~16 km); frequent buses from Delhi and Jaipur.",
+        "sourceName": "BITS Pilani Campus",
+        "sourceUrl": "https://www.bits-pilani.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "safetyNotes": {
+        "value": "Self-contained residential township in Pilani with medical centre, markets, and 24x7 security.",
+        "sourceName": "BITS Pilani Campus",
+        "sourceUrl": "https://www.bits-pilani.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "accreditation": {
+      "aicteApproved": {
+        "value": true,
+        "sourceName": "UGC Institution of Eminence",
+        "sourceUrl": "https://www.ugc.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "ugcStatus": {
+        "value": "Institution of Eminence (Deemed to be University)",
+        "sourceName": "UGC Official List",
+        "sourceUrl": "https://www.ugc.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "naacGrade": {
+        "value": "A",
+        "sourceName": "NAAC Portal",
+        "sourceUrl": "http://www.naac.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nbaAccreditedBranches": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "nirfRank": {
+        "value": 20,
+        "sourceName": "NIRF India Rankings 2024 (Engineering)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfYear": 2024
+    },
+    "admissionRoutes": [
+      {
+        "routeType": "college_process",
+        "label": "College's Own Process (BITSAT Merit Only)",
+        "examsAccepted": [
+          "bitsat"
+        ],
+        "explanation": {
+          "value": "100% merit-based admission via BITSAT computer-based test; zero management quota or reservation.",
+          "sourceName": "BITS Admission Portal",
+          "sourceUrl": "https://www.bitsadmission.com",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 3400,
+          "sourceName": "BITSAT Brochure",
+          "sourceUrl": "https://www.bitsadmission.com",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://www.bitsadmission.com"
+      },
+      {
+        "routeType": "direct",
+        "label": "Direct Board Topper Scheme (1st Rank in Central/State Board)",
+        "examsAccepted": [],
+        "explanation": {
+          "value": "Direct admission for verified 1st rank holders of central and state Class 12 boards in India.",
+          "sourceName": "BITS Board Topper Policy",
+          "sourceUrl": "https://www.bitsadmission.com",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 1000,
+          "sourceName": "BITS Admission Portal",
+          "sourceUrl": "https://www.bitsadmission.com",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://www.bitsadmission.com"
+      }
+    ],
+    "courses": [
+      {
+        "id": "bits-cse",
+        "name": "B.E. in Computer Science",
+        "branchCode": "CSE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": null,
+          "sourceName": null,
+          "sourceUrl": null,
+          "lastVerified": null,
+          "confidence": "unverified"
+        },
+        "NBAStatus": {
+          "value": null,
+          "sourceName": null,
+          "sourceUrl": null,
+          "lastVerified": null,
+          "confidence": "unverified"
+        }
+      },
+      {
+        "id": "bits-ece",
+        "name": "B.E. in Electronics and Communication",
+        "branchCode": "ECE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": null,
+          "sourceName": null,
+          "sourceUrl": null,
+          "lastVerified": null,
+          "confidence": "unverified"
+        },
+        "NBAStatus": {
+          "value": null,
+          "sourceName": null,
+          "sourceUrl": null,
+          "lastVerified": null,
+          "confidence": "unverified"
+        }
+      }
+    ],
+    "fees": {
+      "tuitionPerYearInr": {
+        "value": 518000,
+        "sourceName": "BITS Admission Fee Structure",
+        "sourceUrl": "https://www.bitsadmission.com",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "hostelPerYearInr": {
+        "value": 38500,
+        "sourceName": "BITS Admission Fee Structure",
+        "sourceUrl": "https://www.bitsadmission.com",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "messPerYearInr": {
+        "value": 28000,
+        "sourceName": "BITS Admission Fee Structure",
+        "sourceUrl": "https://www.bitsadmission.com",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "examAndLabPerYearInr": {
+        "value": 12000,
+        "sourceName": "BITS Admission Fee Structure",
+        "sourceUrl": "https://www.bitsadmission.com",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "oneTimeAdmissionInr": {
+        "value": 53900,
+        "sourceName": "BITS Admission Fee Structure",
+        "sourceUrl": "https://www.bitsadmission.com",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "cautionDepositRefundableInr": {
+        "value": 3000,
+        "sourceName": "BITS Admission Fee Structure",
+        "sourceUrl": "https://www.bitsadmission.com",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "scholarshipNote": {
+        "value": "Merit and Merit-cum-Need (MCN) scholarships from 15% to 100% tuition fee waiver based on CGPA and family income (< ₹15 LPA).",
+        "sourceName": "BITS Scholarship Policy",
+        "sourceUrl": "https://www.bitsadmission.com",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "placements": {
+      "year": 2024,
+      "medianSalaryInr": {
+        "value": 1800000,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "highestSalaryInr": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "placedPercent": {
+        "value": 81,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "topRecruiters": {
+        "value": [
+          "Amazon",
+          "DE Shaw",
+          "Cisco",
+          "Flipkart",
+          "Nvidia",
+          "JP Morgan"
+        ],
+        "sourceName": "BITS Placement Unit",
+        "sourceUrl": "https://www.bits-pilani.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "reviews": [
+      {
+        "id": "rev-bits-1",
+        "collegeId": "bits-pilani",
+        "source": "NIRF / Student Feedback",
+        "sourceUrl": "https://www.bits-pilani.ac.in",
+        "category": "fees",
+        "shortSnippet": "Total 4-year cost exceeds ₹25 Lakhs without scholarship, though MCN scholarship helps students with family income under ₹15 LPA.",
+        "rating": 4,
+        "date": "2025-01-16",
+        "authenticityScore": 94,
+        "flags": [
+          "Specific campus details, natural phrasing, and diverse date/source signals"
+        ]
+      }
+    ],
+    "rankingMetrics": {
+      "affordabilityScore": 10,
+      "placementStrengthScore": 75,
+      "valueForMoneyScore": 81,
+      "roiPaybackYears": 1.36,
+      "trustScore": 85,
+      "overallFairScore": 66,
+      "lastComputed": "2025-02-15"
+    }
+  },
+  {
+    "id": "dtu-delhi",
+    "name": "Delhi Technological University",
+    "shortName": "DTU Delhi",
+    "ownership": "Government",
+    "establishedYear": {
+      "value": 1941,
+      "sourceName": "DTU Official Website",
+      "sourceUrl": "http://www.dtu.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialWebsite": "http://www.dtu.ac.in",
+    "isPartner": false,
+    "hasHostel": true,
+    "cityInfo": {
+      "city": "New Delhi",
+      "state": "Delhi",
+      "costOfLivingMonthlyInr": {
+        "value": 7500,
+        "sourceName": "Rohini / Bawana Student Estimate",
+        "sourceUrl": "http://www.dtu.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "estimated"
+      },
+      "hostelFeeRangeAnnualInr": {
+        "value": "₹60,000 – ₹76,000 (hostel + mess)",
+        "sourceName": "DTU Hostel Office",
+        "sourceUrl": "http://www.dtu.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "transportNotes": {
+        "value": "Connected via Samaypur Badli and Rithala Metro stations (~4 km via e-rickshaw).",
+        "sourceName": "DTU Campus Guide",
+        "sourceUrl": "http://www.dtu.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "safetyNotes": {
+        "value": "164-acre walled campus in Rohini Sector-17 with security guards at all gates.",
+        "sourceName": "DTU Campus",
+        "sourceUrl": "http://www.dtu.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "accreditation": {
+      "aicteApproved": {
+        "value": true,
+        "sourceName": "AICTE Approved List",
+        "sourceUrl": "https://www.aicte-india.org",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "ugcStatus": {
+        "value": "State University (Govt. of NCT of Delhi)",
+        "sourceName": "UGC Official List",
+        "sourceUrl": "https://www.ugc.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "naacGrade": {
+        "value": "A",
+        "sourceName": "NAAC Portal",
+        "sourceUrl": "http://www.naac.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nbaAccreditedBranches": {
+        "value": [
+          "CSE",
+          "IT",
+          "ECE",
+          "ME",
+          "EE"
+        ],
+        "sourceName": "DTU Disclosures",
+        "sourceUrl": "http://www.dtu.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfRank": {
+        "value": 27,
+        "sourceName": "NIRF India Rankings 2024 (Engineering)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfYear": 2024
+    },
+    "admissionRoutes": [
+      {
+        "routeType": "national_exam",
+        "label": "All-India Exam (JEE Main + JAC Delhi Counselling)",
+        "examsAccepted": [
+          "jee-main"
+        ],
+        "explanation": {
+          "value": "85% seats reserved for students passing Class 12 from Delhi region schools; 15% for outside Delhi, allotted via JAC Delhi.",
+          "sourceName": "JAC Delhi Portal",
+          "sourceUrl": "https://jacdelhi.admissions.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 1500,
+          "sourceName": "JAC Delhi Brochure",
+          "sourceUrl": "https://jacdelhi.admissions.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://jacdelhi.admissions.nic.in"
+      }
+    ],
+    "courses": [
+      {
+        "id": "dtu-cse",
+        "name": "B.Tech in Computer Science and Engineering",
+        "branchCode": "CSE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 480,
+          "sourceName": "JAC Delhi Seat Matrix",
+          "sourceUrl": "https://jacdelhi.admissions.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "DTU Disclosures",
+          "sourceUrl": "http://www.dtu.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      },
+      {
+        "id": "dtu-me",
+        "name": "B.Tech in Mechanical Engineering",
+        "branchCode": "ME",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 300,
+          "sourceName": "JAC Delhi Seat Matrix",
+          "sourceUrl": "https://jacdelhi.admissions.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "DTU Disclosures",
+          "sourceUrl": "http://www.dtu.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      }
+    ],
+    "fees": {
+      "tuitionPerYearInr": {
+        "value": 236700,
+        "sourceName": "JAC Delhi / DTU Fee Structure",
+        "sourceUrl": "https://jacdelhi.admissions.nic.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "hostelPerYearInr": {
+        "value": 32000,
+        "sourceName": "DTU Hostel Fee Notice",
+        "sourceUrl": "http://www.dtu.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "messPerYearInr": {
+        "value": 36000,
+        "sourceName": "DTU Hostel Mess Estimate",
+        "sourceUrl": "http://www.dtu.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "examAndLabPerYearInr": {
+        "value": 10000,
+        "sourceName": "DTU Fee Structure",
+        "sourceUrl": "http://www.dtu.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "oneTimeAdmissionInr": {
+        "value": 8000,
+        "sourceName": "DTU Fee Structure",
+        "sourceUrl": "http://www.dtu.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "cautionDepositRefundableInr": {
+        "value": 5000,
+        "sourceName": "DTU Fee Structure",
+        "sourceUrl": "http://www.dtu.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "scholarshipNote": {
+        "value": "Delhi Govt Merit-cum-Means Linked Financial Assistance Scheme (25% to 100% fee waiver).",
+        "sourceName": "Delhi e-District / DTU",
+        "sourceUrl": "http://www.dtu.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "placements": {
+      "year": 2024,
+      "medianSalaryInr": {
+        "value": 1300000,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "highestSalaryInr": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "placedPercent": {
+        "value": 79,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "topRecruiters": {
+        "value": [
+          "Atlassian",
+          "Sprinklr",
+          "Maruti Suzuki",
+          "Deloitte",
+          "Samsung"
+        ],
+        "sourceName": "DTU T&P",
+        "sourceUrl": "http://www.dtu.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "reviews": [
+      {
+        "id": "rev-dtu-1",
+        "collegeId": "dtu-delhi",
+        "source": "DTU Student Council",
+        "sourceUrl": "http://www.dtu.ac.in",
+        "category": "hostel",
+        "shortSnippet": "Delhi NCR day scholars rarely get hostel allotment in first year; outside-Delhi students get priority in hostel allocation.",
+        "rating": 4,
+        "date": "2025-01-13",
+        "authenticityScore": 94,
+        "flags": [
+          "Specific campus details, natural phrasing, and diverse date/source signals"
+        ]
+      }
+    ],
+    "rankingMetrics": {
+      "affordabilityScore": 41,
+      "placementStrengthScore": 61,
+      "valueForMoneyScore": 91,
+      "roiPaybackYears": 0.97,
+      "trustScore": 100,
+      "overallFairScore": 72,
+      "lastComputed": "2025-02-15"
+    }
+  },
+  {
+    "id": "jadavpur-univ",
+    "name": "Jadavpur University (Faculty of Engineering & Technology)",
+    "shortName": "Jadavpur University",
+    "ownership": "Government",
+    "establishedYear": {
+      "value": 1955,
+      "sourceName": "Jadavpur University Official Website",
+      "sourceUrl": "https://jadavpuruniversity.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialWebsite": "https://jadavpuruniversity.in",
+    "isPartner": false,
+    "hasHostel": true,
+    "cityInfo": {
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "costOfLivingMonthlyInr": {
+        "value": 5000,
+        "sourceName": "Jadavpur Student Estimate",
+        "sourceUrl": "https://jadavpuruniversity.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "estimated"
+      },
+      "hostelFeeRangeAnnualInr": {
+        "value": "₹18,000 – ₹28,000 (subsidised hostel + mess)",
+        "sourceName": "Jadavpur University Disclosures",
+        "sourceUrl": "https://jadavpuruniversity.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "transportNotes": {
+        "value": "Walking distance from Jadavpur Railway Station and connected by Kolkata buses and metro.",
+        "sourceName": "JU Campus Guide",
+        "sourceUrl": "https://jadavpuruniversity.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "safetyNotes": {
+        "value": "Urban Kolkata campus; verify official anti-ragging cell helpline and hostel allocation rules.",
+        "sourceName": "JU Anti-Ragging Cell",
+        "sourceUrl": "https://jadavpuruniversity.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "accreditation": {
+      "aicteApproved": {
+        "value": true,
+        "sourceName": "AICTE Approved List",
+        "sourceUrl": "https://www.aicte-india.org",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "ugcStatus": {
+        "value": "State University",
+        "sourceName": "UGC Official List",
+        "sourceUrl": "https://www.ugc.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "naacGrade": {
+        "value": "A",
+        "sourceName": "NAAC Portal",
+        "sourceUrl": "http://www.naac.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nbaAccreditedBranches": {
+        "value": [
+          "CSE",
+          "ETCE",
+          "EE",
+          "ME",
+          "CE"
+        ],
+        "sourceName": "JU Disclosures",
+        "sourceUrl": "https://jadavpuruniversity.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfRank": {
+        "value": 12,
+        "sourceName": "NIRF India Rankings 2024 (Engineering)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfYear": 2024
+    },
+    "admissionRoutes": [
+      {
+        "routeType": "national_exam",
+        "label": "State Entrance Exam (WBJEE Counselling - 90% Domicile, 10% All-India)",
+        "examsAccepted": [
+          "wbjee"
+        ],
+        "explanation": {
+          "value": "Admission strictly through WBJEE General Merit Rank (90% West Bengal domicile, 10% All-India seats via WBJEE).",
+          "sourceName": "WBJEEB Portal",
+          "sourceUrl": "https://wbjeeb.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 500,
+          "sourceName": "WBJEEB Information Bulletin",
+          "sourceUrl": "https://wbjeeb.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://wbjeeb.nic.in"
+      }
+    ],
+    "courses": [
+      {
+        "id": "ju-cse",
+        "name": "B.E. in Computer Science and Engineering",
+        "branchCode": "CSE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 84,
+          "sourceName": "WBJEEB Seat Matrix",
+          "sourceUrl": "https://wbjeeb.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "JU FET",
+          "sourceUrl": "https://jadavpuruniversity.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      },
+      {
+        "id": "ju-etce",
+        "name": "B.E. in Electronics and Telecommunication Engineering",
+        "branchCode": "ECE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 84,
+          "sourceName": "WBJEEB Seat Matrix",
+          "sourceUrl": "https://wbjeeb.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "JU FET",
+          "sourceUrl": "https://jadavpuruniversity.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      }
+    ],
+    "fees": {
+      "tuitionPerYearInr": {
+        "value": 2400,
+        "sourceName": "JU FET Official Fee Schedule (Non-IT Branches)",
+        "sourceUrl": "https://jadavpuruniversity.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "hostelPerYearInr": {
+        "value": 3000,
+        "sourceName": "JU Hostel Fee Schedule",
+        "sourceUrl": "https://jadavpuruniversity.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "messPerYearInr": {
+        "value": 20000,
+        "sourceName": "JU Hostel Mess Estimate",
+        "sourceUrl": "https://jadavpuruniversity.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "examAndLabPerYearInr": {
+        "value": 1200,
+        "sourceName": "JU FET Official Fee Schedule",
+        "sourceUrl": "https://jadavpuruniversity.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "oneTimeAdmissionInr": {
+        "value": 2500,
+        "sourceName": "JU FET Official Fee Schedule",
+        "sourceUrl": "https://jadavpuruniversity.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "cautionDepositRefundableInr": {
+        "value": 500,
+        "sourceName": "JU FET Official Fee Schedule",
+        "sourceUrl": "https://jadavpuruniversity.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "scholarshipNote": {
+        "value": "Swami Vivekananda Merit-cum-Means Scholarship (SVMCM) and Kanyashree for West Bengal students.",
+        "sourceName": "WBMDFC / SVMCM Portal",
+        "sourceUrl": "https://svmcm.wbhed.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "placements": {
+      "year": 2024,
+      "medianSalaryInr": {
+        "value": 1100000,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "highestSalaryInr": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "placedPercent": {
+        "value": 85,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "topRecruiters": {
+        "value": [
+          "Texas Instruments",
+          "CESC",
+          "PwC",
+          "Samsung",
+          "Airbus"
+        ],
+        "sourceName": "JU Placement Cell",
+        "sourceUrl": "https://jadavpuruniversity.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "reviews": [
+      {
+        "id": "rev-ju-1",
+        "collegeId": "jadavpur-univ",
+        "source": "NIRF Data & Alumni Review",
+        "sourceUrl": "https://jadavpuruniversity.in",
+        "category": "fees",
+        "shortSnippet": "At roughly ₹2,400/year tuition for core B.E. branches (₹30,000/yr for IT), Jadavpur offers the highest ROI payback in India.",
+        "rating": 5,
+        "date": "2025-01-09",
+        "authenticityScore": 76,
+        "flags": [
+          "Extreme rating without concrete academic, placement, or campus specifics"
+        ]
+      }
+    ],
+    "rankingMetrics": {
+      "affordabilityScore": 100,
+      "placementStrengthScore": 58,
+      "valueForMoneyScore": 100,
+      "roiPaybackYears": 0.1,
+      "trustScore": 100,
+      "overallFairScore": 85,
+      "lastComputed": "2025-02-15"
+    }
+  },
+  {
+    "id": "vit-vellore",
+    "name": "Vellore Institute of Technology",
+    "shortName": "VIT Vellore",
+    "ownership": "Private",
+    "establishedYear": {
+      "value": 1984,
+      "sourceName": "VIT Official Website",
+      "sourceUrl": "https://vit.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialWebsite": "https://vit.ac.in",
+    "isPartner": true,
+    "hasHostel": true,
+    "cityInfo": {
+      "city": "Vellore",
+      "state": "Tamil Nadu",
+      "costOfLivingMonthlyInr": {
+        "value": 6000,
+        "sourceName": "Katpadi Student Estimate",
+        "sourceUrl": "https://vit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "estimated"
+      },
+      "hostelFeeRangeAnnualInr": {
+        "value": "₹1,05,000 – ₹1,85,000 (varies by AC/Non-AC & bed sharing)",
+        "sourceName": "VIT Hostel Fee Structure",
+        "sourceUrl": "https://vit.ac.in/campuslife/hostels",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "transportNotes": {
+        "value": "3 km from Katpadi Railway Junction (major rail hub between Chennai and Bengaluru).",
+        "sourceName": "VIT Campus Info",
+        "sourceUrl": "https://vit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "safetyNotes": {
+        "value": "Strict biometric gate entry and hostel in-time regulations with 24x7 health centre.",
+        "sourceName": "VIT Hostel Rules",
+        "sourceUrl": "https://vit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "accreditation": {
+      "aicteApproved": {
+        "value": true,
+        "sourceName": "AICTE Approved List",
+        "sourceUrl": "https://www.aicte-india.org",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "ugcStatus": {
+        "value": "Institution of Eminence (Deemed to be University)",
+        "sourceName": "UGC Official List",
+        "sourceUrl": "https://www.ugc.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "naacGrade": {
+        "value": "A++",
+        "sourceName": "NAAC Portal",
+        "sourceUrl": "http://www.naac.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nbaAccreditedBranches": {
+        "value": [
+          "CSE",
+          "ECE",
+          "EEE",
+          "ME",
+          "CE"
+        ],
+        "sourceName": "VIT Accreditation Page",
+        "sourceUrl": "https://vit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfRank": {
+        "value": 11,
+        "sourceName": "NIRF India Rankings 2024 (Engineering)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfYear": 2024
+    },
+    "admissionRoutes": [
+      {
+        "routeType": "college_process",
+        "label": "College's Own Process (VITEEE Entrance Exam & Category 1–5 Counselling)",
+        "examsAccepted": [
+          "viteee"
+        ],
+        "explanation": {
+          "value": "B.Tech admissions via VITEEE computer-based test. Tuition fee slab (Category 1 to Category 5) depends on VITEEE rank.",
+          "sourceName": "VIT Admissions",
+          "sourceUrl": "https://vit.ac.in/admissions/undergraduate",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 1350,
+          "sourceName": "VITEEE Brochure",
+          "sourceUrl": "https://viteee.vit.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://viteee.vit.ac.in"
+      }
+    ],
+    "courses": [
+      {
+        "id": "vit-cse",
+        "name": "B.Tech in Computer Science and Engineering",
+        "branchCode": "CSE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": null,
+          "sourceName": null,
+          "sourceUrl": null,
+          "lastVerified": null,
+          "confidence": "unverified"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "VIT Accreditation",
+          "sourceUrl": "https://vit.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      },
+      {
+        "id": "vit-ece",
+        "name": "B.Tech in Electronics and Communication Engineering",
+        "branchCode": "ECE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": null,
+          "sourceName": null,
+          "sourceUrl": null,
+          "lastVerified": null,
+          "confidence": "unverified"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "VIT Accreditation",
+          "sourceUrl": "https://vit.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      }
+    ],
+    "fees": {
+      "tuitionPerYearInr": {
+        "value": 198000,
+        "sourceName": "VIT B.Tech Group B Category-1 Fee Schedule (Category 2–5 ranges up to ₹4.93L/yr)",
+        "sourceUrl": "https://vit.ac.in/admissions/undergraduate",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "hostelPerYearInr": {
+        "value": 68000,
+        "sourceName": "VIT Hostel Fee Schedule (Non-AC 4-Bed)",
+        "sourceUrl": "https://vit.ac.in/campuslife/hostels",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "messPerYearInr": {
+        "value": 58000,
+        "sourceName": "VIT Hostel Mess Schedule (Veg/Non-Veg/Special)",
+        "sourceUrl": "https://vit.ac.in/campuslife/hostels",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "examAndLabPerYearInr": {
+        "value": 8000,
+        "sourceName": "VIT Academic Regulations",
+        "sourceUrl": "https://vit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "oneTimeAdmissionInr": {
+        "value": 3000,
+        "sourceName": "VIT B.Tech Fee Schedule",
+        "sourceUrl": "https://vit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "cautionDepositRefundableInr": {
+        "value": 3000,
+        "sourceName": "VIT B.Tech Fee Schedule",
+        "sourceUrl": "https://vit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "scholarshipNote": {
+        "value": "GV School Development Programme (GVSDP): 25% to 100% tuition waiver for VITEEE rank 1 to 1000 and board toppers.",
+        "sourceName": "VIT Scholarships",
+        "sourceUrl": "https://vit.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "placements": {
+      "year": 2024,
+      "medianSalaryInr": {
+        "value": 900000,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "highestSalaryInr": {
+        "value": 8800000,
+        "sourceName": "VIT CDC Placement Highlights",
+        "sourceUrl": "https://vit.ac.in/cdc-overview",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "placedPercent": {
+        "value": 78,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "topRecruiters": {
+        "value": [
+          "TCS",
+          "Cognizant",
+          "Microsoft",
+          "PayPal",
+          "Motorq",
+          "Deloitte"
+        ],
+        "sourceName": "VIT CDC",
+        "sourceUrl": "https://vit.ac.in/cdc-overview",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "reviews": [
+      {
+        "id": "rev-vit-1",
+        "collegeId": "vit-vellore",
+        "source": "Verified Student Feedback",
+        "sourceUrl": "https://vit.ac.in",
+        "category": "placement",
+        "shortSnippet": "FFCS credit system lets you pick faculty and slots, but batch size is large so maintaining 8.5+ CGPA is key for shortlisting.",
+        "rating": 4,
+        "date": "2025-01-17",
+        "authenticityScore": 98,
+        "flags": [
+          "Specific campus details, natural phrasing, and diverse date/source signals"
+        ]
+      },
+      {
+        "id": "rev-vit-2",
+        "collegeId": "vit-vellore",
+        "source": "Third-Party Classified Ad",
+        "sourceUrl": "https://vit.ac.in",
+        "category": "placement",
+        "shortSnippet": "100% placement guaranteed apply now direct seat call agent hurry!!!",
+        "rating": 5,
+        "date": "2025-01-22",
+        "authenticityScore": 33,
+        "flags": [
+          "Contains promotional or marketing phrasing",
+          "Extreme rating without concrete academic, placement, or campus specifics",
+          "Unusual punctuation burst (multiple exclamation marks)"
+        ]
+      }
+    ],
+    "rankingMetrics": {
+      "affordabilityScore": 37,
+      "placementStrengthScore": 51,
+      "valueForMoneyScore": 78,
+      "roiPaybackYears": 1.48,
+      "trustScore": 100,
+      "overallFairScore": 65,
+      "lastComputed": "2025-02-15"
+    }
+  },
+  {
+    "id": "srm-chennai",
+    "name": "SRM Institute of Science and Technology, Kattankulathur",
+    "shortName": "SRM IST Chennai",
+    "ownership": "Private",
+    "establishedYear": {
+      "value": 1985,
+      "sourceName": "SRM IST Official Website",
+      "sourceUrl": "https://www.srmist.edu.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialWebsite": "https://www.srmist.edu.in",
+    "isPartner": true,
+    "hasHostel": true,
+    "cityInfo": {
+      "city": "Chennai (Kattankulathur)",
+      "state": "Tamil Nadu",
+      "costOfLivingMonthlyInr": {
+        "value": 6500,
+        "sourceName": "Potheri / Kattankulathur Student Estimate",
+        "sourceUrl": "https://www.srmist.edu.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "estimated"
+      },
+      "hostelFeeRangeAnnualInr": {
+        "value": "₹1,18,000 – ₹2,25,000 (Non-AC to AC attached)",
+        "sourceName": "SRM Hostels Portal",
+        "sourceUrl": "https://www.srmist.edu.in/life-at-srm/hostels/",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "transportNotes": {
+        "value": "Opposite Potheri Suburban Railway Station on Chennai Beach–Chengalpattu line.",
+        "sourceName": "SRM Campus Guide",
+        "sourceUrl": "https://www.srmist.edu.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "safetyNotes": {
+        "value": "Multi-sport campus with SRM Medical College Hospital located inside the same campus.",
+        "sourceName": "SRM Campus",
+        "sourceUrl": "https://www.srmist.edu.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "accreditation": {
+      "aicteApproved": {
+        "value": true,
+        "sourceName": "AICTE Approved List",
+        "sourceUrl": "https://www.aicte-india.org",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "ugcStatus": {
+        "value": "Deemed to be University (Category 1)",
+        "sourceName": "UGC Official List",
+        "sourceUrl": "https://www.ugc.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "naacGrade": {
+        "value": "A++",
+        "sourceName": "NAAC Portal",
+        "sourceUrl": "http://www.naac.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nbaAccreditedBranches": {
+        "value": [
+          "CSE",
+          "ECE",
+          "ME",
+          "CE"
+        ],
+        "sourceName": "SRM Accreditation Page",
+        "sourceUrl": "https://www.srmist.edu.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfRank": {
+        "value": 13,
+        "sourceName": "NIRF India Rankings 2024 (Engineering)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfYear": 2024
+    },
+    "admissionRoutes": [
+      {
+        "routeType": "college_process",
+        "label": "College's Own Process (SRMJEEE Phases 1–3)",
+        "examsAccepted": [
+          "srmjeee"
+        ],
+        "explanation": {
+          "value": "Online proctored SRMJEEE entrance test followed by branch and campus choice filling.",
+          "sourceName": "SRM Admissions",
+          "sourceUrl": "https://www.srmist.edu.in/admission-india/",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 1400,
+          "sourceName": "SRMJEEE Portal",
+          "sourceUrl": "https://www.srmist.edu.in/admission-india/",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://www.srmist.edu.in/admission-india/"
+      }
+    ],
+    "courses": [
+      {
+        "id": "srm-cse",
+        "name": "B.Tech in Computer Science and Engineering",
+        "branchCode": "CSE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": null,
+          "sourceName": null,
+          "sourceUrl": null,
+          "lastVerified": null,
+          "confidence": "unverified"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "SRM Accreditation",
+          "sourceUrl": "https://www.srmist.edu.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      },
+      {
+        "id": "srm-ece",
+        "name": "B.Tech in Electronics and Communication Engineering",
+        "branchCode": "ECE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": null,
+          "sourceName": null,
+          "sourceUrl": null,
+          "lastVerified": null,
+          "confidence": "unverified"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "SRM Accreditation",
+          "sourceUrl": "https://www.srmist.edu.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      }
+    ],
+    "fees": {
+      "tuitionPerYearInr": {
+        "value": 275000,
+        "sourceName": "SRM IST KTR Fee Schedule (Core ECE ₹2.75L/yr; CSE ₹4.25L–₹4.75L/yr)",
+        "sourceUrl": "https://www.srmist.edu.in/admission-india/engineering/fees/",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "hostelPerYearInr": {
+        "value": 65000,
+        "sourceName": "SRM Hostel Tariff (Non-AC)",
+        "sourceUrl": "https://www.srmist.edu.in/life-at-srm/hostels/",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "messPerYearInr": {
+        "value": 55000,
+        "sourceName": "SRM Hostel Mess Tariff",
+        "sourceUrl": "https://www.srmist.edu.in/life-at-srm/hostels/",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "examAndLabPerYearInr": {
+        "value": 10000,
+        "sourceName": "SRM Fee Schedule",
+        "sourceUrl": "https://www.srmist.edu.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "oneTimeAdmissionInr": {
+        "value": 10000,
+        "sourceName": "SRM Fee Schedule",
+        "sourceUrl": "https://www.srmist.edu.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "cautionDepositRefundableInr": {
+        "value": 5000,
+        "sourceName": "SRM Fee Schedule",
+        "sourceUrl": "https://www.srmist.edu.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "scholarshipNote": {
+        "value": "Founder’s Scholarship (100% tuition + hostel waiver for top SRMJEEE rankers & state toppers); renewal requires 9.0+ CGPA.",
+        "sourceName": "SRM Scholarships",
+        "sourceUrl": "https://www.srmist.edu.in/scholarships/",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "placements": {
+      "year": 2024,
+      "medianSalaryInr": {
+        "value": 610000,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "highestSalaryInr": {
+        "value": 5200000,
+        "sourceName": "SRM Career Centre Highlights",
+        "sourceUrl": "https://www.srmist.edu.in/placements/",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "placedPercent": {
+        "value": 76,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "topRecruiters": {
+        "value": [
+          "Cognizant",
+          "TCS",
+          "Wipro",
+          "Amazon",
+          "Barclays",
+          "ZF"
+        ],
+        "sourceName": "SRM Career Centre",
+        "sourceUrl": "https://www.srmist.edu.in/placements/",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "reviews": [
+      {
+        "id": "rev-srm-1",
+        "collegeId": "srm-chennai",
+        "source": "NIRF / Student Feedback",
+        "sourceUrl": "https://www.srmist.edu.in",
+        "category": "fees",
+        "shortSnippet": "Check branch-wise tuition carefully: CSE at KTR campus has higher annual tuition than core mechanical or ECE branches.",
+        "rating": 4,
+        "date": "2025-01-21",
+        "authenticityScore": 88,
+        "flags": [
+          "Specific campus details, natural phrasing, and diverse date/source signals"
+        ]
+      }
+    ],
+    "rankingMetrics": {
+      "affordabilityScore": 21,
+      "placementStrengthScore": 42,
+      "valueForMoneyScore": 48,
+      "roiPaybackYears": 2.67,
+      "trustScore": 100,
+      "overallFairScore": 51,
+      "lastComputed": "2025-02-15"
+    }
+  },
+  {
+    "id": "thapar-patiala",
+    "name": "Thapar Institute of Engineering and Technology, Patiala",
+    "shortName": "TIET Patiala (Thapar)",
+    "ownership": "Private",
+    "establishedYear": {
+      "value": 1956,
+      "sourceName": "TIET Official Website",
+      "sourceUrl": "https://www.thapar.edu",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialWebsite": "https://www.thapar.edu",
+    "isPartner": true,
+    "hasHostel": true,
+    "cityInfo": {
+      "city": "Patiala",
+      "state": "Punjab",
+      "costOfLivingMonthlyInr": {
+        "value": 6000,
+        "sourceName": "Patiala Student Estimate",
+        "sourceUrl": "https://www.thapar.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "estimated"
+      },
+      "hostelFeeRangeAnnualInr": {
+        "value": "₹95,000 – ₹1,45,000 (hostel + Sodexo/mess)",
+        "sourceName": "TIET Fee Structure",
+        "sourceUrl": "https://admission.thapar.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "transportNotes": {
+        "value": "250-acre campus inside Patiala city (~5 km from Patiala Bus Stand and Railway Station).",
+        "sourceName": "TIET Reach Us",
+        "sourceUrl": "https://www.thapar.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "safetyNotes": {
+        "value": "Gated residential campus with 24x7 dispensary, CCTV, and dedicated women’s hostel security.",
+        "sourceName": "TIET Campus Life",
+        "sourceUrl": "https://www.thapar.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "accreditation": {
+      "aicteApproved": {
+        "value": true,
+        "sourceName": "AICTE Approved List",
+        "sourceUrl": "https://www.aicte-india.org",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "ugcStatus": {
+        "value": "Deemed to be University",
+        "sourceName": "UGC Official List",
+        "sourceUrl": "https://www.ugc.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "naacGrade": {
+        "value": "A+",
+        "sourceName": "NAAC Portal",
+        "sourceUrl": "http://www.naac.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nbaAccreditedBranches": {
+        "value": [
+          "CSE",
+          "ECE",
+          "ME",
+          "EE",
+          "CE"
+        ],
+        "sourceName": "TIET NBA / ABET Accreditations",
+        "sourceUrl": "https://www.thapar.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfRank": {
+        "value": 29,
+        "sourceName": "NIRF India Rankings 2024 (Engineering)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfYear": 2024
+    },
+    "admissionRoutes": [
+      {
+        "routeType": "national_exam",
+        "label": "All-India Exam (JEE Main Merit - 50% Seats)",
+        "examsAccepted": [
+          "jee-main"
+        ],
+        "explanation": {
+          "value": "Direct institute counselling based on JEE Main score (50% seats reserved for Punjab domicile, 50% outside Punjab).",
+          "sourceName": "TIET Admission Brochure",
+          "sourceUrl": "https://admission.thapar.edu",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 1500,
+          "sourceName": "TIET Admission Portal",
+          "sourceUrl": "https://admission.thapar.edu",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://admission.thapar.edu"
+      },
+      {
+        "routeType": "direct",
+        "label": "Direct Class 12 PCM Merit Mode (Selected Branches/Seats)",
+        "examsAccepted": [],
+        "explanation": {
+          "value": "Official institute counselling rounds for seats allotted on Class 12 PCM aggregate marks (with JEE appearance requirement).",
+          "sourceName": "TIET Admission Brochure",
+          "sourceUrl": "https://admission.thapar.edu",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 1500,
+          "sourceName": "TIET Admission Portal",
+          "sourceUrl": "https://admission.thapar.edu",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://admission.thapar.edu"
+      }
+    ],
+    "courses": [
+      {
+        "id": "tiet-copc",
+        "name": "B.E. in Computer Engineering (COPC)",
+        "branchCode": "CSE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": null,
+          "sourceName": null,
+          "sourceUrl": null,
+          "lastVerified": null,
+          "confidence": "unverified"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "TIET Accreditation",
+          "sourceUrl": "https://www.thapar.edu",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      },
+      {
+        "id": "tiet-ece",
+        "name": "B.E. in Electronics and Communication Engineering",
+        "branchCode": "ECE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": null,
+          "sourceName": null,
+          "sourceUrl": null,
+          "lastVerified": null,
+          "confidence": "unverified"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "TIET Accreditation",
+          "sourceUrl": "https://www.thapar.edu",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      }
+    ],
+    "fees": {
+      "tuitionPerYearInr": {
+        "value": 495000,
+        "sourceName": "TIET B.E./B.Tech Tuition & Development Fee",
+        "sourceUrl": "https://admission.thapar.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "hostelPerYearInr": {
+        "value": 64000,
+        "sourceName": "TIET Hostel Fee Schedule",
+        "sourceUrl": "https://admission.thapar.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "messPerYearInr": {
+        "value": 42000,
+        "sourceName": "TIET Hostel Mess Estimate",
+        "sourceUrl": "https://admission.thapar.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "examAndLabPerYearInr": {
+        "value": 12000,
+        "sourceName": "TIET Fee Schedule",
+        "sourceUrl": "https://admission.thapar.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "oneTimeAdmissionInr": {
+        "value": 30000,
+        "sourceName": "TIET Admission Fee",
+        "sourceUrl": "https://admission.thapar.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "cautionDepositRefundableInr": {
+        "value": 10000,
+        "sourceName": "TIET Fee Schedule",
+        "sourceUrl": "https://admission.thapar.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "scholarshipNote": {
+        "value": "Merit Cohort I/II/III and Merit-cum-Means scholarships offering 30% to 100% tuition waiver based on JEE Main rank and AGPA.",
+        "sourceName": "TIET Scholarships",
+        "sourceUrl": "https://www.thapar.edu/students/pages/scholarships",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "placements": {
+      "year": 2024,
+      "medianSalaryInr": {
+        "value": 1190000,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "highestSalaryInr": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "placedPercent": {
+        "value": 83,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "topRecruiters": {
+        "value": [
+          "JP Morgan",
+          "American Express",
+          "Apple",
+          "Optum",
+          "Maruti Suzuki",
+          "Deloitte"
+        ],
+        "sourceName": "TIET CILP",
+        "sourceUrl": "https://www.thapar.edu/placements",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "reviews": [
+      {
+        "id": "rev-thapar-1",
+        "collegeId": "thapar-patiala",
+        "source": "NIRF / Student Review",
+        "sourceUrl": "https://www.thapar.edu",
+        "category": "campus",
+        "shortSnippet": "Modern library and ABET-accredited labs in Patiala; tuition has risen over the years so plan for merit scholarships early.",
+        "rating": 4,
+        "date": "2025-01-23",
+        "authenticityScore": 94,
+        "flags": [
+          "Specific campus details, natural phrasing, and diverse date/source signals"
+        ]
+      }
+    ],
+    "rankingMetrics": {
+      "affordabilityScore": 10,
+      "placementStrengthScore": 60,
+      "valueForMoneyScore": 63,
+      "roiPaybackYears": 2.09,
+      "trustScore": 100,
+      "overallFairScore": 59,
+      "lastComputed": "2025-02-15"
+    }
+  },
+  {
+    "id": "pec-chandigarh",
+    "name": "Punjab Engineering College (Deemed to be University), Chandigarh",
+    "shortName": "PEC Chandigarh",
+    "ownership": "Government",
+    "establishedYear": {
+      "value": 1921,
+      "sourceName": "PEC Official Website",
+      "sourceUrl": "https://pec.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialWebsite": "https://pec.ac.in",
+    "isPartner": false,
+    "hasHostel": true,
+    "cityInfo": {
+      "city": "Chandigarh",
+      "state": "Chandigarh",
+      "costOfLivingMonthlyInr": {
+        "value": 6500,
+        "sourceName": "Sector 12 Chandigarh Estimate",
+        "sourceUrl": "https://pec.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "estimated"
+      },
+      "hostelFeeRangeAnnualInr": {
+        "value": "₹62,000 – ₹75,000 (hostel + mess)",
+        "sourceName": "PEC Hostel Brochure",
+        "sourceUrl": "https://pec.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "transportNotes": {
+        "value": "Located in Sector 12 Chandigarh adjacent to PGI and Panjab University; CTU bus stop at gate.",
+        "sourceName": "PEC Location",
+        "sourceUrl": "https://pec.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "safetyNotes": {
+        "value": "Prime Sector 12 Chandigarh location right beside PGIMER hospital.",
+        "sourceName": "PEC Campus",
+        "sourceUrl": "https://pec.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "accreditation": {
+      "aicteApproved": {
+        "value": true,
+        "sourceName": "AICTE Approved List",
+        "sourceUrl": "https://www.aicte-india.org",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "ugcStatus": {
+        "value": "Government Funded Technical Institute (Deemed to be University)",
+        "sourceName": "UGC / JoSAA List",
+        "sourceUrl": "https://josaa.nic.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "naacGrade": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "nbaAccreditedBranches": {
+        "value": [
+          "CSE",
+          "ECE",
+          "ME",
+          "EE",
+          "AE"
+        ],
+        "sourceName": "PEC Disclosures",
+        "sourceUrl": "https://pec.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfRank": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "nirfYear": 2024
+    },
+    "admissionRoutes": [
+      {
+        "routeType": "national_exam",
+        "label": "All-India Exam (JEE Main + JoSAA / CSAB)",
+        "examsAccepted": [
+          "jee-main"
+        ],
+        "explanation": {
+          "value": "50% Chandigarh UT Home State quota and 50% All-India quota through JoSAA/CSAB.",
+          "sourceName": "JoSAA Portal",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 1000,
+          "sourceName": "NTA JEE Main Bulletin",
+          "sourceUrl": "https://jeemain.nta.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://josaa.nic.in"
+      }
+    ],
+    "courses": [
+      {
+        "id": "pec-cse",
+        "name": "B.Tech in Computer Science and Engineering",
+        "branchCode": "CSE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 120,
+          "sourceName": "JoSAA Seat Matrix",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "PEC Academics",
+          "sourceUrl": "https://pec.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      },
+      {
+        "id": "pec-ae",
+        "name": "B.Tech in Aerospace Engineering",
+        "branchCode": "ME",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 30,
+          "sourceName": "JoSAA Seat Matrix",
+          "sourceUrl": "https://josaa.nic.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "PEC Academics",
+          "sourceUrl": "https://pec.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      }
+    ],
+    "fees": {
+      "tuitionPerYearInr": {
+        "value": 176000,
+        "sourceName": "PEC B.Tech Fee Structure",
+        "sourceUrl": "https://pec.ac.in/fee-structure",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "hostelPerYearInr": {
+        "value": 31500,
+        "sourceName": "PEC Hostel Fee Structure",
+        "sourceUrl": "https://pec.ac.in/fee-structure",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "messPerYearInr": {
+        "value": 38000,
+        "sourceName": "PEC Hostel Mess Estimate",
+        "sourceUrl": "https://pec.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "examAndLabPerYearInr": {
+        "value": 12000,
+        "sourceName": "PEC B.Tech Fee Structure",
+        "sourceUrl": "https://pec.ac.in/fee-structure",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "oneTimeAdmissionInr": {
+        "value": 9000,
+        "sourceName": "PEC B.Tech Fee Structure",
+        "sourceUrl": "https://pec.ac.in/fee-structure",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "cautionDepositRefundableInr": {
+        "value": 6000,
+        "sourceName": "PEC B.Tech Fee Structure",
+        "sourceUrl": "https://pec.ac.in/fee-structure",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "scholarshipNote": {
+        "value": "Half free-ship for EWS students and full tuition waiver for SC/ST/PwD students as per UT norms.",
+        "sourceName": "PEC Scholarships",
+        "sourceUrl": "https://pec.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "placements": {
+      "year": 2024,
+      "medianSalaryInr": {
+        "value": 1250000,
+        "sourceName": "PEC CDGC / NIRF 2024 Submission",
+        "sourceUrl": "https://pec.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "highestSalaryInr": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "placedPercent": {
+        "value": 80,
+        "sourceName": "PEC CDGC Placement Summary",
+        "sourceUrl": "https://pec.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "topRecruiters": {
+        "value": [
+          "Goldman Sachs",
+          "Arcesium",
+          "Uber",
+          "Airbus",
+          "Alstom"
+        ],
+        "sourceName": "PEC CDGC",
+        "sourceUrl": "https://pec.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "reviews": [
+      {
+        "id": "rev-pec-1",
+        "collegeId": "pec-chandigarh",
+        "source": "PEC CDGC & Alumni Notes",
+        "sourceUrl": "https://pec.ac.in",
+        "category": "placement",
+        "shortSnippet": "Full 6-month industry internship in 6th semester gives students strong pre-placement offer (PPO) conversion.",
+        "rating": 5,
+        "date": "2025-01-19",
+        "authenticityScore": 94,
+        "flags": [
+          "Specific campus details, natural phrasing, and diverse date/source signals"
+        ]
+      }
+    ],
+    "rankingMetrics": {
+      "affordabilityScore": 54,
+      "placementStrengthScore": 61,
+      "valueForMoneyScore": 94,
+      "roiPaybackYears": 0.83,
+      "trustScore": 65,
+      "overallFairScore": 69,
+      "lastComputed": "2025-02-15"
+    }
+  },
+  {
+    "id": "coep-pune",
+    "name": "COEP Technological University, Pune",
+    "shortName": "COEP Tech Pune",
+    "ownership": "Government",
+    "establishedYear": {
+      "value": 1854,
+      "sourceName": "COEP Official Website",
+      "sourceUrl": "https://www.coeptech.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialWebsite": "https://www.coeptech.ac.in",
+    "isPartner": false,
+    "hasHostel": true,
+    "cityInfo": {
+      "city": "Pune",
+      "state": "Maharashtra",
+      "costOfLivingMonthlyInr": {
+        "value": 6500,
+        "sourceName": "Shivajinagar Student Estimate",
+        "sourceUrl": "https://www.coeptech.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "estimated"
+      },
+      "hostelFeeRangeAnnualInr": {
+        "value": "₹42,000 – ₹54,000 (hostel + mess)",
+        "sourceName": "COEP Hostel Notice",
+        "sourceUrl": "https://www.coeptech.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "transportNotes": {
+        "value": "Heart of Pune in Shivajinagar; Shivajinagar Railway & Metro Station within walking distance.",
+        "sourceName": "COEP Campus",
+        "sourceUrl": "https://www.coeptech.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "safetyNotes": {
+        "value": "Central Shivajinagar location with boat club on Mula river and gated hostel campus.",
+        "sourceName": "COEP Campus",
+        "sourceUrl": "https://www.coeptech.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "accreditation": {
+      "aicteApproved": {
+        "value": true,
+        "sourceName": "AICTE Approved List",
+        "sourceUrl": "https://www.aicte-india.org",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "ugcStatus": {
+        "value": "Unitary Public Technological University (Govt. of Maharashtra)",
+        "sourceName": "UGC Official List",
+        "sourceUrl": "https://www.ugc.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "naacGrade": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "nbaAccreditedBranches": {
+        "value": [
+          "CSE",
+          "ECE",
+          "ME",
+          "EE",
+          "CE"
+        ],
+        "sourceName": "COEP Disclosures",
+        "sourceUrl": "https://www.coeptech.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfRank": {
+        "value": 77,
+        "sourceName": "NIRF India Rankings 2024 (Engineering)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfYear": 2024
+    },
+    "admissionRoutes": [
+      {
+        "routeType": "national_exam",
+        "label": "State & All-India Exam (MHT CET + JEE Main via Maharashtra CAP)",
+        "examsAccepted": [
+          "mht-cet",
+          "jee-main"
+        ],
+        "explanation": {
+          "value": "Allotted through Maharashtra State CET Cell CAP rounds (MHT CET for Maharashtra State quota; JEE Main for All-India quota).",
+          "sourceName": "Maha CET Cell Portal",
+          "sourceUrl": "https://cetcell.mahacet.org",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 1000,
+          "sourceName": "Maha CET Cell Brochure",
+          "sourceUrl": "https://cetcell.mahacet.org",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://cetcell.mahacet.org"
+      }
+    ],
+    "courses": [
+      {
+        "id": "coep-cse",
+        "name": "B.Tech in Computer Engineering",
+        "branchCode": "CSE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 150,
+          "sourceName": "Maha CET Cell Seat Matrix",
+          "sourceUrl": "https://cetcell.mahacet.org",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "COEP Disclosures",
+          "sourceUrl": "https://www.coeptech.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      },
+      {
+        "id": "coep-me",
+        "name": "B.Tech in Mechanical Engineering",
+        "branchCode": "ME",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": 150,
+          "sourceName": "Maha CET Cell Seat Matrix",
+          "sourceUrl": "https://cetcell.mahacet.org",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "COEP Disclosures",
+          "sourceUrl": "https://www.coeptech.ac.in",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      }
+    ],
+    "fees": {
+      "tuitionPerYearInr": {
+        "value": 68000,
+        "sourceName": "COEP Fee Structure (Open Category)",
+        "sourceUrl": "https://www.coeptech.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "hostelPerYearInr": {
+        "value": 25000,
+        "sourceName": "COEP Hostel Fee Structure",
+        "sourceUrl": "https://www.coeptech.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "messPerYearInr": {
+        "value": 30000,
+        "sourceName": "COEP Hostel Mess Estimate",
+        "sourceUrl": "https://www.coeptech.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "examAndLabPerYearInr": {
+        "value": 24850,
+        "sourceName": "COEP Development & Exam Fees",
+        "sourceUrl": "https://www.coeptech.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "oneTimeAdmissionInr": {
+        "value": 3500,
+        "sourceName": "COEP Fee Structure",
+        "sourceUrl": "https://www.coeptech.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "cautionDepositRefundableInr": {
+        "value": 5000,
+        "sourceName": "COEP Fee Structure",
+        "sourceUrl": "https://www.coeptech.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "scholarshipNote": {
+        "value": "MahaDBT Rajarshi Chhatrapati Shahu Maharaj Shikshan Shulkh Shishyavritti (EBC 50% tuition waiver) and TFWS.",
+        "sourceName": "MahaDBT Portal",
+        "sourceUrl": "https://mahadbt.maharashtra.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "placements": {
+      "year": 2024,
+      "medianSalaryInr": {
+        "value": 980000,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "highestSalaryInr": {
+        "value": null,
+        "sourceName": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "confidence": "unverified"
+      },
+      "placedPercent": {
+        "value": 82,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "topRecruiters": {
+        "value": [
+          "Bajaj Auto",
+          "Tata Motors",
+          "DE Shaw",
+          "Mastercard",
+          "Siemens"
+        ],
+        "sourceName": "COEP T&P Cell",
+        "sourceUrl": "https://www.coeptech.ac.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "reviews": [
+      {
+        "id": "rev-coep-1",
+        "collegeId": "coep-pune",
+        "source": "COEP Alumni & NIRF Feedback",
+        "sourceUrl": "https://www.coeptech.ac.in",
+        "category": "placement",
+        "shortSnippet": "Top automotive, robotics, and software recruiters in Pune visit regularly; low government fee structure delivers strong ROI.",
+        "rating": 5,
+        "date": "2025-01-12",
+        "authenticityScore": 94,
+        "flags": [
+          "Specific campus details, natural phrasing, and diverse date/source signals"
+        ]
+      }
+    ],
+    "rankingMetrics": {
+      "affordabilityScore": 78,
+      "placementStrengthScore": 54,
+      "valueForMoneyScore": 100,
+      "roiPaybackYears": 0.61,
+      "trustScore": 80,
+      "overallFairScore": 76,
+      "lastComputed": "2025-02-15"
+    }
+  },
+  {
+    "id": "manipal-mit",
+    "name": "Manipal Institute of Technology, Manipal",
+    "shortName": "MIT Manipal",
+    "ownership": "Private",
+    "establishedYear": {
+      "value": 1957,
+      "sourceName": "MAHE Official Website",
+      "sourceUrl": "https://www.manipal.edu/mit.html",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialWebsite": "https://www.manipal.edu/mit.html",
+    "isPartner": true,
+    "hasHostel": true,
+    "cityInfo": {
+      "city": "Manipal (Udupi)",
+      "state": "Karnataka",
+      "costOfLivingMonthlyInr": {
+        "value": 6500,
+        "sourceName": "Manipal Student Town Estimate",
+        "sourceUrl": "https://www.manipal.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "estimated"
+      },
+      "hostelFeeRangeAnnualInr": {
+        "value": "₹1,14,000 – ₹1,96,000 (Non-AC double to AC single + mess)",
+        "sourceName": "MAHE Hostel Fee Brochure",
+        "sourceUrl": "https://www.manipal.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "transportNotes": {
+        "value": "5 km from Udupi Railway Station (Konkan Railway) and 65 km from Mangaluru Airport.",
+        "sourceName": "MAHE Travel Guide",
+        "sourceUrl": "https://www.manipal.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "safetyNotes": {
+        "value": "Dedicated university town with Kasturba Hospital Manipal on campus and 24x7 campus patrol.",
+        "sourceName": "MAHE Campus Life",
+        "sourceUrl": "https://www.manipal.edu",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "accreditation": {
+      "aicteApproved": {
+        "value": true,
+        "sourceName": "AICTE Approved List",
+        "sourceUrl": "https://www.aicte-india.org",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "ugcStatus": {
+        "value": "Institution of Eminence (MAHE Deemed to be University)",
+        "sourceName": "UGC Official List",
+        "sourceUrl": "https://www.ugc.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "naacGrade": {
+        "value": "A++",
+        "sourceName": "NAAC Portal",
+        "sourceUrl": "http://www.naac.gov.in",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nbaAccreditedBranches": {
+        "value": [
+          "CSE",
+          "ECE",
+          "ME",
+          "EE",
+          "CE"
+        ],
+        "sourceName": "MIT Manipal Accreditations",
+        "sourceUrl": "https://www.manipal.edu/mit.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfRank": {
+        "value": 56,
+        "sourceName": "NIRF India Rankings 2024 (Engineering)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "nirfYear": 2024
+    },
+    "admissionRoutes": [
+      {
+        "routeType": "college_process",
+        "label": "College's Own Process (Manipal Entrance Test - MET)",
+        "examsAccepted": [
+          "met-manipal"
+        ],
+        "explanation": {
+          "value": "100% merit-based online counselling using MET score + Class 12 board normalisation.",
+          "sourceName": "MAHE Admissions",
+          "sourceUrl": "https://manipal.edu/mu/admission.html",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "applicationFeeInr": {
+          "value": 2000,
+          "sourceName": "MET Application Brochure",
+          "sourceUrl": "https://manipal.edu/mu/admission.html",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        },
+        "officialAdmissionUrl": "https://manipal.edu/mu/admission.html"
+      }
+    ],
+    "courses": [
+      {
+        "id": "mit-cse",
+        "name": "B.Tech in Computer Science and Engineering",
+        "branchCode": "CSE",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": null,
+          "sourceName": null,
+          "sourceUrl": null,
+          "lastVerified": null,
+          "confidence": "unverified"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "MIT Manipal",
+          "sourceUrl": "https://www.manipal.edu/mit.html",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      },
+      {
+        "id": "mit-me",
+        "name": "B.Tech in Mechanical Engineering",
+        "branchCode": "ME",
+        "durationYears": 4,
+        "intakeSeats": {
+          "value": null,
+          "sourceName": null,
+          "sourceUrl": null,
+          "lastVerified": null,
+          "confidence": "unverified"
+        },
+        "NBAStatus": {
+          "value": true,
+          "sourceName": "MIT Manipal",
+          "sourceUrl": "https://www.manipal.edu/mit.html",
+          "lastVerified": "2025-02-10",
+          "confidence": "official"
+        }
+      }
+    ],
+    "fees": {
+      "tuitionPerYearInr": {
+        "value": 489000,
+        "sourceName": "MAHE B.Tech Fee Structure (CSE/IT group ~₹4.89L/yr; Core branches lower)",
+        "sourceUrl": "https://manipal.edu/mu/admission/fees.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "hostelPerYearInr": {
+        "value": 68000,
+        "sourceName": "MAHE Hostel Fee Schedule",
+        "sourceUrl": "https://manipal.edu/mu/admission/fees.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "messPerYearInr": {
+        "value": 46000,
+        "sourceName": "MAHE Hostel Mess Advance",
+        "sourceUrl": "https://manipal.edu/mu/admission/fees.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "examAndLabPerYearInr": {
+        "value": 10000,
+        "sourceName": "MAHE Fee Schedule",
+        "sourceUrl": "https://manipal.edu/mu/admission/fees.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "oneTimeAdmissionInr": {
+        "value": 10000,
+        "sourceName": "MAHE Fee Schedule",
+        "sourceUrl": "https://manipal.edu/mu/admission/fees.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "cautionDepositRefundableInr": {
+        "value": 10000,
+        "sourceName": "MAHE Fee Schedule",
+        "sourceUrl": "https://manipal.edu/mu/admission/fees.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "scholarshipNote": {
+        "value": "Freeship (100% tuition waiver for MET Rank 1–100) and Scholar (20% tuition waiver for MET Rank 101–5000) plus AICTE TFW.",
+        "sourceName": "MAHE Scholarships",
+        "sourceUrl": "https://manipal.edu/mu/admission/scholarships.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "placements": {
+      "year": 2024,
+      "medianSalaryInr": {
+        "value": 969000,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "highestSalaryInr": {
+        "value": 5103000,
+        "sourceName": "MIT Manipal Placement Summary",
+        "sourceUrl": "https://www.manipal.edu/mit.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "placedPercent": {
+        "value": 77,
+        "sourceName": "NIRF 2024 Submitted Data (UG 4-Year)",
+        "sourceUrl": "https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      },
+      "topRecruiters": {
+        "value": [
+          "Microsoft",
+          "Cisco",
+          "Goldman Sachs",
+          "Philips",
+          "Schneider Electric"
+        ],
+        "sourceName": "MIT Placement Office",
+        "sourceUrl": "https://www.manipal.edu/mit.html",
+        "lastVerified": "2025-02-10",
+        "confidence": "official"
+      }
+    },
+    "reviews": [
+      {
+        "id": "rev-mit-1",
+        "collegeId": "manipal-mit",
+        "source": "MIT Student Project Board Feedback",
+        "sourceUrl": "https://www.manipal.edu/mit.html",
+        "category": "campus",
+        "shortSnippet": "Student project teams (Formula Manipal, Mars Rover, AeroMIT) have dedicated workshop funding and strong alumni network.",
+        "rating": 5,
+        "date": "2025-01-25",
+        "authenticityScore": 76,
+        "flags": [
+          "Extreme rating without concrete academic, placement, or campus specifics"
+        ]
+      }
+    ],
+    "rankingMetrics": {
+      "affordabilityScore": 10,
+      "placementStrengthScore": 52,
+      "valueForMoneyScore": 52,
+      "roiPaybackYears": 2.54,
+      "trustScore": 100,
+      "overallFairScore": 53,
+      "lastComputed": "2025-02-15"
+    }
+  }
+]

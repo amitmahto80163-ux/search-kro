@@ -1,0 +1,9 @@
+{
+  "lastRefreshed": "2026-10-23",
+  "datasetType": "sample",
+  "refreshScheduleCron": "0 3 1 * *",
+  "examRefreshScheduleCron": "0 4 * * 1",
+  "totalColleges": 15,
+  "totalExams": 15,
+  "totalScholarships": 6
+}

@@ -1,0 +1,367 @@
+<div
+  class="min-h-screen flex flex-col bg-stone-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-150"
+  [class.text-lg]="i18n.parentMode()"
+>
+  <!-- Top Trust & Sample Data Status Strip -->
+  <div class="bg-slate-900 text-slate-200 border-b border-slate-800 px-3 sm:px-6 py-2 text-xs no-print">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+        @if (api.meta().datasetType === 'sample') {
+          <span class="inline-flex items-center gap-1 rounded bg-amber-500/20 border border-amber-500/40 px-2 py-0.5 font-mono text-[11px] text-amber-200">
+            <mat-icon class="!w-3.5 !h-3.5 !text-[14px]">dataset</mat-icon>
+            <span>{{ i18n.t('banner.sampleData') }}</span>
+          </span>
+        }
+        @if (api.isOfflineDemoMode()) {
+          <span class="inline-flex items-center gap-1 rounded bg-indigo-500/20 border border-indigo-500/40 px-2 py-0.5 font-mono text-[11px] text-indigo-200">
+            <mat-icon class="!w-3.5 !h-3.5 !text-[14px]">cloud_off</mat-icon>
+            <span>{{ i18n.t('banner.offlineDemo') }}</span>
+          </span>
+        }
+        <span class="text-slate-400 hidden md:inline">
+          {{ i18n.t('banner.guidanceOnly') }}
+        </span>
+      </div>
+
+      <div class="flex items-center gap-3 font-mono text-[11px] text-slate-300">
+        <span>{{ i18n.t('banner.lastUpdated') }}: {{ api.meta().lastRefreshed }}</span>
+        <button
+          type="button"
+          (click)="showFormulaModal.set(true)"
+          class="inline-flex items-center gap-1 text-teal-400 hover:underline cursor-pointer"
+        >
+          <mat-icon class="!w-3.5 !h-3.5 !text-[14px]">functions</mat-icon>
+          <span>{{ i18n.t('action.howWeCalculate') }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Primary Header -->
+  <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur-xs dark:border-slate-800 dark:bg-slate-900/95 no-print">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+      <!-- Brand + Mobile Menu Button -->
+      <div class="flex items-center gap-2.5">
+        <button
+          type="button"
+          (click)="showMobileDrawer.set(!showMobileDrawer())"
+          class="lg:hidden inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800 cursor-pointer"
+          aria-label="Toggle navigation menu"
+        >
+          <mat-icon>{{ showMobileDrawer() ? 'close' : 'menu' }}</mat-icon>
+        </button>
+
+        <a routerLink="/" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 rounded-xl bg-teal-700 text-white flex items-center justify-center font-bold shadow-xs">
+            <mat-icon>school</mat-icon>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white">
+                {{ appName }}
+              </span>
+              <span class="rounded bg-teal-50 px-1.5 py-0.5 font-mono text-[10px] font-bold uppercase text-teal-800 dark:bg-teal-950/80 dark:text-teal-300">
+                UNBIASED
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:block">
+              Zero Paid Rankings • Official NIRF & JoSAA Sourced
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Global Search Input -->
+      <div class="relative flex-1 max-w-md min-w-[200px]">
+        <div class="relative flex items-center">
+          <mat-icon class="absolute left-3 !w-4 !h-4 !text-[16px] text-slate-400">search</mat-icon>
+          <input
+            type="search"
+            [value]="searchQuery()"
+            (input)="onSearchInput($any($event.target).value)"
+            [placeholder]="i18n.t('action.searchPlaceholder')"
+            class="w-full rounded-xl border border-slate-300 bg-slate-50 pl-9 pr-4 py-2 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:border-teal-600 focus:bg-white focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"
+            aria-label="Global search for colleges, exams, and tools"
+          />
+        </div>
+
+        @if (showSearchDropdown()) {
+          <div class="absolute left-0 right-0 top-full mt-1.5 z-50 rounded-2xl border border-slate-200 bg-white p-3 shadow-md dark:border-slate-700 dark:bg-slate-900 space-y-3 max-h-96 overflow-y-auto">
+            @if (searchResults().colleges.length > 0) {
+              <div>
+                <div class="text-[10px] font-mono uppercase text-slate-400 px-2 mb-1">Colleges</div>
+                @for (c of searchResults().colleges; track c.id) {
+                  <button
+                    type="button"
+                    (click)="navigateToSearchResult('/college/' + c.id)"
+                    class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between gap-2 text-xs cursor-pointer"
+                  >
+                    <span class="font-semibold text-slate-900 dark:text-white">{{ c.name }}</span>
+                    <span class="font-mono text-[11px] text-teal-700 dark:text-teal-400">{{ c.cityInfo.city }}</span>
+                  </button>
+                }
+              </div>
+            }
+            @if (searchResults().exams.length > 0) {
+              <div>
+                <div class="text-[10px] font-mono uppercase text-slate-400 px-2 mb-1">Entrance Exams</div>
+                @for (e of searchResults().exams; track e.id) {
+                  <button
+                    type="button"
+                    (click)="navigateToSearchResult('/exams')"
+                    class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between gap-2 text-xs cursor-pointer"
+                  >
+                    <span class="font-semibold text-slate-900 dark:text-white">{{ e.shortName }} — {{ e.name }}</span>
+                    <span class="font-mono text-[11px] text-slate-500">{{ e.level }}</span>
+                  </button>
+                }
+              </div>
+            }
+            @if (searchResults().tools.length > 0) {
+              <div>
+                <div class="text-[10px] font-mono uppercase text-slate-400 px-2 mb-1">Platform Tools</div>
+                @for (t of searchResults().tools; track t.path) {
+                  <button
+                    type="button"
+                    (click)="navigateToSearchResult(t.path)"
+                    class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2 text-xs cursor-pointer"
+                  >
+                    <mat-icon class="!w-4 !h-4 !text-[16px] text-teal-700">{{ t.icon }}</mat-icon>
+                    <span class="font-semibold text-slate-900 dark:text-white">{{ i18n.t(t.labelKey) }}</span>
+                  </button>
+                }
+              </div>
+            }
+            @if (searchResults().colleges.length === 0 && searchResults().exams.length === 0 && searchResults().tools.length === 0) {
+              <div class="p-3 text-center text-xs text-slate-500">
+                No matching colleges, exams, or tools found.
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- Language Switcher, Parent Mode, Dark Theme & Delete Data -->
+      <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+        <!-- Language Switcher (EN / HI / PA) -->
+        <div class="inline-flex rounded-xl border border-slate-200 bg-slate-100 p-0.5 dark:border-slate-700 dark:bg-slate-800" role="group" aria-label="Language selector">
+          <button
+            type="button"
+            (click)="setLang('en')"
+            class="px-2.5 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer"
+            [class]="i18n.currentLang() === 'en' ? 'bg-white text-teal-800 shadow-2xs dark:bg-slate-900 dark:text-teal-300' : 'text-slate-600 dark:text-slate-400'"
+          >
+            EN
+          </button>
+          <button
+            type="button"
+            (click)="setLang('hi')"
+            class="px-2.5 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer"
+            [class]="i18n.currentLang() === 'hi' ? 'bg-white text-teal-800 shadow-2xs dark:bg-slate-900 dark:text-teal-300' : 'text-slate-600 dark:text-slate-400'"
+          >
+            हिंदी
+          </button>
+          <button
+            type="button"
+            (click)="setLang('pa')"
+            class="px-2.5 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer"
+            [class]="i18n.currentLang() === 'pa' ? 'bg-white text-teal-800 shadow-2xs dark:bg-slate-900 dark:text-teal-300' : 'text-slate-600 dark:text-slate-400'"
+          >
+            ਪੰਜਾਬੀ
+          </button>
+        </div>
+
+        <!-- Parent Mode Toggle -->
+        <button
+          type="button"
+          (click)="i18n.toggleParentMode()"
+          class="inline-flex min-h-[38px] items-center gap-1 rounded-xl border px-2.5 py-1.5 text-xs font-semibold transition-colors cursor-pointer"
+          [class]="i18n.parentMode() ? 'border-amber-600 bg-amber-600 text-white' : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200'"
+          [attr.aria-pressed]="i18n.parentMode()"
+        >
+          <mat-icon class="!w-4 !h-4 !text-[16px]">family_restroom</mat-icon>
+          <span class="hidden sm:inline whitespace-nowrap">{{ i18n.t('action.parentMode') }}</span>
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button
+          type="button"
+          (click)="i18n.toggleDarkMode()"
+          class="inline-flex min-h-[38px] min-w-[38px] items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 cursor-pointer"
+          [attr.aria-label]="i18n.t('action.darkMode')"
+        >
+          <mat-icon class="!w-4 !h-4 !text-[16px]">{{ i18n.darkMode() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+        </button>
+
+        <!-- Delete My Data Button -->
+        <button
+          type="button"
+          (click)="showDeleteConfirmModal.set(true)"
+          class="inline-flex min-h-[38px] items-center gap-1 rounded-xl border border-rose-200 bg-rose-50 px-2.5 py-1.5 text-xs font-semibold text-rose-800 hover:bg-rose-100 dark:border-rose-900/60 dark:bg-rose-950/50 dark:text-rose-300 cursor-pointer"
+          [attr.aria-label]="i18n.t('action.deleteData')"
+        >
+          <mat-icon class="!w-4 !h-4 !text-[16px]">delete_forever</mat-icon>
+          <span class="hidden md:inline whitespace-nowrap">{{ i18n.t('action.deleteData') }}</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Workspace Layout: Desktop Sidebar + Router Outlet -->
+  <div class="flex-1 flex max-w-[1440px] w-full mx-auto">
+    <!-- Desktop Left Navigation Rail -->
+    <aside class="hidden lg:flex flex-col w-64 shrink-0 border-r border-slate-200 bg-white/70 dark:border-slate-800 dark:bg-slate-900/50 p-4 space-y-5 no-print">
+      <!-- Profile Completion Card -->
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3.5 dark:border-slate-800 dark:bg-slate-800/60 space-y-2">
+        <div class="flex items-center justify-between text-xs">
+          <span class="font-bold text-slate-800 dark:text-slate-200">Your Admission Profile</span>
+          <span class="font-mono font-bold text-teal-700 dark:text-teal-400">{{ profileStore.profileCompletionPercent() }}%</span>
+        </div>
+        <div class="h-1.5 w-full rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+          <div class="h-full bg-teal-600 transition-all" [style.width.%]="profileStore.profileCompletionPercent()"></div>
+        </div>
+        <div class="flex items-center justify-between text-[11px] text-slate-500">
+          <span>{{ profileStore.profile().homeState }} • {{ profileStore.profile().category }}</span>
+          <a routerLink="/start" class="font-semibold text-teal-700 dark:text-teal-400 hover:underline">Edit →</a>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="space-y-1" aria-label="Main feature navigation">
+        @for (item of navItems; track item.path) {
+          <a
+            [routerLink]="item.path"
+            routerLinkActive="bg-teal-50 text-teal-900 font-bold border-teal-200 dark:bg-teal-950/60 dark:text-teal-200 dark:border-teal-800"
+            [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+            class="flex items-center gap-2.5 rounded-xl border border-transparent px-3 py-2 text-xs text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800/70 transition-colors"
+          >
+            <mat-icon class="!w-4 !h-4 !text-[16px] text-teal-700 dark:text-teal-400 shrink-0">{{ item.icon }}</mat-icon>
+            <span class="truncate">{{ i18n.t(item.labelKey) }}</span>
+          </a>
+        }
+      </nav>
+    </aside>
+
+    <!-- Mobile Navigation Drawer -->
+    @if (showMobileDrawer()) {
+      <div class="fixed inset-0 z-40 lg:hidden flex no-print" role="dialog" aria-modal="true">
+        <button type="button" class="fixed inset-0 bg-slate-950/60 cursor-default" (click)="showMobileDrawer.set(false)" aria-label="Close navigation menu"></button>
+        <div class="relative z-10 w-72 max-w-[85vw] bg-white dark:bg-slate-900 h-full overflow-y-auto p-4 space-y-4 shadow-xl">
+          <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+            <span class="font-bold text-sm text-slate-900 dark:text-white">{{ appName }} All 38 Tools</span>
+            <button type="button" (click)="showMobileDrawer.set(false)" class="p-1 text-slate-500">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+          <nav class="space-y-1">
+            @for (item of navItems; track item.path) {
+              <a
+                [routerLink]="item.path"
+                (click)="showMobileDrawer.set(false)"
+                routerLinkActive="bg-teal-50 text-teal-900 font-bold dark:bg-teal-950/60 dark:text-teal-200"
+                [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+                class="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-xs text-slate-700 dark:text-slate-300"
+              >
+                <mat-icon class="!w-4 !h-4 !text-[16px] text-teal-700">{{ item.icon }}</mat-icon>
+                <span>{{ i18n.t(item.labelKey) }}</span>
+              </a>
+            }
+          </nav>
+        </div>
+      </div>
+    }
+
+    <!-- Main Content Viewport -->
+    <main class="flex-1 min-w-0 pb-24 lg:pb-12">
+      <router-outlet />
+    </main>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar (5 Key Destinations) -->
+  <nav
+    class="lg:hidden fixed bottom-0 left-0 right-0 z-30 border-t border-slate-200 bg-white/95 backdrop-blur-xs dark:border-slate-800 dark:bg-slate-900/95 grid grid-cols-5 py-1.5 px-2 no-print"
+    aria-label="Mobile quick navigation"
+  >
+    <a routerLink="/" routerLinkActive="text-teal-700 dark:text-teal-400 font-bold" [routerLinkActiveOptions]="{ exact: true }" class="flex flex-col items-center justify-center py-1 text-[11px] text-slate-600 dark:text-slate-400">
+      <mat-icon class="!w-5 !h-5 !text-[20px]">home</mat-icon>
+      <span class="truncate mt-0.5">Home</span>
+    </a>
+    <a routerLink="/start" routerLinkActive="text-teal-700 dark:text-teal-400 font-bold" class="flex flex-col items-center justify-center py-1 text-[11px] text-slate-600 dark:text-slate-400">
+      <mat-icon class="!w-5 !h-5 !text-[20px]">explore</mat-icon>
+      <span class="truncate mt-0.5">Colleges</span>
+    </a>
+    <a routerLink="/verify" routerLinkActive="text-teal-700 dark:text-teal-400 font-bold" class="flex flex-col items-center justify-center py-1 text-[11px] text-slate-600 dark:text-slate-400">
+      <mat-icon class="!w-5 !h-5 !text-[20px]">verified_user</mat-icon>
+      <span class="truncate mt-0.5">Verify</span>
+    </a>
+    <a routerLink="/money" routerLinkActive="text-teal-700 dark:text-teal-400 font-bold" class="flex flex-col items-center justify-center py-1 text-[11px] text-slate-600 dark:text-slate-400">
+      <mat-icon class="!w-5 !h-5 !text-[20px]">calculate</mat-icon>
+      <span class="truncate mt-0.5">Cost/ROI</span>
+    </a>
+    <a routerLink="/counsellor" routerLinkActive="text-teal-700 dark:text-teal-400 font-bold" class="flex flex-col items-center justify-center py-1 text-[11px] text-slate-600 dark:text-slate-400">
+      <mat-icon class="!w-5 !h-5 !text-[20px]">psychology</mat-icon>
+      <span class="truncate mt-0.5">AI Guide</span>
+    </a>
+  </nav>
+
+  <!-- Toast Notification Stack -->
+  <div class="fixed bottom-16 lg:bottom-6 right-4 z-50 space-y-2 max-w-sm w-full pointer-events-none no-print">
+    @for (t of api.toasts(); track t.id) {
+      <div
+        class="pointer-events-auto flex items-center justify-between gap-3 rounded-xl border px-4 py-3 text-xs font-medium shadow-md"
+        [class.bg-emerald-900]="t.type === 'success'"
+        [class.text-white]="t.type === 'success'"
+        [class.border-emerald-700]="t.type === 'success'"
+        [class.bg-slate-900]="t.type === 'info'"
+        [class.text-white]="t.type === 'info'"
+        [class.border-slate-700]="t.type === 'info'"
+        [class.bg-amber-900]="t.type === 'warning'"
+        [class.text-white]="t.type === 'warning'"
+        [class.border-amber-700]="t.type === 'warning'"
+        [class.bg-rose-900]="t.type === 'error'"
+        [class.text-white]="t.type === 'error'"
+        [class.border-rose-700]="t.type === 'error'"
+      >
+        <span>{{ t.text }}</span>
+        <button type="button" (click)="api.dismissToast(t.id)" class="text-white/80 hover:text-white cursor-pointer">
+          <mat-icon class="!w-4 !h-4 !text-[16px]">close</mat-icon>
+        </button>
+      </div>
+    }
+  </div>
+
+  <!-- Delete My Data Confirmation Modal -->
+  @if (showDeleteConfirmModal()) {
+    <div class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-xs" role="dialog" aria-modal="true">
+      <div class="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-md dark:border-slate-800 dark:bg-slate-900 space-y-4">
+        <div class="flex items-center gap-2.5 text-rose-700 dark:text-rose-400">
+          <mat-icon>delete_forever</mat-icon>
+          <h2 class="text-base font-bold">Delete All My Admission Data?</h2>
+        </div>
+        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+          This immediately clears your saved student profile, comparison list, checklist progress, common applications, and seat alerts from both your browser (<code>localStorage</code>) and the server.
+        </p>
+        <div class="flex items-center justify-end gap-2 pt-2">
+          <button
+            type="button"
+            (click)="showDeleteConfirmModal.set(false)"
+            class="px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-300 cursor-pointer"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            (click)="confirmDeleteAllMyData()"
+            class="px-4 py-2 rounded-xl bg-rose-700 hover:bg-rose-800 text-white text-xs font-bold flex items-center gap-1.5 cursor-pointer"
+          >
+            <mat-icon class="!w-4 !h-4 !text-[16px]">delete</mat-icon>
+            <span>Yes, Delete Everything</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+
+  <!-- Global How We Calculate Modal -->
+  <app-how-we-calculate-modal [isOpen]="showFormulaModal()" (closed)="showFormulaModal.set(false)" />
+</div>

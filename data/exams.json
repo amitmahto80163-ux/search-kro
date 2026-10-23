@@ -1,0 +1,797 @@
+[
+  {
+    "id": "jee-main",
+    "name": "Joint Entrance Examination (Main)",
+    "shortName": "JEE Main",
+    "stream": "Engineering",
+    "level": "National",
+    "conductingBody": "National Testing Agency (NTA)",
+    "eligibility": {
+      "value": "Passed or appearing in Class 12 with Physics, Mathematics, and Chemistry/Biotech/Technical Vocational subject. 75% in Class 12 (65% SC/ST) required for NITs/IIITs/GFTIs.",
+      "sourceName": "NTA JEE Main Information Bulletin",
+      "sourceUrl": "https://jeemain.nta.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minClass12Percent": {
+      "value": 75,
+      "sourceName": "JoSAA / NTA Eligibility Criteria",
+      "sourceUrl": "https://jeemain.nta.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationStart": {
+      "value": "2025-10-28",
+      "sourceName": "NTA JEE Main Schedule",
+      "sourceUrl": "https://jeemain.nta.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationEnd": {
+      "value": "2025-11-22",
+      "sourceName": "NTA JEE Main Schedule",
+      "sourceUrl": "https://jeemain.nta.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "examDate": {
+      "value": "2026-01-22",
+      "sourceName": "NTA JEE Main Session 1 & April Session 2",
+      "sourceUrl": "https://jeemain.nta.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialUrl": "https://jeemain.nta.nic.in",
+    "year": 2026,
+    "applicationFeeGeneralInr": {
+      "value": 1000,
+      "sourceName": "NTA JEE Main Information Bulletin",
+      "sourceUrl": "https://jeemain.nta.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "status": "Open"
+  },
+  {
+    "id": "jee-advanced",
+    "name": "Joint Entrance Examination (Advanced)",
+    "shortName": "JEE Advanced",
+    "stream": "Engineering",
+    "level": "National",
+    "conductingBody": "IIT Joint Admission Board (JAB)",
+    "eligibility": {
+      "value": "Must rank among top 2,50,000 successful candidates (across categories) in JEE Main Paper 1 and meet age/Class 12 criteria.",
+      "sourceName": "JEE Advanced Official Website",
+      "sourceUrl": "https://jeeadv.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minClass12Percent": {
+      "value": 75,
+      "sourceName": "JEE Advanced Brochure",
+      "sourceUrl": "https://jeeadv.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationStart": {
+      "value": "2026-04-23",
+      "sourceName": "JEE Advanced Official Schedule",
+      "sourceUrl": "https://jeeadv.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationEnd": {
+      "value": "2026-05-02",
+      "sourceName": "JEE Advanced Official Schedule",
+      "sourceUrl": "https://jeeadv.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "examDate": {
+      "value": "2026-05-18",
+      "sourceName": "JEE Advanced Official Schedule",
+      "sourceUrl": "https://jeeadv.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialUrl": "https://jeeadv.ac.in",
+    "year": 2026,
+    "applicationFeeGeneralInr": {
+      "value": 3200,
+      "sourceName": "JEE Advanced Brochure",
+      "sourceUrl": "https://jeeadv.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "status": "Upcoming"
+  },
+  {
+    "id": "bitsat",
+    "name": "BITS Admission Test",
+    "shortName": "BITSAT",
+    "stream": "Engineering",
+    "level": "Institute",
+    "conductingBody": "BITS Pilani",
+    "eligibility": {
+      "value": "Minimum 75% aggregate in Physics, Chemistry and Mathematics in Class 12, with at least 60% in each of PCM individually.",
+      "sourceName": "BITS Admission Modality",
+      "sourceUrl": "https://www.bitsadmission.com",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minClass12Percent": {
+      "value": 75,
+      "sourceName": "BITS Admission Modality",
+      "sourceUrl": "https://www.bitsadmission.com",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationStart": {
+      "value": "2026-01-15",
+      "sourceName": "BITS Admission Portal",
+      "sourceUrl": "https://www.bitsadmission.com",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationEnd": {
+      "value": "2026-04-18",
+      "sourceName": "BITS Admission Portal",
+      "sourceUrl": "https://www.bitsadmission.com",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "examDate": {
+      "value": "2026-05-26",
+      "sourceName": "BITS Admission Portal",
+      "sourceUrl": "https://www.bitsadmission.com",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialUrl": "https://www.bitsadmission.com",
+    "year": 2026,
+    "applicationFeeGeneralInr": {
+      "value": 3400,
+      "sourceName": "BITS Admission Portal",
+      "sourceUrl": "https://www.bitsadmission.com",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "status": "Open"
+  },
+  {
+    "id": "viteee",
+    "name": "VIT Engineering Entrance Examination",
+    "shortName": "VITEEE",
+    "stream": "Engineering",
+    "level": "Institute",
+    "conductingBody": "Vellore Institute of Technology (VIT)",
+    "eligibility": {
+      "value": "Minimum 60% aggregate in Physics, Chemistry, and Mathematics/Biology in Class 12 (50% for SC/ST and North-East states).",
+      "sourceName": "VITEEE Official Portal",
+      "sourceUrl": "https://viteee.vit.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minClass12Percent": {
+      "value": 60,
+      "sourceName": "VITEEE Official Portal",
+      "sourceUrl": "https://viteee.vit.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationStart": {
+      "value": "2025-11-04",
+      "sourceName": "VITEEE Official Portal",
+      "sourceUrl": "https://viteee.vit.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationEnd": {
+      "value": "2026-03-31",
+      "sourceName": "VITEEE Official Portal",
+      "sourceUrl": "https://viteee.vit.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "examDate": {
+      "value": "2026-04-20",
+      "sourceName": "VITEEE Official Portal",
+      "sourceUrl": "https://viteee.vit.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialUrl": "https://viteee.vit.ac.in",
+    "year": 2026,
+    "applicationFeeGeneralInr": {
+      "value": 1350,
+      "sourceName": "VITEEE Official Portal",
+      "sourceUrl": "https://viteee.vit.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "status": "Open"
+  },
+  {
+    "id": "srmjeee",
+    "name": "SRM Joint Engineering Entrance Examination",
+    "shortName": "SRMJEEE",
+    "stream": "Engineering",
+    "level": "Institute",
+    "conductingBody": "SRM Institute of Science and Technology",
+    "eligibility": {
+      "value": "Minimum 60% aggregate in PCM in Class 12 (for Kattankulathur campus).",
+      "sourceName": "SRM IST Admissions",
+      "sourceUrl": "https://www.srmist.edu.in/admission-india/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minClass12Percent": {
+      "value": 60,
+      "sourceName": "SRM IST Admissions",
+      "sourceUrl": "https://www.srmist.edu.in/admission-india/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationStart": {
+      "value": "2025-11-10",
+      "sourceName": "SRM IST Admissions",
+      "sourceUrl": "https://www.srmist.edu.in/admission-india/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationEnd": {
+      "value": "2026-04-16",
+      "sourceName": "SRM IST Admissions",
+      "sourceUrl": "https://www.srmist.edu.in/admission-india/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "examDate": {
+      "value": "2026-04-22",
+      "sourceName": "SRM IST Admissions",
+      "sourceUrl": "https://www.srmist.edu.in/admission-india/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialUrl": "https://www.srmist.edu.in/admission-india/",
+    "year": 2026,
+    "applicationFeeGeneralInr": {
+      "value": 1400,
+      "sourceName": "SRM IST Admissions",
+      "sourceUrl": "https://www.srmist.edu.in/admission-india/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "status": "Open"
+  },
+  {
+    "id": "wbjee",
+    "name": "West Bengal Joint Entrance Examination",
+    "shortName": "WBJEE",
+    "stream": "Engineering",
+    "level": "State",
+    "conductingBody": "West Bengal Joint Entrance Examinations Board (WBJEEB)",
+    "eligibility": {
+      "value": "Passed Class 12 with Physics and Mathematics + Chemistry/Biotech/CS with at least 45% aggregate (60% for Jadavpur Univ).",
+      "sourceName": "WBJEEB Information Bulletin",
+      "sourceUrl": "https://wbjeeb.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minClass12Percent": {
+      "value": 45,
+      "sourceName": "WBJEEB Information Bulletin",
+      "sourceUrl": "https://wbjeeb.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationStart": {
+      "value": "2026-01-22",
+      "sourceName": "WBJEEB Official Portal",
+      "sourceUrl": "https://wbjeeb.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationEnd": {
+      "value": "2026-02-23",
+      "sourceName": "WBJEEB Official Portal",
+      "sourceUrl": "https://wbjeeb.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "examDate": {
+      "value": "2026-04-27",
+      "sourceName": "WBJEEB Official Portal",
+      "sourceUrl": "https://wbjeeb.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialUrl": "https://wbjeeb.nic.in",
+    "year": 2026,
+    "applicationFeeGeneralInr": {
+      "value": 500,
+      "sourceName": "WBJEEB Information Bulletin",
+      "sourceUrl": "https://wbjeeb.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "status": "Closing soon"
+  },
+  {
+    "id": "mht-cet",
+    "name": "Maharashtra Common Entrance Test (PCM)",
+    "shortName": "MHT CET",
+    "stream": "Engineering",
+    "level": "State",
+    "conductingBody": "State Common Entrance Test Cell, Maharashtra",
+    "eligibility": {
+      "value": "Passed HSC / Class 12 with Physics and Mathematics + Chemistry/CS/IT with minimum 45% marks (40% for reserved categories of Maharashtra).",
+      "sourceName": "Maha CET Cell Portal",
+      "sourceUrl": "https://cetcell.mahacet.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minClass12Percent": {
+      "value": 45,
+      "sourceName": "Maha CET Cell Brochure",
+      "sourceUrl": "https://cetcell.mahacet.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationStart": {
+      "value": "2025-12-30",
+      "sourceName": "Maha CET Cell Portal",
+      "sourceUrl": "https://cetcell.mahacet.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationEnd": {
+      "value": "2026-02-27",
+      "sourceName": "Maha CET Cell Portal",
+      "sourceUrl": "https://cetcell.mahacet.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "examDate": {
+      "value": "2026-04-19",
+      "sourceName": "Maha CET Cell Portal",
+      "sourceUrl": "https://cetcell.mahacet.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialUrl": "https://cetcell.mahacet.org",
+    "year": 2026,
+    "applicationFeeGeneralInr": {
+      "value": 1000,
+      "sourceName": "Maha CET Cell Brochure",
+      "sourceUrl": "https://cetcell.mahacet.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "status": "Closing soon"
+  },
+  {
+    "id": "kcet",
+    "name": "Karnataka Common Entrance Test",
+    "shortName": "KCET",
+    "stream": "Engineering",
+    "level": "State",
+    "conductingBody": "Karnataka Examinations Authority (KEA)",
+    "eligibility": {
+      "value": "Passed 2nd PUC / Class 12 with Physics and Mathematics + Chemistry/CS/Electronics with 45% aggregate; Karnataka domicile clauses apply.",
+      "sourceName": "KEA Official Website",
+      "sourceUrl": "https://cetonline.karnataka.gov.in/kea/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minClass12Percent": {
+      "value": 45,
+      "sourceName": "KEA KCET Brochure",
+      "sourceUrl": "https://cetonline.karnataka.gov.in/kea/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationStart": {
+      "value": "2026-01-23",
+      "sourceName": "KEA KCET Notification",
+      "sourceUrl": "https://cetonline.karnataka.gov.in/kea/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationEnd": {
+      "value": "2026-02-24",
+      "sourceName": "KEA KCET Notification",
+      "sourceUrl": "https://cetonline.karnataka.gov.in/kea/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "examDate": {
+      "value": "2026-04-16",
+      "sourceName": "KEA KCET Notification",
+      "sourceUrl": "https://cetonline.karnataka.gov.in/kea/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialUrl": "https://cetonline.karnataka.gov.in/kea/",
+    "year": 2026,
+    "applicationFeeGeneralInr": {
+      "value": 500,
+      "sourceName": "KEA KCET Brochure",
+      "sourceUrl": "https://cetonline.karnataka.gov.in/kea/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "status": "Closing soon"
+  },
+  {
+    "id": "comedk-uget",
+    "name": "COMEDK Undergraduate Entrance Test",
+    "shortName": "COMEDK UGET",
+    "stream": "Engineering",
+    "level": "National",
+    "conductingBody": "Consortium of Medical, Engineering and Dental Colleges of Karnataka",
+    "eligibility": {
+      "value": "Open to all-India candidates with 45% aggregate in PCM in Class 12 (40% for SC/ST/OBC of Karnataka).",
+      "sourceName": "COMEDK Official Website",
+      "sourceUrl": "https://www.comedk.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minClass12Percent": {
+      "value": 45,
+      "sourceName": "COMEDK Brochure",
+      "sourceUrl": "https://www.comedk.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationStart": {
+      "value": "2026-02-03",
+      "sourceName": "COMEDK Official Website",
+      "sourceUrl": "https://www.comedk.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationEnd": {
+      "value": "2026-03-15",
+      "sourceName": "COMEDK Official Website",
+      "sourceUrl": "https://www.comedk.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "examDate": {
+      "value": "2026-05-10",
+      "sourceName": "COMEDK Official Website",
+      "sourceUrl": "https://www.comedk.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialUrl": "https://www.comedk.org",
+    "year": 2026,
+    "applicationFeeGeneralInr": {
+      "value": 1950,
+      "sourceName": "COMEDK Brochure",
+      "sourceUrl": "https://www.comedk.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "status": "Open"
+  },
+  {
+    "id": "tg-eapcet",
+    "name": "Telangana Engineering, Agriculture and Pharmacy Common Entrance Test",
+    "shortName": "TG EAPCET (TS EAMCET)",
+    "stream": "Engineering",
+    "level": "State",
+    "conductingBody": "JNTU Hyderabad on behalf of TGCHE",
+    "eligibility": {
+      "value": "Passed or appearing in Class 12 (MPC) with 45% marks (40% reserved); Telangana / AP local status rules apply.",
+      "sourceName": "TG EAPCET Official Portal",
+      "sourceUrl": "https://eapcet.tsche.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minClass12Percent": {
+      "value": 45,
+      "sourceName": "TG EAPCET Notification",
+      "sourceUrl": "https://eapcet.tsche.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationStart": {
+      "value": "2026-02-25",
+      "sourceName": "TGCHE Schedule",
+      "sourceUrl": "https://eapcet.tsche.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationEnd": {
+      "value": "2026-04-04",
+      "sourceName": "TGCHE Schedule",
+      "sourceUrl": "https://eapcet.tsche.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "examDate": {
+      "value": "2026-05-02",
+      "sourceName": "TGCHE Schedule",
+      "sourceUrl": "https://eapcet.tsche.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialUrl": "https://eapcet.tsche.ac.in",
+    "year": 2026,
+    "applicationFeeGeneralInr": {
+      "value": 900,
+      "sourceName": "TG EAPCET Notification",
+      "sourceUrl": "https://eapcet.tsche.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "status": "Upcoming"
+  },
+  {
+    "id": "ap-eapcet",
+    "name": "Andhra Pradesh Engineering, Agriculture and Pharmacy CET",
+    "shortName": "AP EAPCET",
+    "stream": "Engineering",
+    "level": "State",
+    "conductingBody": "JNTU Kakinada on behalf of APSCHE",
+    "eligibility": {
+      "value": "Passed or appearing in Intermediate (10+2) with Mathematics, Physics, and Chemistry.",
+      "sourceName": "APSCHE Official Portal",
+      "sourceUrl": "https://cets.apsche.ap.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minClass12Percent": {
+      "value": 45,
+      "sourceName": "AP EAPCET Notification",
+      "sourceUrl": "https://cets.apsche.ap.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationStart": {
+      "value": "2026-03-11",
+      "sourceName": "APSCHE Official Portal",
+      "sourceUrl": "https://cets.apsche.ap.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationEnd": {
+      "value": "2026-04-15",
+      "sourceName": "APSCHE Official Portal",
+      "sourceUrl": "https://cets.apsche.ap.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "examDate": {
+      "value": "2026-05-19",
+      "sourceName": "APSCHE Official Portal",
+      "sourceUrl": "https://cets.apsche.ap.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialUrl": "https://cets.apsche.ap.gov.in",
+    "year": 2026,
+    "applicationFeeGeneralInr": {
+      "value": 600,
+      "sourceName": "AP EAPCET Notification",
+      "sourceUrl": "https://cets.apsche.ap.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "status": "Upcoming"
+  },
+  {
+    "id": "keam",
+    "name": "Kerala Engineering Architecture Medical Entrance Exam",
+    "shortName": "KEAM",
+    "stream": "Engineering",
+    "level": "State",
+    "conductingBody": "Commissioner for Entrance Examinations (CEE), Kerala",
+    "eligibility": {
+      "value": "Passed Higher Secondary examination of Kerala or equivalent with 45% marks in Mathematics, Physics and Chemistry put together.",
+      "sourceName": "CEE Kerala Official Website",
+      "sourceUrl": "https://cee.kerala.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minClass12Percent": {
+      "value": 45,
+      "sourceName": "CEE Kerala Prospectus",
+      "sourceUrl": "https://cee.kerala.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationStart": {
+      "value": "2026-02-20",
+      "sourceName": "CEE Kerala Notification",
+      "sourceUrl": "https://cee.kerala.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationEnd": {
+      "value": "2026-03-10",
+      "sourceName": "CEE Kerala Notification",
+      "sourceUrl": "https://cee.kerala.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "examDate": {
+      "value": "2026-04-24",
+      "sourceName": "CEE Kerala Notification",
+      "sourceUrl": "https://cee.kerala.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialUrl": "https://cee.kerala.gov.in",
+    "year": 2026,
+    "applicationFeeGeneralInr": {
+      "value": 875,
+      "sourceName": "CEE Kerala Prospectus",
+      "sourceUrl": "https://cee.kerala.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "status": "Open"
+  },
+  {
+    "id": "gujcet",
+    "name": "Gujarat Common Entrance Test",
+    "shortName": "GUJCET",
+    "stream": "Engineering",
+    "level": "State",
+    "conductingBody": "Gujarat Secondary and Higher Secondary Education Board (GSEB)",
+    "eligibility": {
+      "value": "Passed HSC (10+2) Science Stream (Group A or AB) from Gujarat Board / CBSE / ICSE located in Gujarat.",
+      "sourceName": "GSEB / ACPC Portal",
+      "sourceUrl": "https://gujcet.gseb.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minClass12Percent": {
+      "value": 45,
+      "sourceName": "ACPC Gujarat Rules",
+      "sourceUrl": "https://gujcet.gseb.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationStart": {
+      "value": "2025-12-17",
+      "sourceName": "GSEB Official Notification",
+      "sourceUrl": "https://gujcet.gseb.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationEnd": {
+      "value": "2026-01-15",
+      "sourceName": "GSEB Official Notification",
+      "sourceUrl": "https://gujcet.gseb.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "examDate": {
+      "value": "2026-03-23",
+      "sourceName": "GSEB Official Notification",
+      "sourceUrl": "https://gujcet.gseb.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialUrl": "https://gujcet.gseb.org",
+    "year": 2026,
+    "applicationFeeGeneralInr": {
+      "value": 350,
+      "sourceName": "GSEB Official Notification",
+      "sourceUrl": "https://gujcet.gseb.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "status": "Closed"
+  },
+  {
+    "id": "met-manipal",
+    "name": "Manipal Entrance Test",
+    "shortName": "MET Manipal",
+    "stream": "Engineering",
+    "level": "Institute",
+    "conductingBody": "Manipal Academy of Higher Education (MAHE)",
+    "eligibility": {
+      "value": "Pass in 10+2 with Physics, Mathematics and English + Chemistry/Biotech/CS with minimum 50% aggregate in PM + optional subject.",
+      "sourceName": "MAHE Admissions",
+      "sourceUrl": "https://manipal.edu/mu/admission.html",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minClass12Percent": {
+      "value": 50,
+      "sourceName": "MAHE Eligibility Brochure",
+      "sourceUrl": "https://manipal.edu/mu/admission.html",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationStart": {
+      "value": "2025-10-15",
+      "sourceName": "MAHE Admissions",
+      "sourceUrl": "https://manipal.edu/mu/admission.html",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationEnd": {
+      "value": "2026-03-15",
+      "sourceName": "MAHE Admissions",
+      "sourceUrl": "https://manipal.edu/mu/admission.html",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "examDate": {
+      "value": "2026-04-18",
+      "sourceName": "MAHE Admissions",
+      "sourceUrl": "https://manipal.edu/mu/admission.html",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialUrl": "https://manipal.edu/mu/admission.html",
+    "year": 2026,
+    "applicationFeeGeneralInr": {
+      "value": 2000,
+      "sourceName": "MAHE Admissions",
+      "sourceUrl": "https://manipal.edu/mu/admission.html",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "status": "Open"
+  },
+  {
+    "id": "ugee-iiith",
+    "name": "IIIT Hyderabad Undergraduate Entrance Examination",
+    "shortName": "IIITH UGEE",
+    "stream": "Engineering",
+    "level": "Institute",
+    "conductingBody": "IIIT Hyderabad",
+    "eligibility": {
+      "value": "Passed Class 12 or equivalent with Maths, Physics and Chemistry; selects for 5-year B.Tech + MS by Research Dual Degree.",
+      "sourceName": "IIITH UGEE Portal",
+      "sourceUrl": "https://ugadmissions.iiit.ac.in/ugee/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minClass12Percent": {
+      "value": 60,
+      "sourceName": "IIITH UGEE Portal",
+      "sourceUrl": "https://ugadmissions.iiit.ac.in/ugee/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationStart": {
+      "value": "2026-02-01",
+      "sourceName": "IIITH UGEE Portal",
+      "sourceUrl": "https://ugadmissions.iiit.ac.in/ugee/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "registrationEnd": {
+      "value": "2026-03-31",
+      "sourceName": "IIITH UGEE Portal",
+      "sourceUrl": "https://ugadmissions.iiit.ac.in/ugee/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "examDate": {
+      "value": "2026-05-04",
+      "sourceName": "IIITH UGEE Portal",
+      "sourceUrl": "https://ugadmissions.iiit.ac.in/ugee/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "officialUrl": "https://ugadmissions.iiit.ac.in/ugee/",
+    "year": 2026,
+    "applicationFeeGeneralInr": {
+      "value": 3000,
+      "sourceName": "IIITH UGEE Portal",
+      "sourceUrl": "https://ugadmissions.iiit.ac.in/ugee/",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "status": "Open"
+  }
+]

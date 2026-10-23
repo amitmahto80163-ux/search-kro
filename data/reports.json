@@ -1,0 +1,20 @@
+[
+  {
+    "id": "rep-seed-1",
+    "type": "Fake Agent / Guaranteed Seat Scam",
+    "entityType": "Consultancy / Agent",
+    "stateOrCity": "Delhi NCR",
+    "details": "Agent promised direct CSE seat in government college for ₹5 Lakh advance.",
+    "createdAt": "2025-01-20T10:00:00.000Z",
+    "status": "Aggregated"
+  },
+  {
+    "id": "rep-seed-2",
+    "type": "Hidden Fee / Original Document Retention",
+    "entityType": "College",
+    "stateOrCity": "Pune",
+    "details": "Requested original Class 12 marksheet retention before JoSAA spot round withdrawal window.",
+    "createdAt": "2025-01-25T12:00:00.000Z",
+    "status": "Aggregated"
+  }
+]

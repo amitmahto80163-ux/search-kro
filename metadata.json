@@ -1,0 +1,6 @@
+{
+  "name": "AdmitWise — Unbiased Indian Engineering Admission Platform",
+  "description": "Student-first, source-verified B.Tech and engineering admission guidance platform for Indian students and parents with transparent fees, exam timelines, fraud detection, and AI counselling.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

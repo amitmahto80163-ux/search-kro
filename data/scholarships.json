@@ -1,0 +1,348 @@
+[
+  {
+    "id": "aicte-pragati",
+    "name": "AICTE Pragati Scholarship Scheme for Girl Students (Technical Degree)",
+    "provider": "All India Council for Technical Education (AICTE)",
+    "providerType": "AICTE",
+    "maxIncomeLakhs": {
+      "value": 8,
+      "sourceName": "AICTE Pragati Guidelines",
+      "sourceUrl": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minMarksPercent": {
+      "value": 60,
+      "sourceName": "AICTE / NSP Portal",
+      "sourceUrl": "https://scholarships.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "eligibleCategories": [
+      "ALL"
+    ],
+    "eligibleGenders": [
+      "Female"
+    ],
+    "eligibleStates": [
+      "ALL"
+    ],
+    "benefitDescription": {
+      "value": "₹50,000 per annum for every year of study (up to 4 years) towards tuition fee, computer, books, and stationery.",
+      "sourceName": "AICTE Pragati Guidelines",
+      "sourceUrl": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "annualAmountInr": {
+      "value": 50000,
+      "sourceName": "AICTE Pragati Guidelines",
+      "sourceUrl": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "deadline": {
+      "value": "2025-10-31",
+      "sourceName": "National Scholarship Portal (NSP)",
+      "sourceUrl": "https://scholarships.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "documentsNeeded": [
+      "Class 10 and Class 12 Marksheets",
+      "Tehsildar-signed Family Income Certificate (< ₹8 Lakh/year)",
+      "AICTE-approved College Bonafide & Admission Allotment Letter",
+      "Aadhaar-seeded Bank Account Passbook in Student Name",
+      "Parents Declaration (Maximum 2 girls per family)"
+    ],
+    "officialUrl": "https://scholarships.gov.in"
+  },
+  {
+    "id": "aicte-saksham",
+    "name": "AICTE Saksham Scholarship Scheme for Specially-Abled Students",
+    "provider": "All India Council for Technical Education (AICTE)",
+    "providerType": "AICTE",
+    "maxIncomeLakhs": {
+      "value": 8,
+      "sourceName": "AICTE Saksham Guidelines",
+      "sourceUrl": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minMarksPercent": {
+      "value": 50,
+      "sourceName": "AICTE / NSP Portal",
+      "sourceUrl": "https://scholarships.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "eligibleCategories": [
+      "ALL"
+    ],
+    "eligibleGenders": [
+      "ALL"
+    ],
+    "eligibleStates": [
+      "ALL"
+    ],
+    "benefitDescription": {
+      "value": "₹50,000 per annum for every year of study for students with >= 40% disability admitted to 1st year AICTE technical degree.",
+      "sourceName": "AICTE Saksham Guidelines",
+      "sourceUrl": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "annualAmountInr": {
+      "value": 50000,
+      "sourceName": "AICTE Saksham Guidelines",
+      "sourceUrl": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "deadline": {
+      "value": "2025-10-31",
+      "sourceName": "National Scholarship Portal (NSP)",
+      "sourceUrl": "https://scholarships.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "documentsNeeded": [
+      "UDID / Government Disability Certificate (>= 40%)",
+      "Family Annual Income Certificate (< ₹8 Lakh/year)",
+      "Class 12 Marksheet and College Admission Letter",
+      "Aadhaar-linked Bank Account Details"
+    ],
+    "officialUrl": "https://scholarships.gov.in"
+  },
+  {
+    "id": "moe-iit-nit-remission",
+    "name": "MoE IIT & NIT Income-Linked Tuition Fee Remission (100% / 66.6% Waiver)",
+    "provider": "Ministry of Education, Government of India",
+    "providerType": "Central Govt",
+    "maxIncomeLakhs": {
+      "value": 5,
+      "sourceName": "MoE Statutory IIT/NIT Fee Remission Order",
+      "sourceUrl": "https://www.education.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minMarksPercent": {
+      "value": 60,
+      "sourceName": "JoSAA / Institute Rules",
+      "sourceUrl": "https://josaa.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "eligibleCategories": [
+      "GEN",
+      "OBC-NCL",
+      "EWS",
+      "SC",
+      "ST"
+    ],
+    "eligibleGenders": [
+      "ALL"
+    ],
+    "eligibleStates": [
+      "ALL"
+    ],
+    "benefitDescription": {
+      "value": "100% Tuition Waiver for SC/ST/PwD (no income cap) and General/OBC/EWS with family income < ₹1 Lakh; 2/3rd (66.6%) Tuition Waiver for family income between ₹1 Lakh and ₹5 Lakh.",
+      "sourceName": "MoE IIT/NIT Fee Waiver Circular",
+      "sourceUrl": "https://www.education.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "annualAmountInr": {
+      "value": 133333,
+      "sourceName": "MoE IIT/NIT Fee Waiver Circular",
+      "sourceUrl": "https://www.education.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "deadline": {
+      "value": "During Semester Registration at Admitted IIT/NIT",
+      "sourceName": "Institute Academic Office",
+      "sourceUrl": "https://josaa.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "documentsNeeded": [
+      "Annual Family Income Certificate issued by Revenue Officer (Tehsildar/SDM) for current financial year",
+      "Income Tax Return (ITR) / Form 16 of both parents",
+      "Category / EWS / SC / ST Certificate (if applicable)"
+    ],
+    "officialUrl": "https://www.education.gov.in"
+  },
+  {
+    "id": "csss-nsp",
+    "name": "Central Sector Scheme of Scholarships for College and University Students (CSSS)",
+    "provider": "Department of Higher Education, Ministry of Education",
+    "providerType": "Central Govt",
+    "maxIncomeLakhs": {
+      "value": 4.5,
+      "sourceName": "NSP CSSS Guidelines",
+      "sourceUrl": "https://scholarships.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minMarksPercent": {
+      "value": 80,
+      "sourceName": "NSP CSSS Top 20th Percentile Rule",
+      "sourceUrl": "https://scholarships.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "eligibleCategories": [
+      "ALL"
+    ],
+    "eligibleGenders": [
+      "ALL"
+    ],
+    "eligibleStates": [
+      "ALL"
+    ],
+    "benefitDescription": {
+      "value": "₹12,000 per annum for first 3 years of B.Tech and ₹20,000 in 4th year for students in top 20th percentile of Class 12 board.",
+      "sourceName": "NSP CSSS Guidelines",
+      "sourceUrl": "https://scholarships.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "annualAmountInr": {
+      "value": 12000,
+      "sourceName": "NSP CSSS Guidelines",
+      "sourceUrl": "https://scholarships.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "deadline": {
+      "value": "2025-10-31",
+      "sourceName": "National Scholarship Portal (NSP)",
+      "sourceUrl": "https://scholarships.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "documentsNeeded": [
+      "Class 12 Board Marksheet (above 80th percentile)",
+      "Family Income Certificate (< ₹4.5 Lakh/year)",
+      "College Bonafide Certificate via NSP Institute Nodal Officer"
+    ],
+    "officialUrl": "https://scholarships.gov.in"
+  },
+  {
+    "id": "aicte-tfw",
+    "name": "AICTE Tuition Fee Waiver (TFW / TFWS) Supernumerary Scheme",
+    "provider": "AICTE & State Counselling Authorities (MHT CET, WBJEE, KCET, GUJCET)",
+    "providerType": "AICTE",
+    "maxIncomeLakhs": {
+      "value": 8,
+      "sourceName": "AICTE Approval Process Handbook",
+      "sourceUrl": "https://www.aicte-india.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minMarksPercent": {
+      "value": 60,
+      "sourceName": "AICTE TFW Guidelines",
+      "sourceUrl": "https://www.aicte-india.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "eligibleCategories": [
+      "ALL"
+    ],
+    "eligibleGenders": [
+      "ALL"
+    ],
+    "eligibleStates": [
+      "ALL"
+    ],
+    "benefitDescription": {
+      "value": "Up to 5% supernumerary seats in every AICTE-approved engineering college where 100% of tuition fee is waived for all 4 years (student pays only exam/hostel/other fees).",
+      "sourceName": "AICTE Approval Process Handbook",
+      "sourceUrl": "https://www.aicte-india.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "annualAmountInr": {
+      "value": 100000,
+      "sourceName": "AICTE TFW Guidelines",
+      "sourceUrl": "https://www.aicte-india.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "deadline": {
+      "value": "Must opt for TFW choice code during State CET / Institute Counselling",
+      "sourceName": "AICTE / State CET Portals",
+      "sourceUrl": "https://www.aicte-india.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "documentsNeeded": [
+      "Competent Authority Income Certificate (< ₹8 Lakh/year) uploaded BEFORE counselling choice locking",
+      "Domicile Certificate (for State CET TFW seats)"
+    ],
+    "officialUrl": "https://www.aicte-india.org"
+  },
+  {
+    "id": "punjab-ashirwad-postmatric",
+    "name": "Dr. Ambedkar Post-Matric Scholarship Portal (Punjab / State SC & OBC)",
+    "provider": "Department of Social Justice & Empowerment / State Governments",
+    "providerType": "State Govt",
+    "maxIncomeLakhs": {
+      "value": 2.5,
+      "sourceName": "Dr. Ambedkar / NSP Post-Matric Guidelines",
+      "sourceUrl": "https://scholarships.punjab.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "minMarksPercent": {
+      "value": 50,
+      "sourceName": "Post-Matric Guidelines",
+      "sourceUrl": "https://scholarships.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "eligibleCategories": [
+      "SC",
+      "ST",
+      "OBC-NCL"
+    ],
+    "eligibleGenders": [
+      "ALL"
+    ],
+    "eligibleStates": [
+      "Punjab",
+      "ALL"
+    ],
+    "benefitDescription": {
+      "value": "Reimbursement of compulsory non-refundable tuition fees plus academic maintenance allowance directly via DBT.",
+      "sourceName": "Post-Matric Scholarship Guidelines",
+      "sourceUrl": "https://scholarships.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "annualAmountInr": {
+      "value": 65000,
+      "sourceName": "Post-Matric Scholarship Guidelines",
+      "sourceUrl": "https://scholarships.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "deadline": {
+      "value": "2025-11-15",
+      "sourceName": "National / State Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    },
+    "documentsNeeded": [
+      "SC / ST / OBC Caste Certificate",
+      "State Residence / Domicile Certificate",
+      "Income Certificate (< ₹2.5 Lakh/year)",
+      "Aadhaar-seeded Bank Account"
+    ],
+    "officialUrl": "https://scholarships.gov.in"
+  }
+]

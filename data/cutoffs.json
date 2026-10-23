@@ -1,0 +1,268 @@
+[
+  {
+    "id": "cut-iitm-cse-gen",
+    "collegeId": "iit-madras",
+    "collegeName": "IIT Madras",
+    "branchCode": "CSE",
+    "branchName": "Computer Science and Engineering",
+    "examId": "jee-advanced",
+    "examName": "JEE Advanced",
+    "metricType": "rank",
+    "category": "GEN",
+    "year": 2024,
+    "closingValue": {
+      "value": 159,
+      "sourceName": "JoSAA 2024 Round 5 Opening & Closing Ranks",
+      "sourceUrl": "https://josaa.admissions.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    }
+  },
+  {
+    "id": "cut-iitm-me-gen",
+    "collegeId": "iit-madras",
+    "collegeName": "IIT Madras",
+    "branchCode": "ME",
+    "branchName": "Mechanical Engineering",
+    "examId": "jee-advanced",
+    "examName": "JEE Advanced",
+    "metricType": "rank",
+    "category": "GEN",
+    "year": 2024,
+    "closingValue": {
+      "value": 2685,
+      "sourceName": "JoSAA 2024 Round 5 Opening & Closing Ranks",
+      "sourceUrl": "https://josaa.admissions.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    }
+  },
+  {
+    "id": "cut-iitd-cse-gen",
+    "collegeId": "iit-delhi",
+    "collegeName": "IIT Delhi",
+    "branchCode": "CSE",
+    "branchName": "Computer Science and Engineering",
+    "examId": "jee-advanced",
+    "examName": "JEE Advanced",
+    "metricType": "rank",
+    "category": "GEN",
+    "year": 2024,
+    "closingValue": {
+      "value": 116,
+      "sourceName": "JoSAA 2024 Round 5 Opening & Closing Ranks",
+      "sourceUrl": "https://josaa.admissions.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    }
+  },
+  {
+    "id": "cut-iitb-cse-gen",
+    "collegeId": "iit-bombay",
+    "collegeName": "IIT Bombay",
+    "branchCode": "CSE",
+    "branchName": "Computer Science and Engineering",
+    "examId": "jee-advanced",
+    "examName": "JEE Advanced",
+    "metricType": "rank",
+    "category": "GEN",
+    "year": 2024,
+    "closingValue": {
+      "value": 68,
+      "sourceName": "JoSAA 2024 Round 5 Opening & Closing Ranks",
+      "sourceUrl": "https://josaa.admissions.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    }
+  },
+  {
+    "id": "cut-nitt-cse-gen",
+    "collegeId": "nit-trichy",
+    "collegeName": "NIT Trichy",
+    "branchCode": "CSE",
+    "branchName": "Computer Science and Engineering (OS)",
+    "examId": "jee-main",
+    "examName": "JEE Main",
+    "metricType": "rank",
+    "category": "GEN",
+    "year": 2024,
+    "closingValue": {
+      "value": 1223,
+      "sourceName": "JoSAA 2024 Round 5 Opening & Closing Ranks",
+      "sourceUrl": "https://josaa.admissions.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    }
+  },
+  {
+    "id": "cut-nitt-ece-gen",
+    "collegeId": "nit-trichy",
+    "collegeName": "NIT Trichy",
+    "branchCode": "ECE",
+    "branchName": "Electronics and Communication Engineering (OS)",
+    "examId": "jee-main",
+    "examName": "JEE Main",
+    "metricType": "rank",
+    "category": "GEN",
+    "year": 2024,
+    "closingValue": {
+      "value": 3538,
+      "sourceName": "JoSAA 2024 Round 5 Opening & Closing Ranks",
+      "sourceUrl": "https://josaa.admissions.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    }
+  },
+  {
+    "id": "cut-nitk-cse-gen",
+    "collegeId": "nit-surathkal",
+    "collegeName": "NIT Surathkal (NITK)",
+    "branchCode": "CSE",
+    "branchName": "Computer Science and Engineering (OS)",
+    "examId": "jee-main",
+    "examName": "JEE Main",
+    "metricType": "rank",
+    "category": "GEN",
+    "year": 2024,
+    "closingValue": {
+      "value": 1615,
+      "sourceName": "JoSAA 2024 Round 5 Opening & Closing Ranks",
+      "sourceUrl": "https://josaa.admissions.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    }
+  },
+  {
+    "id": "cut-iiith-cse-gen",
+    "collegeId": "iiit-hyderabad",
+    "collegeName": "IIIT Hyderabad",
+    "branchCode": "CSE",
+    "branchName": "Computer Science and Engineering",
+    "examId": "jee-main",
+    "examName": "JEE Main",
+    "metricType": "rank",
+    "category": "GEN",
+    "year": 2024,
+    "closingValue": {
+      "value": 1582,
+      "sourceName": "IIIT Hyderabad JEE Main Mode Closing Rank",
+      "sourceUrl": "https://ugadmissions.iiit.ac.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    }
+  },
+  {
+    "id": "cut-dtu-cse-gen",
+    "collegeId": "dtu-delhi",
+    "collegeName": "DTU Delhi",
+    "branchCode": "CSE",
+    "branchName": "Computer Science and Engineering (Delhi Region)",
+    "examId": "jee-main",
+    "examName": "JEE Main",
+    "metricType": "rank",
+    "category": "GEN",
+    "year": 2024,
+    "closingValue": {
+      "value": 13560,
+      "sourceName": "JAC Delhi 2024 Round 5 Cutoff",
+      "sourceUrl": "https://jacdelhi.admissions.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    }
+  },
+  {
+    "id": "cut-pec-cse-gen",
+    "collegeId": "pec-chandigarh",
+    "collegeName": "PEC Chandigarh",
+    "branchCode": "CSE",
+    "branchName": "Computer Science and Engineering (OS)",
+    "examId": "jee-main",
+    "examName": "JEE Main",
+    "metricType": "rank",
+    "category": "GEN",
+    "year": 2024,
+    "closingValue": {
+      "value": 13829,
+      "sourceName": "JoSAA 2024 Round 5 Opening & Closing Ranks",
+      "sourceUrl": "https://josaa.admissions.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    }
+  },
+  {
+    "id": "cut-ju-cse-gen",
+    "collegeId": "jadavpur-univ",
+    "collegeName": "Jadavpur University",
+    "branchCode": "CSE",
+    "branchName": "Computer Science and Engineering (All-India)",
+    "examId": "wbjee",
+    "examName": "WBJEE",
+    "metricType": "rank",
+    "category": "GEN",
+    "year": 2024,
+    "closingValue": {
+      "value": 57,
+      "sourceName": "WBJEEB 2024 Round 2 Opening & Closing Ranks",
+      "sourceUrl": "https://wbjeeb.nic.in",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    }
+  },
+  {
+    "id": "cut-coep-cse-gen",
+    "collegeId": "coep-pune",
+    "collegeName": "COEP Tech Pune",
+    "branchCode": "CSE",
+    "branchName": "Computer Engineering (State Level)",
+    "examId": "mht-cet",
+    "examName": "MHT CET",
+    "metricType": "percentile",
+    "category": "GEN",
+    "year": 2024,
+    "closingValue": {
+      "value": 99.85,
+      "sourceName": "Maha CET Cell 2024 CAP Round Cutoff",
+      "sourceUrl": "https://cetcell.mahacet.org",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    }
+  },
+  {
+    "id": "cut-bits-cse-gen",
+    "collegeId": "bits-pilani",
+    "collegeName": "BITS Pilani",
+    "branchCode": "CSE",
+    "branchName": "B.E. Computer Science (Pilani Campus)",
+    "examId": "bitsat",
+    "examName": "BITSAT",
+    "metricType": "score",
+    "category": "GEN",
+    "year": 2024,
+    "closingValue": {
+      "value": 327,
+      "sourceName": "BITS Pilani 2024 Cut-off Scores",
+      "sourceUrl": "https://www.bitsadmission.com",
+      "lastVerified": "2025-02-10",
+      "confidence": "official"
+    }
+  },
+  {
+    "id": "cut-vit-cse-gen",
+    "collegeId": "vit-vellore",
+    "collegeName": "VIT Vellore",
+    "branchCode": "CSE",
+    "branchName": "B.Tech CSE",
+    "examId": "viteee",
+    "examName": "VITEEE",
+    "metricType": "rank",
+    "category": "GEN",
+    "year": 2024,
+    "closingValue": {
+      "value": null,
+      "sourceName": null,
+      "sourceUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified"
+    }
+  }
+]
