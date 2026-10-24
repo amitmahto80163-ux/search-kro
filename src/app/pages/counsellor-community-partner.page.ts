@@ -103,7 +103,7 @@ export class AiCounsellorPage {
   readonly messages = signal<{ role: 'user' | 'assistant'; text: string; sources?: { name: string; url: string }[] }[]>([
     {
       role: 'assistant',
-      text: 'Namaste! Sat Sri Akal! Welcome to AdmitWise AI Counsellor. Tell me your 12th PCM percentage, JEE/CET rank, home state, and 4-year family budget — I will suggest verified colleges across Exam, College Process, and Direct routes without any paid promotion.',
+      text: 'Namaste! Sat Sri Akal! Welcome to Search Kro AI Counsellor. Tell me your 12th PCM percentage, JEE/CET rank, home state, and 4-year family budget — I will suggest verified colleges across Exam, College Process, and Direct routes without any paid promotion.',
       sources: [
         { name: 'NIRF 2024 Rankings', url: 'https://www.nirfindia.org/Rankings/2024/EngineeringRanking.html' },
         { name: 'JoSAA Portal', url: 'https://josaa.nic.in' }
@@ -331,7 +331,7 @@ export class CommunityAfterAdmissionPage {
             <div class="flex items-center gap-2.5">
               <mat-icon class="!text-lg !w-5 !h-5">chat</mat-icon>
               <div>
-                <div class="text-sm font-bold">AdmitWise Official Bot (Simulated)</div>
+                <div class="text-sm font-bold">Search Kro Official Bot (Simulated)</div>
                 <div class="text-[11px] text-emerald-100">Verified Admission Assistant • Online</div>
               </div>
             </div>
@@ -385,7 +385,7 @@ export class WhatsAppBotPage {
   readonly botLogs = signal<{ from: 'user' | 'bot'; text: string }[]>([
     {
       from: 'bot',
-      text: 'Namaste! Welcome to AdmitWise WhatsApp Bot.\nReply with a number:\n1 - Top Verified Colleges\n2 - Fake University Check\n3 - 4-Year Fee Breakdown\n4 - Upcoming Exam Dates\n5 - Scholarships & Loans'
+      text: 'Namaste! Welcome to Search Kro WhatsApp Bot.\nReply with a number:\n1 - Top Verified Colleges\n2 - Fake University Check\n3 - 4-Year Fee Breakdown\n4 - Upcoming Exam Dates\n5 - Scholarships & Loans'
     }
   ]);
 
@@ -393,8 +393,8 @@ export class WhatsAppBotPage {
     const replies: Record<string, string> = {
       '1': 'Verified Colleges (NIRF 2024):\n• IIT Bombay (#3) - ₹2.0L/yr tuition\n• NIT Trichy (#9) - ₹1.25L/yr tuition\n• Jadavpur University (#12) - ₹2,400/yr tuition\n• COEP Pune (#77) - ₹68,000/yr tuition\n• VIT Vellore (#11) - ₹1.98L/yr Cat-1',
       '2': 'UGC Fake University Alert:\nAlways verify AICTE Permanent ID & UGC 2(f)/12(B) notification on ugc.gov.in before paying any token fee. Never pay cash to middlemen.',
-      '3': 'True 4-Year B.Tech Cost Formula:\n(Tuition + Hostel + Mess + Exam Fee) × 4 + One-time Admission Deposit + Laptop/Books. Compare on AdmitWise /money.',
-      '4': 'Upcoming Exams:\n• JEE Main Session 2: April\n• BITSAT Session 1: May\n• COMEDK / MHT-CET / WBJEE: April–May\nSet reminders at AdmitWise /calendar.',
+      '3': 'True 4-Year B.Tech Cost Formula:\n(Tuition + Hostel + Mess + Exam Fee) × 4 + One-time Admission Deposit + Laptop/Books. Compare on Search Kro /money.',
+      '4': 'Upcoming Exams:\n• JEE Main Session 2: April\n• BITSAT Session 1: May\n• COMEDK / MHT-CET / WBJEE: April–May\nSet reminders at Search Kro /calendar.',
       '5': 'Top Scholarships:\n• NSP Central Sector Scheme: ₹20,000/yr\n• AICTE Pragati (Girls): ₹50,000/yr\n• Post-Matric SC/ST/OBC State Portal\n• PM-Vidyalaxmi Education Loan (No collateral up to ₹7.5L).'
     };
     this.botLogs.update((curr) => [
@@ -405,7 +405,7 @@ export class WhatsAppBotPage {
   }
 
   realWhatsAppLink(): string {
-    const msg = 'Check verified B.Tech college fees, NIRF placements, and fake university alerts on AdmitWise (Zero paid rankings).';
+    const msg = 'Check verified B.Tech college fees, NIRF placements, and fake university alerts on Search Kro (Zero paid rankings).';
     return `https://wa.me/?text=${encodeURIComponent(msg)}`;
   }
 }
@@ -447,7 +447,7 @@ export class WhatsAppBotPage {
           <div class="text-xs font-mono uppercase text-teal-700 dark:text-teal-400 font-bold">3. Zero Spam Guarantee</div>
           <h2 class="text-lg font-bold text-slate-900 dark:text-white">Your Phone Number is Never Sold</h2>
           <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-            Traditional portals sell your phone number to 30+ aggressive admission agents within 5 minutes of sign-up. AdmitWise stores your profile locally and shares applications only with colleges you explicitly select.
+            Traditional portals sell your phone number to 30+ aggressive admission agents within 5 minutes of sign-up. Search Kro stores your profile locally and shares applications only with colleges you explicitly select.
           </p>
         </div>
       </div>

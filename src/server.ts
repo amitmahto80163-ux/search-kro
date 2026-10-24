@@ -49,10 +49,16 @@ import {
   handleAiVerify,
 } from './server-lib/ai/gemini';
 import {repo} from './server-lib/repository/jsonRepo';
+import {
+  buildPanIndiaCollegeRecord,
+  PanIndiaCollegeSeedInput,
+} from './shared/pan-india-colleges';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
+// Trust reverse proxy headers in Cloud Run / containerized preview environments
+app.set('trust proxy', 1);
 const angularApp = new AngularNodeAppEngine();
 
 // Security headers (configured for iframe preview compatibility)
@@ -79,15 +85,16 @@ app.use('/api', (req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-// Request size limit
-app.use(express.json({limit: '100kb'}));
+// Request size limit (500kb to support bulk AICTE/AISHE/NIRF college imports)
+app.use(express.json({limit: '500kb'}));
 
-// Rate limiters
+// Rate limiters (validate: false avoids ERR_ERL_UNEXPECTED_X_FORWARDED_FOR & ERR_ERL_FORWARDED_HEADER behind Cloud Run proxies)
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 300,
   standardHeaders: true,
   legacyHeaders: false,
+  validate: false,
   message: {
     error: {
       code: 'RATE_LIMIT_EXCEEDED',
@@ -101,6 +108,7 @@ const aiLimiter = rateLimit({
   max: 45,
   standardHeaders: true,
   legacyHeaders: false,
+  validate: false,
   message: {
     error: {
       code: 'AI_RATE_LIMIT_EXCEEDED',
@@ -112,16 +120,18 @@ const aiLimiter = rateLimit({
 app.use('/api', apiLimiter);
 app.use('/api/ai', aiLimiter);
 
-// Schedule monthly college refresh & weekly exam deadline refresh via node-cron
-try {
-  cron.schedule('0 3 1 * *', () => {
-    repo.bootstrapFilesIfNeeded();
-  });
-  cron.schedule('0 4 * * 1', () => {
-    repo.bootstrapFilesIfNeeded();
-  });
-} catch {
-  // Ignore cron registration errors in serverless environments
+// Schedule monthly college refresh & weekly exam deadline refresh via node-cron (skip on serverless)
+if (!process.env['VERCEL']) {
+  try {
+    cron.schedule('0 3 1 * *', () => {
+      repo.bootstrapFilesIfNeeded();
+    });
+    cron.schedule('0 4 * * 1', () => {
+      repo.bootstrapFilesIfNeeded();
+    });
+  } catch {
+    // Ignore cron registration errors in serverless environments
+  }
 }
 
 // --- Core Data Endpoints ---
@@ -169,6 +179,178 @@ app.get('/api/colleges/:id', (req: Request, res: Response) => {
     rankingFormulas: RANKING_FORMULAS_DOCUMENTATION,
   });
 });
+
+// Option 3: On-Demand Live College Lookup & Auto-Add for Any College in India
+const LiveCollegeLookupSchema = z.object({
+  name: z.string().min(3).max(200),
+  shortName: z.string().min(2).max(50).optional(),
+  city: z.string().min(2).max(80),
+  state: z.string().min(2).max(80),
+  ownership: z.enum(['Government', 'Private', 'Public-Private']),
+  officialWebsite: z.string().url().optional(),
+  nirfRank: z.number().int().min(1).max(500).nullable().optional(),
+  tuitionPerYearInr: z.number().min(0).max(2500000).nullable().optional(),
+  medianSalaryInr: z.number().min(0).max(10000000).nullable().optional(),
+  examName: z.string().min(2).max(120).optional(),
+});
+
+app.post(
+  '/api/colleges/lookup',
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const input = LiveCollegeLookupSchema.parse(req.body);
+      const slug = input.name
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '')
+        .slice(0, 60);
+
+      // Check if already in dataset by ID or case-insensitive name
+      const existing = repo
+        .getColleges()
+        .find(
+          (c) =>
+            c.id === slug ||
+            c.name.toLowerCase() === input.name.trim().toLowerCase()
+        );
+      if (existing) {
+        res.json({
+          college: existing,
+          added: false,
+          totalColleges: repo.getColleges().length,
+          message: `${existing.name} is already in the verified Pan-India directory.`,
+        });
+        return;
+      }
+
+      const shortName =
+        input.shortName?.trim() ||
+        input.name
+          .split(/\s+/)
+          .filter((w) => w.length > 2)
+          .map((w) => w[0]?.toUpperCase() || '')
+          .join('')
+          .slice(0, 10) ||
+        input.city;
+
+      const seedInput: PanIndiaCollegeSeedInput = {
+        id: slug || `college-${Date.now()}`,
+        name: input.name.trim(),
+        shortName: `${shortName} ${input.city}`.trim(),
+        city: input.city.trim(),
+        state: input.state.trim(),
+        ownership: input.ownership,
+        officialWebsite:
+          input.officialWebsite || 'https://www.aicte-india.org',
+        nirfRank: input.nirfRank ?? null,
+        naacGrade: null,
+        tuitionPerYearInr: input.tuitionPerYearInr ?? null,
+        hostelPerYearInr: null,
+        medianSalaryInr: input.medianSalaryInr ?? null,
+        placementRatePercent: null,
+        routeType:
+          input.ownership === 'Government' ? 'national_exam' : 'college_process',
+        examName:
+          input.examName ||
+          (input.ownership === 'Government'
+            ? 'JEE Main / State CET Counselling'
+            : 'State CET / Institute Merit Process'),
+        counsellingPortalUrl:
+          input.officialWebsite || 'https://josaa.nic.in',
+      };
+
+      const builtCollege = buildPanIndiaCollegeRecord(seedInput);
+      const allColleges = repo.upsertColleges([builtCollege]);
+
+      res.status(201).json({
+        college: builtCollege,
+        added: true,
+        totalColleges: allColleges.length,
+        message: `Added ${builtCollege.name} (${builtCollege.cityInfo.city}, ${builtCollege.cityInfo.state}) to the Pan-India directory. Unverified figures are explicitly marked "Not verified, check the official site".`,
+      });
+    } catch (err) {
+      next(err);
+    }
+  }
+);
+
+// Option 1: Bulk Import Pipeline for AICTE / AISHE / NIRF College Rows
+const BulkCollegeImportSchema = z.object({
+  colleges: z
+    .array(
+      z.object({
+        id: z.string().min(2).max(80).optional(),
+        name: z.string().min(3).max(200),
+        shortName: z.string().min(2).max(60).optional(),
+        city: z.string().min(2).max(80),
+        state: z.string().min(2).max(80),
+        ownership: z.enum(['Government', 'Private', 'Public-Private']),
+        officialWebsite: z.string().url().optional(),
+        nirfRank: z.number().int().min(1).max(500).nullable().optional(),
+        naacGrade: z.string().max(15).nullable().optional(),
+        tuitionPerYearInr: z.number().min(0).max(2500000).nullable().optional(),
+        hostelPerYearInr: z.number().min(0).max(1000000).nullable().optional(),
+        medianSalaryInr: z.number().min(0).max(10000000).nullable().optional(),
+        placementRatePercent: z.number().min(0).max(100).nullable().optional(),
+        examName: z.string().max(120).optional(),
+      })
+    )
+    .min(1)
+    .max(200),
+});
+
+app.post(
+  '/api/colleges/import',
+  (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const parsed = BulkCollegeImportSchema.parse(req.body);
+      const builtRecords = parsed.colleges.map((row) => {
+        const slug =
+          row.id ||
+          row.name
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-|-$/g, '')
+            .slice(0, 60);
+        return buildPanIndiaCollegeRecord({
+          id: slug,
+          name: row.name.trim(),
+          shortName: row.shortName?.trim() || row.name.trim().slice(0, 24),
+          city: row.city.trim(),
+          state: row.state.trim(),
+          ownership: row.ownership,
+          officialWebsite:
+            row.officialWebsite || 'https://www.aicte-india.org',
+          nirfRank: row.nirfRank ?? null,
+          naacGrade: row.naacGrade ?? null,
+          tuitionPerYearInr: row.tuitionPerYearInr ?? null,
+          hostelPerYearInr: row.hostelPerYearInr ?? null,
+          medianSalaryInr: row.medianSalaryInr ?? null,
+          placementRatePercent: row.placementRatePercent ?? null,
+          routeType:
+            row.ownership === 'Government' ? 'national_exam' : 'college_process',
+          examName:
+            row.examName ||
+            (row.ownership === 'Government'
+              ? 'JEE Main / State CET'
+              : 'State CET / University Entrance'),
+          counsellingPortalUrl:
+            row.officialWebsite || 'https://www.aicte-india.org',
+        });
+      });
+
+      const updatedAll = repo.upsertColleges(builtRecords);
+      res.status(201).json({
+        importedCount: builtRecords.length,
+        totalColleges: updatedAll.length,
+        colleges: updatedAll,
+        message: `Successfully imported ${builtRecords.length} colleges into the Pan-India dataset with source badges and unbiased ranking scores.`,
+      });
+    } catch (err) {
+      next(err);
+    }
+  }
+);
 
 app.get('/api/exams', (_req: Request, res: Response) => {
   res.json({

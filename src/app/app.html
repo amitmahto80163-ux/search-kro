@@ -1,304 +1,668 @@
 <div
-  class="min-h-screen flex flex-col bg-stone-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-150"
+  class="min-h-screen flex flex-col text-slate-900 dark:text-slate-100 transition-colors duration-200"
+  [class.dark]="i18n.darkMode()"
+  [class.app-bg-ocean]="bgTheme() === 'ocean'"
+  [class.app-bg-warm]="bgTheme() === 'warm'"
+  [class.app-bg-emerald]="bgTheme() === 'emerald'"
+  [class.app-bg-lavender]="bgTheme() === 'lavender'"
   [class.text-lg]="i18n.parentMode()"
 >
-  <!-- Top Trust & Sample Data Status Strip -->
-  <div class="bg-slate-900 text-slate-200 border-b border-slate-800 px-3 sm:px-6 py-2 text-xs no-print">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-      <div class="flex flex-wrap items-center gap-2 sm:gap-3">
-        @if (api.meta().datasetType === 'sample') {
-          <span class="inline-flex items-center gap-1 rounded bg-amber-500/20 border border-amber-500/40 px-2 py-0.5 font-mono text-[11px] text-amber-200">
-            <mat-icon class="!w-3.5 !h-3.5 !text-[14px]">dataset</mat-icon>
-            <span>{{ i18n.t('banner.sampleData') }}</span>
-          </span>
-        }
-        @if (api.isOfflineDemoMode()) {
-          <span class="inline-flex items-center gap-1 rounded bg-indigo-500/20 border border-indigo-500/40 px-2 py-0.5 font-mono text-[11px] text-indigo-200">
-            <mat-icon class="!w-3.5 !h-3.5 !text-[14px]">cloud_off</mat-icon>
-            <span>{{ i18n.t('banner.offlineDemo') }}</span>
-          </span>
-        }
-        <span class="text-slate-400 hidden md:inline">
-          {{ i18n.t('banner.guidanceOnly') }}
-        </span>
-      </div>
-
-      <div class="flex items-center gap-3 font-mono text-[11px] text-slate-300">
-        <span>{{ i18n.t('banner.lastUpdated') }}: {{ api.meta().lastRefreshed }}</span>
-        <button
-          type="button"
-          (click)="showFormulaModal.set(true)"
-          class="inline-flex items-center gap-1 text-teal-400 hover:underline cursor-pointer"
-        >
-          <mat-icon class="!w-3.5 !h-3.5 !text-[14px]">functions</mat-icon>
-          <span>{{ i18n.t('action.howWeCalculate') }}</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sticky Primary Header -->
-  <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur-xs dark:border-slate-800 dark:bg-slate-900/95 no-print">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
-      <!-- Brand + Mobile Menu Button -->
-      <div class="flex items-center gap-2.5">
+  <!-- Clean, Uncluttered Sticky Top Navigation Header -->
+  <header class="sticky top-0 z-30 border-b border-slate-200/80 bg-white/90 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/90 no-print">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <!-- Zone 1: Sidebar Toggle + Brand Wordmark + Primary Navigation -->
+      <div class="flex items-center gap-3 sm:gap-5 shrink-0">
+        <!-- Mobile Menu Trigger -->
         <button
           type="button"
           (click)="showMobileDrawer.set(!showMobileDrawer())"
-          class="lg:hidden inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800 cursor-pointer"
+          class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 cursor-pointer"
           aria-label="Toggle navigation menu"
         >
           <mat-icon>{{ showMobileDrawer() ? 'close' : 'menu' }}</mat-icon>
         </button>
 
-        <a routerLink="/" class="flex items-center gap-2.5 group">
-          <div class="w-10 h-10 rounded-xl bg-teal-700 text-white flex items-center justify-center font-bold shadow-xs">
-            <mat-icon>school</mat-icon>
-          </div>
-          <div>
-            <div class="flex items-center gap-1.5">
-              <span class="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white">
-                {{ appName }}
-              </span>
-              <span class="rounded bg-teal-50 px-1.5 py-0.5 font-mono text-[10px] font-bold uppercase text-teal-800 dark:bg-teal-950/80 dark:text-teal-300">
-                UNBIASED
-              </span>
-            </div>
-            <p class="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:block">
-              Zero Paid Rankings • Official NIRF & JoSAA Sourced
-            </p>
-          </div>
+        <!-- Desktop Sidebar Collapse/Expand Trigger -->
+        <button
+          type="button"
+          (click)="isSidebarCollapsed.set(!isSidebarCollapsed())"
+          class="hidden lg:inline-flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200/90 bg-slate-50 text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-white transition-colors cursor-pointer"
+          [title]="isSidebarCollapsed() ? 'Show navigation sidebar' : 'Hide navigation sidebar for wider view'"
+          [attr.aria-label]="isSidebarCollapsed() ? 'Show navigation sidebar' : 'Hide navigation sidebar'"
+        >
+          <mat-icon class="!w-4 !h-4 !text-[18px]">{{ isSidebarCollapsed() ? 'left_panel_open' : 'left_panel_close' }}</mat-icon>
+        </button>
+
+        <!-- Brand Wordmark -->
+        <a
+          routerLink="/"
+          class="flex items-center gap-2 text-lg sm:text-xl font-extrabold tracking-tight text-indigo-950 hover:text-indigo-700 dark:text-white dark:hover:text-indigo-400 transition-colors whitespace-nowrap shrink-0"
+        >
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-700 text-white font-mono text-xs font-bold shadow-2xs">SK</span>
+          <span>{{ appName }}</span>
         </a>
+
+        <!-- Clean Primary Top Nav Links (Typography only, no clutter) -->
+        <nav class="hidden xl:flex items-center gap-6 pl-4 border-l border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300" aria-label="Primary destinations">
+          <a
+            routerLink="/"
+            routerLinkActive="text-indigo-700 dark:text-indigo-400 font-bold"
+            [routerLinkActiveOptions]="{exact: true}"
+            class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-8 transition-colors whitespace-nowrap"
+          >
+            Workspace
+          </a>
+          <a
+            routerLink="/start"
+            routerLinkActive="text-indigo-700 dark:text-indigo-400 font-bold"
+            class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-8 transition-colors whitespace-nowrap"
+          >
+            Find Colleges
+          </a>
+          <a
+            routerLink="/exams"
+            routerLinkActive="text-indigo-700 dark:text-indigo-400 font-bold"
+            class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-8 transition-colors whitespace-nowrap"
+          >
+            Exams
+          </a>
+          <a
+            routerLink="/money"
+            routerLinkActive="text-indigo-700 dark:text-indigo-400 font-bold"
+            class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-8 transition-colors whitespace-nowrap"
+          >
+            Cost & ROI
+          </a>
+          <a
+            routerLink="/counsellor"
+            routerLinkActive="text-indigo-700 dark:text-indigo-400 font-bold"
+            class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-8 transition-colors whitespace-nowrap"
+          >
+            AI Counsellor
+          </a>
+        </nav>
       </div>
 
-      <!-- Global Search Input -->
-      <div class="relative flex-1 max-w-md min-w-[200px]">
+      <!-- Zone 2: Spacious Global Instant Search Bar with Recent Searches -->
+      <div class="relative flex-1 max-w-md min-w-[160px]">
         <div class="relative flex items-center">
-          <mat-icon class="absolute left-3 !w-4 !h-4 !text-[16px] text-slate-400">search</mat-icon>
+          <mat-icon class="absolute left-3.5 !w-4 !h-4 !text-[16px] text-slate-400">search</mat-icon>
           <input
             type="search"
             [value]="searchQuery()"
+            (focus)="onSearchFocus()"
+            (blur)="onSearchBlur()"
             (input)="onSearchInput($any($event.target).value)"
+            (keydown.enter)="onSearchEnter()"
             [placeholder]="i18n.t('action.searchPlaceholder')"
-            class="w-full rounded-xl border border-slate-300 bg-slate-50 pl-9 pr-4 py-2 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:border-teal-600 focus:bg-white focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"
+            class="w-full rounded-xl border border-slate-200/90 bg-slate-50/90 pl-9 pr-3 py-2 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:border-indigo-600 focus:bg-white focus:outline-none dark:border-slate-700 dark:bg-slate-800/90 dark:text-white transition-colors"
             aria-label="Global search for colleges, exams, and tools"
           />
         </div>
 
         @if (showSearchDropdown()) {
-          <div class="absolute left-0 right-0 top-full mt-1.5 z-50 rounded-2xl border border-slate-200 bg-white p-3 shadow-md dark:border-slate-700 dark:bg-slate-900 space-y-3 max-h-96 overflow-y-auto">
-            @if (searchResults().colleges.length > 0) {
-              <div>
-                <div class="text-[10px] font-mono uppercase text-slate-400 px-2 mb-1">Colleges</div>
-                @for (c of searchResults().colleges; track c.id) {
-                  <button
-                    type="button"
-                    (click)="navigateToSearchResult('/college/' + c.id)"
-                    class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between gap-2 text-xs cursor-pointer"
-                  >
-                    <span class="font-semibold text-slate-900 dark:text-white">{{ c.name }}</span>
-                    <span class="font-mono text-[11px] text-teal-700 dark:text-teal-400">{{ c.cityInfo.city }}</span>
-                  </button>
+          <div
+            (mousedown)="$event.preventDefault()"
+            class="absolute left-0 right-0 top-full mt-2 z-50 rounded-2xl border border-slate-200 bg-white p-3.5 shadow-lg dark:border-slate-700 dark:bg-slate-900 space-y-3 max-h-96 overflow-y-auto"
+          >
+            @if (searchQuery().trim().length === 0) {
+              <!-- Displayed when input is focused but empty: Last 5 Search Queries -->
+              <div class="space-y-2">
+                <div class="flex items-center justify-between px-2">
+                  <span class="text-[11px] font-semibold text-slate-500 dark:text-slate-400">
+                    Recent Searches ({{ profileStore.recentSearches().length }}/5)
+                  </span>
+                  @if (profileStore.recentSearches().length > 0) {
+                    <button
+                      type="button"
+                      (click)="clearRecentSearchHistory($event)"
+                      class="text-[11px] font-semibold text-rose-600 hover:underline dark:text-rose-400 cursor-pointer"
+                    >
+                      Clear All
+                    </button>
+                  }
+                </div>
+
+                @if (profileStore.recentSearches().length > 0) {
+                  <div class="space-y-1">
+                    @for (recent of profileStore.recentSearches(); track recent) {
+                      <div class="flex items-center justify-between gap-1 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 px-2.5 py-1.5">
+                        <button
+                          type="button"
+                          (click)="applyRecentSearch(recent)"
+                          class="flex-1 text-left flex items-center gap-2 text-xs text-slate-800 dark:text-slate-200 cursor-pointer min-w-0"
+                        >
+                          <mat-icon class="!w-3.5 !h-3.5 !text-[14px] text-slate-400 shrink-0">history</mat-icon>
+                          <span class="font-medium truncate">{{ recent }}</span>
+                        </button>
+                        <button
+                          type="button"
+                          (click)="removeRecentSearchItem(recent, $event)"
+                          class="text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 p-0.5 cursor-pointer shrink-0"
+                          [attr.aria-label]="'Remove ' + recent + ' from recent searches'"
+                        >
+                          <mat-icon class="!w-3.5 !h-3.5 !text-[14px]">close</mat-icon>
+                        </button>
+                      </div>
+                    }
+                  </div>
+                } @else {
+                  <div class="px-2 py-2 text-xs text-slate-500 dark:text-slate-400 space-y-2">
+                    <p>No recent searches saved yet. Try searching for:</p>
+                    <div class="flex flex-wrap gap-1.5">
+                      @for (suggestion of ['IIT Madras', 'NIT Trichy', 'JEE Main', 'VIT', 'COEP']; track suggestion) {
+                        <button
+                          type="button"
+                          (click)="applyRecentSearch(suggestion)"
+                          class="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 text-[11px] font-semibold text-slate-700 hover:bg-indigo-50 hover:text-indigo-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 cursor-pointer"
+                        >
+                          {{ suggestion }}
+                        </button>
+                      }
+                    </div>
+                  </div>
                 }
               </div>
-            }
-            @if (searchResults().exams.length > 0) {
-              <div>
-                <div class="text-[10px] font-mono uppercase text-slate-400 px-2 mb-1">Entrance Exams</div>
-                @for (e of searchResults().exams; track e.id) {
-                  <button
-                    type="button"
-                    (click)="navigateToSearchResult('/exams')"
-                    class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between gap-2 text-xs cursor-pointer"
-                  >
-                    <span class="font-semibold text-slate-900 dark:text-white">{{ e.shortName }} — {{ e.name }}</span>
-                    <span class="font-mono text-[11px] text-slate-500">{{ e.level }}</span>
-                  </button>
-                }
+            } @else if (searchQuery().trim().length === 1) {
+              <div class="p-2.5 text-center text-xs text-slate-500 dark:text-slate-400">
+                Type at least 2 characters to search colleges, exams, and tools.
               </div>
-            }
-            @if (searchResults().tools.length > 0) {
-              <div>
-                <div class="text-[10px] font-mono uppercase text-slate-400 px-2 mb-1">Platform Tools</div>
-                @for (t of searchResults().tools; track t.path) {
-                  <button
-                    type="button"
-                    (click)="navigateToSearchResult(t.path)"
-                    class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2 text-xs cursor-pointer"
-                  >
-                    <mat-icon class="!w-4 !h-4 !text-[16px] text-teal-700">{{ t.icon }}</mat-icon>
-                    <span class="font-semibold text-slate-900 dark:text-white">{{ i18n.t(t.labelKey) }}</span>
-                  </button>
-                }
-              </div>
-            }
-            @if (searchResults().colleges.length === 0 && searchResults().exams.length === 0 && searchResults().tools.length === 0) {
-              <div class="p-3 text-center text-xs text-slate-500">
-                No matching colleges, exams, or tools found.
-              </div>
+            } @else {
+              @if (searchResults().colleges.length > 0) {
+                <div>
+                  <div class="text-[11px] font-semibold text-slate-400 px-2 mb-1">Colleges</div>
+                  @for (c of searchResults().colleges; track c.id) {
+                    <button
+                      type="button"
+                      (click)="navigateToSearchResult('/college/' + c.id)"
+                      class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-800 flex items-center justify-between gap-2 text-xs cursor-pointer"
+                    >
+                      <span class="font-semibold text-slate-900 dark:text-white truncate">{{ c.name }}</span>
+                      <span class="font-mono text-[11px] text-teal-700 dark:text-teal-400 shrink-0">{{ c.cityInfo.city }}</span>
+                    </button>
+                  }
+                </div>
+              }
+              @if (searchResults().exams.length > 0) {
+                <div>
+                  <div class="text-[11px] font-semibold text-slate-400 px-2 mb-1">Entrance Exams</div>
+                  @for (e of searchResults().exams; track e.id) {
+                    <button
+                      type="button"
+                      (click)="navigateToSearchResult('/exams')"
+                      class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-800 flex items-center justify-between gap-2 text-xs cursor-pointer"
+                    >
+                      <span class="font-semibold text-slate-900 dark:text-white truncate">{{ e.shortName }} — {{ e.name }}</span>
+                      <span class="font-mono text-[11px] text-slate-500 shrink-0">{{ e.level }}</span>
+                    </button>
+                  }
+                </div>
+              }
+              @if (searchResults().tools.length > 0) {
+                <div>
+                  <div class="text-[11px] font-semibold text-slate-400 px-2 mb-1">Platform Tools</div>
+                  @for (t of searchResults().tools; track t.path) {
+                    <button
+                      type="button"
+                      (click)="navigateToSearchResult(t.path)"
+                      class="w-full text-left px-2.5 py-2 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-800 flex items-center gap-2 text-xs cursor-pointer"
+                    >
+                      <mat-icon class="!w-4 !h-4 !text-[16px] text-indigo-700 dark:text-indigo-400">{{ t.icon }}</mat-icon>
+                      <span class="font-semibold text-slate-900 dark:text-white">{{ i18n.t(t.labelKey) }}</span>
+                    </button>
+                  }
+                </div>
+              }
+              @if (searchResults().colleges.length === 0 && searchResults().exams.length === 0 && searchResults().tools.length === 0) {
+                <div class="p-3 text-center text-xs text-slate-500">
+                  No matching colleges, exams, or tools found for "{{ searchQuery() }}".
+                </div>
+              }
             }
           </div>
         }
       </div>
 
-      <!-- Language Switcher, Parent Mode, Dark Theme & Delete Data -->
-      <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+      <!-- Zone 3: Streamlined Action Controls (Language, Dark Mode, Preferences Popover) -->
+      <div class="flex items-center gap-2 shrink-0">
         <!-- Language Switcher (EN / HI / PA) -->
-        <div class="inline-flex rounded-xl border border-slate-200 bg-slate-100 p-0.5 dark:border-slate-700 dark:bg-slate-800" role="group" aria-label="Language selector">
+        <div
+          class="hidden sm:inline-flex rounded-xl border border-slate-200/90 bg-slate-100/80 p-0.5 dark:border-slate-700 dark:bg-slate-800"
+          role="group"
+          aria-label="Language selector"
+        >
           <button
             type="button"
             (click)="setLang('en')"
-            class="px-2.5 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer"
-            [class]="i18n.currentLang() === 'en' ? 'bg-white text-teal-800 shadow-2xs dark:bg-slate-900 dark:text-teal-300' : 'text-slate-600 dark:text-slate-400'"
+            class="px-2.5 py-1 rounded-lg text-xs font-semibold transition-colors cursor-pointer whitespace-nowrap"
+            [class]="i18n.currentLang() === 'en' ? 'bg-white text-slate-900 shadow-2xs dark:bg-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-400'"
           >
             EN
           </button>
           <button
             type="button"
             (click)="setLang('hi')"
-            class="px-2.5 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer"
-            [class]="i18n.currentLang() === 'hi' ? 'bg-white text-teal-800 shadow-2xs dark:bg-slate-900 dark:text-teal-300' : 'text-slate-600 dark:text-slate-400'"
+            class="px-2.5 py-1 rounded-lg text-xs font-semibold transition-colors cursor-pointer whitespace-nowrap"
+            [class]="i18n.currentLang() === 'hi' ? 'bg-white text-slate-900 shadow-2xs dark:bg-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-400'"
           >
             हिंदी
           </button>
           <button
             type="button"
             (click)="setLang('pa')"
-            class="px-2.5 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer"
-            [class]="i18n.currentLang() === 'pa' ? 'bg-white text-teal-800 shadow-2xs dark:bg-slate-900 dark:text-teal-300' : 'text-slate-600 dark:text-slate-400'"
+            class="px-2.5 py-1 rounded-lg text-xs font-semibold transition-colors cursor-pointer whitespace-nowrap"
+            [class]="i18n.currentLang() === 'pa' ? 'bg-white text-slate-900 shadow-2xs dark:bg-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-400'"
           >
             ਪੰਜਾਬੀ
           </button>
         </div>
 
-        <!-- Parent Mode Toggle -->
-        <button
-          type="button"
-          (click)="i18n.toggleParentMode()"
-          class="inline-flex min-h-[38px] items-center gap-1 rounded-xl border px-2.5 py-1.5 text-xs font-semibold transition-colors cursor-pointer"
-          [class]="i18n.parentMode() ? 'border-amber-600 bg-amber-600 text-white' : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200'"
-          [attr.aria-pressed]="i18n.parentMode()"
-        >
-          <mat-icon class="!w-4 !h-4 !text-[16px]">family_restroom</mat-icon>
-          <span class="hidden sm:inline whitespace-nowrap">{{ i18n.t('action.parentMode') }}</span>
-        </button>
-
-        <!-- Dark Mode Toggle -->
+        <!-- Dark / Light Mode Toggle -->
         <button
           type="button"
           (click)="i18n.toggleDarkMode()"
-          class="inline-flex min-h-[38px] min-w-[38px] items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 cursor-pointer"
+          class="inline-flex h-9 w-9 sm:w-auto sm:px-3 items-center justify-center gap-1.5 rounded-xl border text-xs font-semibold transition-colors cursor-pointer whitespace-nowrap shrink-0"
+          [class]="i18n.darkMode() ? 'border-slate-700 bg-slate-800 text-amber-300 hover:bg-slate-700' : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50'"
+          [attr.aria-pressed]="i18n.darkMode()"
           [attr.aria-label]="i18n.t('action.darkMode')"
         >
           <mat-icon class="!w-4 !h-4 !text-[16px]">{{ i18n.darkMode() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+          <span class="hidden md:inline">{{ i18n.darkMode() ? 'Light' : 'Dark' }}</span>
         </button>
 
-        <!-- Delete My Data Button -->
-        <button
-          type="button"
-          (click)="showDeleteConfirmModal.set(true)"
-          class="inline-flex min-h-[38px] items-center gap-1 rounded-xl border border-rose-200 bg-rose-50 px-2.5 py-1.5 text-xs font-semibold text-rose-800 hover:bg-rose-100 dark:border-rose-900/60 dark:bg-rose-950/50 dark:text-rose-300 cursor-pointer"
-          [attr.aria-label]="i18n.t('action.deleteData')"
-        >
-          <mat-icon class="!w-4 !h-4 !text-[16px]">delete_forever</mat-icon>
-          <span class="hidden md:inline whitespace-nowrap">{{ i18n.t('action.deleteData') }}</span>
-        </button>
+        <!-- Clean Consolidated Display & Data Preferences Menu -->
+        <div class="relative">
+          <button
+            type="button"
+            (click)="showPreferencesMenu.set(!showPreferencesMenu())"
+            class="inline-flex h-9 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3 text-xs font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+            [attr.aria-expanded]="showPreferencesMenu()"
+            aria-label="Display and privacy settings"
+          >
+            <mat-icon class="!w-4 !h-4 !text-[16px]">tune</mat-icon>
+            <span class="hidden sm:inline">Settings</span>
+          </button>
+
+          @if (showPreferencesMenu()) {
+            <button
+              type="button"
+              class="fixed inset-0 z-40 cursor-default"
+              (click)="showPreferencesMenu.set(false)"
+              aria-label="Close settings menu"
+            ></button>
+
+            <div class="absolute right-0 top-full mt-2 z-50 w-72 rounded-2xl border border-slate-200 bg-white p-4 shadow-lg dark:border-slate-700 dark:bg-slate-900 space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-2.5 dark:border-slate-800">
+                <span class="text-xs font-bold text-slate-900 dark:text-white">Display & Privacy Settings</span>
+                <button
+                  type="button"
+                  (click)="showPreferencesMenu.set(false)"
+                  class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
+                >
+                  <mat-icon class="!w-4 !h-4 !text-[16px]">close</mat-icon>
+                </button>
+              </div>
+
+              <!-- Background Canvas Theme -->
+              <div class="space-y-2">
+                <span class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400">
+                  Ambient Canvas Theme
+                </span>
+                <div class="grid grid-cols-2 gap-1.5">
+                  @for (opt of bgThemeOptions; track opt.id) {
+                    <button
+                      type="button"
+                      (click)="setBgTheme(opt.id)"
+                      class="flex items-center gap-2 rounded-xl border px-2.5 py-2 text-left text-xs font-medium transition-colors cursor-pointer"
+                      [class]="bgTheme() === opt.id ? 'border-indigo-600 bg-indigo-50/70 text-indigo-950 font-semibold dark:border-indigo-400 dark:bg-indigo-950/50 dark:text-white' : 'border-slate-200/80 text-slate-600 hover:bg-slate-50 dark:border-slate-800 dark:text-slate-400'"
+                    >
+                      <span class="h-3.5 w-3.5 rounded-full shrink-0" [class]="opt.swatchClass"></span>
+                      <span class="truncate text-[11px]">{{ opt.label.split(' ')[0] }}</span>
+                    </button>
+                  }
+                </div>
+              </div>
+
+              <!-- Parent Mode Larger Text Toggle -->
+              <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
+                <div>
+                  <div class="text-xs font-semibold text-slate-800 dark:text-slate-200">{{ i18n.t('action.parentMode') }}</div>
+                  <div class="text-[11px] text-slate-500 dark:text-slate-400">Larger comfortable reading size</div>
+                </div>
+                <button
+                  type="button"
+                  (click)="i18n.toggleParentMode()"
+                  class="px-3 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer"
+                  [class]="i18n.parentMode() ? 'bg-amber-600 text-white' : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'"
+                >
+                  {{ i18n.parentMode() ? 'ON' : 'OFF' }}
+                </button>
+              </div>
+
+              <!-- Methodology & Data Privacy Actions -->
+              <div class="pt-2 border-t border-slate-100 dark:border-slate-800 space-y-1.5">
+                <button
+                  type="button"
+                  (click)="showFormulaModal.set(true); showPreferencesMenu.set(false)"
+                  class="w-full flex items-center gap-2 rounded-xl px-2.5 py-2 text-xs font-semibold text-indigo-700 hover:bg-indigo-50 dark:text-indigo-400 dark:hover:bg-slate-800 cursor-pointer"
+                >
+                  <mat-icon class="!w-4 !h-4 !text-[16px]">functions</mat-icon>
+                  <span>{{ i18n.t('action.howWeCalculate') }}</span>
+                </button>
+
+                <button
+                  type="button"
+                  (click)="showDeleteConfirmModal.set(true); showPreferencesMenu.set(false)"
+                  class="w-full flex items-center gap-2 rounded-xl px-2.5 py-2 text-xs font-semibold text-rose-700 hover:bg-rose-50 dark:text-rose-400 dark:hover:bg-rose-950/40 cursor-pointer"
+                >
+                  <mat-icon class="!w-4 !h-4 !text-[16px]">delete_forever</mat-icon>
+                  <span>{{ i18n.t('action.deleteData') }}</span>
+                </button>
+              </div>
+            </div>
+          }
+        </div>
+
+        <!-- Firebase Authentication: Google Sign-In or Authenticated Account Menu -->
+        @if (!authService.currentUser()) {
+          <button
+            type="button"
+            (click)="authService.signInWithGoogle()"
+            [disabled]="authService.isSigningIn()"
+            class="inline-flex h-9 items-center gap-1.5 rounded-xl bg-indigo-700 px-3.5 text-xs font-bold text-white hover:bg-indigo-800 disabled:opacity-60 transition-colors cursor-pointer whitespace-nowrap shrink-0"
+          >
+            <mat-icon class="!w-4 !h-4 !text-[16px]">login</mat-icon>
+            <span>{{ authService.isSigningIn() ? 'Signing in...' : 'Sign In' }}</span>
+          </button>
+        } @else {
+          @let user = authService.currentUser()!;
+          <div class="relative">
+            <button
+              type="button"
+              (click)="showAccountMenu.set(!showAccountMenu())"
+              class="inline-flex h-9 items-center gap-2 rounded-xl border border-indigo-200 bg-indigo-50/70 px-2.5 text-xs font-semibold text-indigo-950 hover:bg-indigo-100 dark:border-slate-700 dark:bg-slate-800 dark:text-white cursor-pointer"
+              [attr.aria-expanded]="showAccountMenu()"
+              aria-label="Account and cloud sync menu"
+            >
+              @if (user.photoURL) {
+                <img
+                  [src]="user.photoURL"
+                  [alt]="user.displayName"
+                  referrerpolicy="no-referrer"
+                  class="h-6 w-6 rounded-full object-cover"
+                />
+              } @else {
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-indigo-700 text-white text-[11px] font-bold">
+                  {{ user.displayName.slice(0, 1).toUpperCase() }}
+                </span>
+              }
+              <span class="hidden md:inline max-w-[110px] truncate">{{ user.displayName }}</span>
+              <mat-icon class="!w-3.5 !h-3.5 !text-[14px] text-slate-400">expand_more</mat-icon>
+            </button>
+
+            @if (showAccountMenu()) {
+              <button
+                type="button"
+                class="fixed inset-0 z-40 cursor-default"
+                (click)="showAccountMenu.set(false)"
+                aria-label="Close account menu"
+              ></button>
+
+              <div class="absolute right-0 top-full mt-2 z-50 w-72 rounded-2xl border border-slate-200 bg-white p-4 shadow-lg dark:border-slate-700 dark:bg-slate-900 space-y-3.5">
+                <div class="border-b border-slate-100 pb-3 dark:border-slate-800 space-y-0.5">
+                  <div class="text-xs font-bold text-slate-900 dark:text-white truncate">
+                    {{ user.displayName }}
+                  </div>
+                  @if (user.email) {
+                    <div class="text-[11px] text-slate-500 dark:text-slate-400 truncate">
+                      {{ user.email }}
+                    </div>
+                  }
+                  <div class="pt-1 flex items-center gap-1.5 text-[11px] text-teal-700 dark:text-teal-400 font-medium">
+                    <mat-icon class="!w-3.5 !h-3.5 !text-[14px]">cloud_done</mat-icon>
+                    <span>
+                      {{ authService.lastSyncedAt() ? 'Cloud Synced at ' + authService.lastSyncedAt() : 'Firebase Cloud Connected' }}
+                    </span>
+                  </div>
+                </div>
+
+                <div class="space-y-1.5">
+                  <button
+                    type="button"
+                    (click)="authService.syncProfileToCloud(); showAccountMenu.set(false)"
+                    [disabled]="authService.isSyncingCloud()"
+                    class="w-full flex items-center gap-2 rounded-xl bg-indigo-50 px-3 py-2 text-xs font-semibold text-indigo-800 hover:bg-indigo-100 dark:bg-indigo-950/60 dark:text-indigo-300 cursor-pointer"
+                  >
+                    <mat-icon class="!w-4 !h-4 !text-[16px]">cloud_upload</mat-icon>
+                    <span>{{ authService.isSyncingCloud() ? 'Syncing...' : 'Sync Profile & Shortlist to Cloud' }}</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    (click)="authService.signOutUser(); showAccountMenu.set(false)"
+                    class="w-full flex items-center gap-2 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 cursor-pointer"
+                  >
+                    <mat-icon class="!w-4 !h-4 !text-[16px]">logout</mat-icon>
+                    <span>Sign Out</span>
+                  </button>
+                </div>
+              </div>
+            }
+          </div>
+        }
       </div>
     </div>
   </header>
 
-  <!-- Main Workspace Layout: Desktop Sidebar + Router Outlet -->
+  <!-- Main Workspace Layout: Collapsible Accordion Sidebar + Clean Content Viewport -->
   <div class="flex-1 flex max-w-[1440px] w-full mx-auto">
-    <!-- Desktop Left Navigation Rail -->
-    <aside class="hidden lg:flex flex-col w-64 shrink-0 border-r border-slate-200 bg-white/70 dark:border-slate-800 dark:bg-slate-900/50 p-4 space-y-5 no-print">
-      <!-- Profile Completion Card -->
-      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3.5 dark:border-slate-800 dark:bg-slate-800/60 space-y-2">
-        <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-slate-800 dark:text-slate-200">Your Admission Profile</span>
-          <span class="font-mono font-bold text-teal-700 dark:text-teal-400">{{ profileStore.profileCompletionPercent() }}%</span>
+    <!-- Desktop Left Navigation Rail (Collapsible & Grouped into Clean Accordions) -->
+    @if (!isSidebarCollapsed()) {
+      <aside class="hidden lg:flex flex-col w-64 shrink-0 border-r border-slate-200/80 bg-white/75 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/75 p-4 space-y-5 no-print">
+        <!-- Compact Student Profile Summary with Cloud Sync Status -->
+        <div class="rounded-xl border border-slate-200/90 bg-slate-50/90 p-3.5 dark:border-slate-800 dark:bg-slate-800/60 space-y-2.5">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-semibold text-slate-700 dark:text-slate-200">Admission Profile</span>
+            <span class="font-mono font-bold text-indigo-700 dark:text-teal-400 tabular-nums">{{ profileStore.profileCompletionPercent() }}%</span>
+          </div>
+          <div class="h-1.5 w-full rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+            <div class="h-full bg-indigo-600 dark:bg-teal-400 transition-all" [style.width.%]="profileStore.profileCompletionPercent()"></div>
+          </div>
+          <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400">
+            <span class="truncate">{{ profileStore.profile().homeState }} · {{ profileStore.profile().category }}</span>
+            <a routerLink="/start" class="font-semibold text-indigo-700 dark:text-indigo-400 hover:underline shrink-0">Edit →</a>
+          </div>
+          <div class="pt-1.5 border-t border-slate-200/70 dark:border-slate-700/70 flex items-center justify-between text-[11px]">
+            @if (authService.currentUser(); as user) {
+              <span class="text-teal-700 dark:text-teal-400 font-medium truncate">
+                Cloud: {{ user.displayName }}
+              </span>
+              <button
+                type="button"
+                (click)="authService.syncProfileToCloud()"
+                class="font-semibold text-indigo-700 dark:text-indigo-400 hover:underline cursor-pointer shrink-0"
+              >
+                Sync
+              </button>
+            } @else {
+              <span class="text-slate-500 dark:text-slate-400">Saved on device</span>
+              <button
+                type="button"
+                (click)="authService.signInWithGoogle()"
+                class="font-semibold text-indigo-700 dark:text-indigo-400 hover:underline cursor-pointer shrink-0"
+              >
+                Cloud Sign In →
+              </button>
+            }
+          </div>
         </div>
-        <div class="h-1.5 w-full rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
-          <div class="h-full bg-teal-600 transition-all" [style.width.%]="profileStore.profileCompletionPercent()"></div>
-        </div>
-        <div class="flex items-center justify-between text-[11px] text-slate-500">
-          <span>{{ profileStore.profile().homeState }} • {{ profileStore.profile().category }}</span>
-          <a routerLink="/start" class="font-semibold text-teal-700 dark:text-teal-400 hover:underline">Edit →</a>
-        </div>
-      </div>
 
-      <!-- Navigation Links -->
-      <nav class="space-y-1" aria-label="Main feature navigation">
-        @for (item of navItems; track item.path) {
-          <a
-            [routerLink]="item.path"
-            routerLinkActive="bg-teal-50 text-teal-900 font-bold border-teal-200 dark:bg-teal-950/60 dark:text-teal-200 dark:border-teal-800"
-            [routerLinkActiveOptions]="{ exact: item.path === '/' }"
-            class="flex items-center gap-2.5 rounded-xl border border-transparent px-3 py-2 text-xs text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800/70 transition-colors"
+        <!-- Accordion Feature Navigation (Clean Separation by Category) -->
+        <nav class="space-y-2 flex-1" aria-label="Main feature navigation">
+          <div class="flex items-center justify-between px-2 pb-1">
+            <span class="text-[11px] font-semibold text-slate-400 dark:text-slate-500">Feature Modules</span>
+            <button
+              type="button"
+              (click)="expandAllSidebarSections()"
+              class="text-[11px] font-medium text-indigo-600 hover:underline dark:text-indigo-400 cursor-pointer"
+            >
+              Expand All
+            </button>
+          </div>
+
+          @for (section of navSections; track section.id) {
+            <div class="rounded-xl border border-slate-200/60 bg-white/60 dark:border-slate-800/80 dark:bg-slate-900/50 overflow-hidden">
+              <button
+                type="button"
+                (click)="toggleSidebarSection(section.id)"
+                class="w-full flex items-center justify-between px-3 py-2.5 text-left text-xs font-bold text-slate-800 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800/60 transition-colors cursor-pointer"
+                [attr.aria-expanded]="isSectionExpanded(section.id)"
+              >
+                <span class="truncate">{{ section.title }}</span>
+                <mat-icon class="!w-4 !h-4 !text-[16px] text-slate-400 transition-transform" [class.rotate-180]="isSectionExpanded(section.id)">
+                  expand_more
+                </mat-icon>
+              </button>
+
+              @if (isSectionExpanded(section.id)) {
+                <div class="px-2 pb-2 pt-0.5 space-y-0.5 border-t border-slate-100 dark:border-slate-800/60">
+                  @for (item of section.items; track item.path) {
+                    <a
+                      [routerLink]="item.path"
+                      routerLinkActive="bg-indigo-50 text-indigo-900 font-semibold dark:bg-indigo-950/70 dark:text-indigo-200"
+                      [routerLinkActiveOptions]="{exact: item.path === '/'}"
+                      class="flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs text-slate-600 hover:bg-slate-100/80 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800/60 dark:hover:text-slate-100 transition-colors"
+                    >
+                      <mat-icon class="!w-4 !h-4 !text-[16px] text-indigo-600 dark:text-indigo-400 shrink-0">{{ item.icon }}</mat-icon>
+                      <span class="truncate">{{ i18n.t(item.labelKey) }}</span>
+                    </a>
+                  }
+                </div>
+              }
+            </div>
+          }
+        </nav>
+
+        <!-- Quiet Dataset Status Footer in Sidebar -->
+        <div class="pt-3 border-t border-slate-200/70 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 space-y-1">
+          <div class="font-mono tabular-nums">
+            Verified Data: {{ api.meta().lastRefreshed.slice(0, 10) }}
+          </div>
+          <button
+            type="button"
+            (click)="showFormulaModal.set(true)"
+            class="text-indigo-700 dark:text-indigo-400 font-semibold hover:underline cursor-pointer"
           >
-            <mat-icon class="!w-4 !h-4 !text-[16px] text-teal-700 dark:text-teal-400 shrink-0">{{ item.icon }}</mat-icon>
-            <span class="truncate">{{ i18n.t(item.labelKey) }}</span>
-          </a>
-        }
-      </nav>
-    </aside>
+            {{ i18n.t('action.howWeCalculate') }} →
+          </button>
+        </div>
+      </aside>
+    }
 
     <!-- Mobile Navigation Drawer -->
     @if (showMobileDrawer()) {
       <div class="fixed inset-0 z-40 lg:hidden flex no-print" role="dialog" aria-modal="true">
         <button type="button" class="fixed inset-0 bg-slate-950/60 cursor-default" (click)="showMobileDrawer.set(false)" aria-label="Close navigation menu"></button>
-        <div class="relative z-10 w-72 max-w-[85vw] bg-white dark:bg-slate-900 h-full overflow-y-auto p-4 space-y-4 shadow-xl">
+        <div class="relative z-10 w-76 max-w-[85vw] bg-white dark:bg-slate-900 h-full overflow-y-auto p-5 space-y-5 shadow-xl">
           <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
-            <span class="font-bold text-sm text-slate-900 dark:text-white">{{ appName }} All 38 Tools</span>
-            <button type="button" (click)="showMobileDrawer.set(false)" class="p-1 text-slate-500">
+            <span class="font-bold text-sm text-slate-900 dark:text-white">{{ appName }} Menu</span>
+            <button type="button" (click)="showMobileDrawer.set(false)" class="p-1 text-slate-500 cursor-pointer">
               <mat-icon>close</mat-icon>
             </button>
           </div>
-          <nav class="space-y-1">
-            @for (item of navItems; track item.path) {
-              <a
-                [routerLink]="item.path"
-                (click)="showMobileDrawer.set(false)"
-                routerLinkActive="bg-teal-50 text-teal-900 font-bold dark:bg-teal-950/60 dark:text-teal-200"
-                [routerLinkActiveOptions]="{ exact: item.path === '/' }"
-                class="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-xs text-slate-700 dark:text-slate-300"
-              >
-                <mat-icon class="!w-4 !h-4 !text-[16px] text-teal-700">{{ item.icon }}</mat-icon>
-                <span>{{ i18n.t(item.labelKey) }}</span>
-              </a>
+          <nav class="space-y-4">
+            @for (section of navSections; track section.id) {
+              <div class="space-y-1">
+                <div class="px-2 pb-1 text-[11px] font-bold text-slate-400">
+                  {{ section.title }}
+                </div>
+                @for (item of section.items; track item.path) {
+                  <a
+                    [routerLink]="item.path"
+                    (click)="showMobileDrawer.set(false)"
+                    routerLinkActive="bg-indigo-50 text-indigo-900 font-bold dark:bg-indigo-950/60 dark:text-indigo-200"
+                    [routerLinkActiveOptions]="{exact: item.path === '/'}"
+                    class="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs text-slate-700 dark:text-slate-300"
+                  >
+                    <mat-icon class="!w-4 !h-4 !text-[16px] text-indigo-700 dark:text-indigo-400">{{ item.icon }}</mat-icon>
+                    <span>{{ i18n.t(item.labelKey) }}</span>
+                  </a>
+                }
+              </div>
             }
           </nav>
         </div>
       </div>
     }
 
-    <!-- Main Content Viewport -->
-    <main class="flex-1 min-w-0 pb-24 lg:pb-12">
-      <router-outlet />
-    </main>
+    <!-- Main Content Viewport with Generous Whitespace -->
+    <div class="flex-1 min-w-0 flex flex-col justify-between">
+      <main class="flex-1 px-4 sm:px-6 lg:px-10 py-6 sm:py-8 pb-24 lg:pb-12">
+        <router-outlet />
+      </main>
+
+      <!-- Clean Site Footer -->
+      <footer class="border-t border-slate-200/80 bg-white/80 px-4 sm:px-6 lg:px-10 py-8 text-xs text-slate-500 dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-400 no-print">
+        <div class="flex flex-wrap items-start justify-between gap-6">
+          <div class="space-y-1.5 max-w-md">
+            <div class="text-sm font-bold text-slate-900 dark:text-slate-100">
+              {{ appName }} — Unbiased Indian Engineering Admission Guidance
+            </div>
+            <p class="leading-relaxed">
+              Rankings are 100% deterministic and immune to paid placement. Always verify final cutoffs, fee circulars, and counselling schedules on official portals.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-8">
+            <div class="space-y-1.5">
+              <div class="font-bold text-slate-800 dark:text-slate-200">Official Portals</div>
+              <div class="flex flex-col gap-1">
+                <a href="https://josaa.nic.in" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-700 dark:hover:text-indigo-400 hover:underline">JoSAA Counselling Portal</a>
+                <a href="https://www.nirfindia.org" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-700 dark:hover:text-indigo-400 hover:underline">NIRF India Rankings</a>
+                <a href="https://www.aicte-india.org" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-700 dark:hover:text-indigo-400 hover:underline">AICTE Official Portal</a>
+                <a href="https://scholarships.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-700 dark:hover:text-indigo-400 hover:underline">National Scholarship Portal (NSP)</a>
+              </div>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="font-bold text-slate-800 dark:text-slate-200">Platform Transparency</div>
+              <div class="flex flex-col gap-1">
+                <button type="button" (click)="showFormulaModal.set(true)" class="text-left hover:text-indigo-700 dark:hover:text-indigo-400 hover:underline cursor-pointer">
+                  How We Calculate Rankings & ROI
+                </button>
+                <a routerLink="/partner" class="hover:text-indigo-700 dark:hover:text-indigo-400 hover:underline">Post-Admission ₹99 Revenue Model</a>
+                <a routerLink="/verify" class="hover:text-indigo-700 dark:hover:text-indigo-400 hover:underline">Fake College & Agent Checker</a>
+                <a routerLink="/documents" class="hover:text-indigo-700 dark:hover:text-indigo-400 hover:underline">On-Device Document Scanner</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   </div>
 
   <!-- Mobile Bottom Navigation Bar (5 Key Destinations) -->
   <nav
-    class="lg:hidden fixed bottom-0 left-0 right-0 z-30 border-t border-slate-200 bg-white/95 backdrop-blur-xs dark:border-slate-800 dark:bg-slate-900/95 grid grid-cols-5 py-1.5 px-2 no-print"
+    class="lg:hidden fixed bottom-0 left-0 right-0 z-30 border-t border-slate-200 bg-white/95 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/95 grid grid-cols-5 py-1.5 px-2 no-print"
     aria-label="Mobile quick navigation"
   >
-    <a routerLink="/" routerLinkActive="text-teal-700 dark:text-teal-400 font-bold" [routerLinkActiveOptions]="{ exact: true }" class="flex flex-col items-center justify-center py-1 text-[11px] text-slate-600 dark:text-slate-400">
+    <a routerLink="/" routerLinkActive="text-indigo-700 dark:text-indigo-400 font-bold" [routerLinkActiveOptions]="{exact: true}" class="flex flex-col items-center justify-center py-1 text-[11px] text-slate-600 dark:text-slate-400">
       <mat-icon class="!w-5 !h-5 !text-[20px]">home</mat-icon>
       <span class="truncate mt-0.5">Home</span>
     </a>
-    <a routerLink="/start" routerLinkActive="text-teal-700 dark:text-teal-400 font-bold" class="flex flex-col items-center justify-center py-1 text-[11px] text-slate-600 dark:text-slate-400">
+    <a routerLink="/start" routerLinkActive="text-indigo-700 dark:text-indigo-400 font-bold" class="flex flex-col items-center justify-center py-1 text-[11px] text-slate-600 dark:text-slate-400">
       <mat-icon class="!w-5 !h-5 !text-[20px]">explore</mat-icon>
       <span class="truncate mt-0.5">Colleges</span>
     </a>
-    <a routerLink="/verify" routerLinkActive="text-teal-700 dark:text-teal-400 font-bold" class="flex flex-col items-center justify-center py-1 text-[11px] text-slate-600 dark:text-slate-400">
-      <mat-icon class="!w-5 !h-5 !text-[20px]">verified_user</mat-icon>
-      <span class="truncate mt-0.5">Verify</span>
+    <a routerLink="/documents" routerLinkActive="text-indigo-700 dark:text-indigo-400 font-bold" class="flex flex-col items-center justify-center py-1 text-[11px] text-slate-600 dark:text-slate-400">
+      <mat-icon class="!w-5 !h-5 !text-[20px]">document_scanner</mat-icon>
+      <span class="truncate mt-0.5">Scanner</span>
     </a>
-    <a routerLink="/money" routerLinkActive="text-teal-700 dark:text-teal-400 font-bold" class="flex flex-col items-center justify-center py-1 text-[11px] text-slate-600 dark:text-slate-400">
+    <a routerLink="/money" routerLinkActive="text-indigo-700 dark:text-indigo-400 font-bold" class="flex flex-col items-center justify-center py-1 text-[11px] text-slate-600 dark:text-slate-400">
       <mat-icon class="!w-5 !h-5 !text-[20px]">calculate</mat-icon>
       <span class="truncate mt-0.5">Cost/ROI</span>
     </a>
-    <a routerLink="/counsellor" routerLinkActive="text-teal-700 dark:text-teal-400 font-bold" class="flex flex-col items-center justify-center py-1 text-[11px] text-slate-600 dark:text-slate-400">
+    <a routerLink="/counsellor" routerLinkActive="text-indigo-700 dark:text-indigo-400 font-bold" class="flex flex-col items-center justify-center py-1 text-[11px] text-slate-600 dark:text-slate-400">
       <mat-icon class="!w-5 !h-5 !text-[20px]">psychology</mat-icon>
       <span class="truncate mt-0.5">AI Guide</span>
     </a>
@@ -339,7 +703,7 @@
           <h2 class="text-base font-bold">Delete All My Admission Data?</h2>
         </div>
         <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-          This immediately clears your saved student profile, comparison list, checklist progress, common applications, and seat alerts from both your browser (<code>localStorage</code>) and the server.
+          This immediately clears your saved student profile, comparison list, checklist progress, scanned documents, common applications, and seat alerts from both your browser (<code>localStorage</code>) and the server.
         </p>
         <div class="flex items-center justify-end gap-2 pt-2">
           <button

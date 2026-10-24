@@ -206,6 +206,10 @@ export class I18nService {
 
   readonly dict = computed(() => DICTIONARIES[this.currentLang()] ?? EN_STRINGS);
 
+  constructor() {
+    this.syncDarkModeClass(this.darkMode());
+  }
+
   setLanguage(lang: SupportedLanguage): void {
     this.currentLang.set(lang);
     safeSetItem('admitwise_lang', lang);
@@ -221,8 +225,13 @@ export class I18nService {
     const next = !this.darkMode();
     this.darkMode.set(next);
     safeSetItem('admitwise_dark_mode', String(next));
+    this.syncDarkModeClass(next);
+  }
+
+  syncDarkModeClass(isDark: boolean): void {
     if (typeof document !== 'undefined') {
-      document.documentElement.classList.toggle('dark', next);
+      document.documentElement.classList.toggle('dark', isDark);
+      document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
     }
   }
 

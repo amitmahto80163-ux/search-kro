@@ -1,0 +1,112 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global Default-Deny Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Reusable Hardened Primitives
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isVerifiedUser() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidStringArray(arr, maxItems) {
+      return arr is list && arr.size() <= maxItems && (arr.size() == 0 || (arr[0] is string && arr[0].size() <= 128));
+    }
+
+    // Validation Blueprint for UserProfile
+    function isValidUserProfile(data, userId) {
+      return data.keys().hasAll([
+        'uid',
+        'displayName',
+        'homeState',
+        'category',
+        'annualBudgetInr',
+        'class12Percent',
+        'compareIds',
+        'checklistCompletedIds',
+        'createdAt',
+        'updatedAt'
+      ]) &&
+      data.keys().hasOnly([
+        'uid',
+        'displayName',
+        'homeState',
+        'category',
+        'annualBudgetInr',
+        'class12Percent',
+        'compareIds',
+        'checklistCompletedIds',
+        'createdAt',
+        'updatedAt'
+      ]) &&
+      data.uid is string && data.uid == userId && data.uid == request.auth.uid && data.uid.size() >= 1 && data.uid.size() <= 128 &&
+      data.displayName is string && data.displayName.size() >= 1 && data.displayName.size() <= 100 &&
+      data.homeState is string && data.homeState.size() >= 2 && data.homeState.size() <= 80 &&
+      data.category is string && data.category.size() >= 2 && data.category.size() <= 30 &&
+      data.annualBudgetInr is number && data.annualBudgetInr >= 0 && data.annualBudgetInr <= 10000000 &&
+      data.class12Percent is number && data.class12Percent >= 0 && data.class12Percent <= 100 &&
+      isValidStringArray(data.compareIds, 4) &&
+      isValidStringArray(data.checklistCompletedIds, 50) &&
+      data.createdAt is timestamp &&
+      data.updatedAt is timestamp;
+    }
+
+    // User Profile Collection: /users/{userId}
+    match /users/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      allow list: if false;
+
+      allow create: if isVerifiedUser() &&
+        isOwner(userId) &&
+        isValidId(userId) &&
+        isValidUserProfile(incoming(), userId) &&
+        incoming().createdAt == request.time &&
+        incoming().updatedAt == request.time;
+
+      allow update: if isVerifiedUser() &&
+        isOwner(userId) &&
+        isValidId(userId) &&
+        isValidUserProfile(incoming(), userId) &&
+        incoming().uid == existing().uid &&
+        incoming().createdAt == existing().createdAt &&
+        incoming().updatedAt == request.time &&
+        incoming().diff(existing()).affectedKeys().hasOnly([
+          'displayName',
+          'homeState',
+          'category',
+          'annualBudgetInr',
+          'class12Percent',
+          'compareIds',
+          'checklistCompletedIds',
+          'updatedAt'
+        ]);
+
+      allow delete: if isVerifiedUser() &&
+        isOwner(userId) &&
+        isValidId(userId);
+    }
+  }
+}

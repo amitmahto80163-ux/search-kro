@@ -3,7 +3,7 @@
   "datasetType": "sample",
   "refreshScheduleCron": "0 3 1 * *",
   "examRefreshScheduleCron": "0 4 * * 1",
-  "totalColleges": 15,
+  "totalColleges": 109,
   "totalExams": 15,
   "totalScholarships": 6
 }

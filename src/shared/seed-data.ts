@@ -11,6 +11,7 @@ import {
 } from './schemas';
 import {computeCollegeRankingMetrics} from '../server-lib/analysis/ranking';
 import {evaluateReviewAuthenticity} from '../server-lib/analysis/reviewAuthenticity';
+import {PAN_INDIA_COLLEGES} from './pan-india-colleges';
 
 export function sourced<T>(
   value: T,
@@ -1382,7 +1383,7 @@ const RAW_COLLEGES: College[] = [
 ];
 
 // Enrich colleges with deterministic review authenticity & ranking metrics
-export const SEED_COLLEGES: College[] = RAW_COLLEGES.map((college) => {
+const CORE_ENRICHED_COLLEGES: College[] = RAW_COLLEGES.map((college) => {
   const reviewsWithScores = college.reviews.map((rev) => {
     const res = evaluateReviewAuthenticity(rev, college.reviews);
     return {
@@ -1400,6 +1401,12 @@ export const SEED_COLLEGES: College[] = RAW_COLLEGES.map((college) => {
     rankingMetrics: computeCollegeRankingMetrics(enriched),
   };
 });
+
+const CORE_IDS = new Set(CORE_ENRICHED_COLLEGES.map((c) => c.id));
+export const SEED_COLLEGES: College[] = [
+  ...CORE_ENRICHED_COLLEGES,
+  ...PAN_INDIA_COLLEGES.filter((c) => !CORE_IDS.has(c.id)),
+];
 
 export const SEED_EXAMS: Exam[] = [
   {

@@ -80,12 +80,35 @@ const DEFAULT_PROFILE: StudentProfile = {
   jeeRankOrPercentile: 14500,
 };
 
+export interface SavedAcademicDocument {
+  id: string;
+  title: string;
+  docType:
+    | 'Class 12 Marksheet'
+    | 'Class 10 Marksheet / DOB Proof'
+    | 'Entrance Exam Admit Card'
+    | 'Category / EWS Certificate'
+    | 'Income Certificate'
+    | 'Passport Photo / Signature';
+  examTag: string;
+  dataUrl: string;
+  width: number;
+  height: number;
+  sizeKb: number;
+  filterApplied: 'colour' | 'high_contrast_bw' | 'bright_document';
+  createdAt: string;
+}
+
 @Injectable({providedIn: 'root'})
 export class ProfileStorageService {
   readonly deviceId = signal<string>(this.initDeviceId());
   readonly profile = signal<StudentProfile>(this.loadProfile());
   readonly compareIds = signal<string[]>(this.loadCompareIds());
   readonly completedChecklistIds = signal<string[]>(this.loadChecklist());
+  readonly savedDocuments = signal<SavedAcademicDocument[]>(
+    this.loadSavedDocuments()
+  );
+  readonly recentSearches = signal<string[]>(this.loadRecentSearches());
 
   readonly profileCompletionPercent = computed(() => {
     const p = this.profile();
@@ -176,10 +199,89 @@ export class ProfileStorageService {
     safeSetItem('admitwise_checklist', JSON.stringify(next));
   }
 
+  setCompletedChecklistIds(ids: string[]): void {
+    const trimmed = ids.slice(0, 50);
+    this.completedChecklistIds.set(trimmed);
+    safeSetItem('admitwise_checklist', JSON.stringify(trimmed));
+  }
+
+  private loadSavedDocuments(): SavedAcademicDocument[] {
+    const raw = safeGetItem('admitwise_saved_documents');
+    if (!raw) return [];
+    try {
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  }
+
+  addSavedDocument(
+    doc: Omit<SavedAcademicDocument, 'id' | 'createdAt'>
+  ): SavedAcademicDocument {
+    const newDoc: SavedAcademicDocument = {
+      ...doc,
+      id: `DOC-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2, 5).toUpperCase()}`,
+      createdAt: new Date().toISOString(),
+    };
+    const next = [newDoc, ...this.savedDocuments()].slice(0, 20);
+    this.savedDocuments.set(next);
+    safeSetItem('admitwise_saved_documents', JSON.stringify(next));
+    return newDoc;
+  }
+
+  deleteSavedDocument(id: string): void {
+    const next = this.savedDocuments().filter((d) => d.id !== id);
+    this.savedDocuments.set(next);
+    safeSetItem('admitwise_saved_documents', JSON.stringify(next));
+  }
+
+  private loadRecentSearches(): string[] {
+    const raw = safeGetItem('admitwise_recent_searches');
+    if (!raw) return [];
+    try {
+      const parsed = JSON.parse(raw);
+      if (!Array.isArray(parsed)) return [];
+      return parsed
+        .filter((item): item is string => typeof item === 'string' && item.trim().length > 0)
+        .map((item) => item.trim())
+        .slice(0, 5);
+    } catch {
+      return [];
+    }
+  }
+
+  addRecentSearch(query: string): void {
+    const cleaned = query.trim();
+    if (cleaned.length < 2) return;
+    const current = this.recentSearches();
+    const deduplicated = current.filter(
+      (item) => item.toLowerCase() !== cleaned.toLowerCase()
+    );
+    const next = [cleaned, ...deduplicated].slice(0, 5);
+    this.recentSearches.set(next);
+    safeSetItem('admitwise_recent_searches', JSON.stringify(next));
+  }
+
+  removeRecentSearch(query: string): void {
+    const next = this.recentSearches().filter(
+      (item) => item.toLowerCase() !== query.trim().toLowerCase()
+    );
+    this.recentSearches.set(next);
+    safeSetItem('admitwise_recent_searches', JSON.stringify(next));
+  }
+
+  clearRecentSearches(): void {
+    this.recentSearches.set([]);
+    safeRemoveItem('admitwise_recent_searches');
+  }
+
   resetAllLocalData(): void {
     safeClearAllAdmitWiseStorage();
     this.profile.set(DEFAULT_PROFILE);
     this.compareIds.set([]);
     this.completedChecklistIds.set([]);
+    this.savedDocuments.set([]);
+    this.recentSearches.set([]);
   }
 }

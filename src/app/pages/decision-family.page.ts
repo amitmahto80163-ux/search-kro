@@ -711,7 +711,7 @@ export class FamilyDecisionPage implements OnInit {
   }
 
   whatsappShareUrl(): string {
-    const text = this.familyResult()?.shareableSummaryText || 'AdmitWise Family Decision Sheet: Compare student vs parent college priorities.';
+    const text = this.familyResult()?.shareableSummaryText || 'Search Kro Family Decision Sheet: Compare student vs parent college priorities.';
     return `https://wa.me/?text=${encodeURIComponent(text)}`;
   }
 }

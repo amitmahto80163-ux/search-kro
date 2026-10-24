@@ -1,4 +1,4 @@
-export const APP_NAME = 'AdmitWise';
+export const APP_NAME = 'Search Kro';
 export const APP_TAGLINE = 'Unbiased Engineering Admission Guidance for Indian Students & Parents';
 export const SUPPORT_HELPLINE = '1800-180-5522';
 export const PLATFORM_FEE_INR = 99;

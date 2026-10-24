@@ -48,6 +48,7 @@ import {
   CategoryReviewSummary,
   summarizeAuthenticReviewsByCategory,
 } from '../../server-lib/analysis/reviewAuthenticity';
+import {buildPanIndiaCollegeRecord} from '../../shared/pan-india-colleges';
 
 export interface ToastMessage {
   id: string;
@@ -789,5 +790,171 @@ export class ApiService {
         message: 'Local and demo data cleared.',
       })
     );
+  }
+
+  async lookupAndAddCollege(payload: {
+    name: string;
+    shortName?: string;
+    city: string;
+    state: string;
+    ownership: 'Government' | 'Private' | 'Public-Private';
+    officialWebsite?: string;
+    nirfRank?: number | null;
+    tuitionPerYearInr?: number | null;
+    medianSalaryInr?: number | null;
+    examName?: string;
+  }): Promise<{
+    college: College;
+    added: boolean;
+    totalColleges: number;
+    message: string;
+  }> {
+    const res = await this.requestJson(
+      '/api/colleges/lookup',
+      {
+        method: 'POST',
+        body: JSON.stringify(payload),
+      },
+      () => {
+        const slug = payload.name
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-|-$/g, '')
+          .slice(0, 60);
+        const existing = this.colleges().find(
+          (c) =>
+            c.id === slug ||
+            c.name.toLowerCase() === payload.name.trim().toLowerCase()
+        );
+        if (existing) {
+          return {
+            college: existing,
+            added: false,
+            totalColleges: this.colleges().length,
+            message: `${existing.name} is already in the Pan-India directory.`,
+          };
+        }
+        const built = buildPanIndiaCollegeRecord({
+          id: slug || `college-${Date.now()}`,
+          name: payload.name.trim(),
+          shortName: payload.shortName?.trim() || payload.name.trim().slice(0, 20),
+          city: payload.city.trim(),
+          state: payload.state.trim(),
+          ownership: payload.ownership,
+          officialWebsite:
+            payload.officialWebsite || 'https://www.aicte-india.org',
+          nirfRank: payload.nirfRank ?? null,
+          naacGrade: null,
+          tuitionPerYearInr: payload.tuitionPerYearInr ?? null,
+          hostelPerYearInr: null,
+          medianSalaryInr: payload.medianSalaryInr ?? null,
+          placementRatePercent: null,
+          routeType:
+            payload.ownership === 'Government'
+              ? 'national_exam'
+              : 'college_process',
+          examName:
+            payload.examName ||
+            (payload.ownership === 'Government'
+              ? 'JEE Main / State CET'
+              : 'State CET / University Entrance'),
+          counsellingPortalUrl:
+            payload.officialWebsite || 'https://www.aicte-india.org',
+        });
+        return {
+          college: built,
+          added: true,
+          totalColleges: this.colleges().length + 1,
+          message: `Added ${built.name} to the directory.`,
+        };
+      }
+    );
+
+    if (res.added) {
+      this.colleges.update((list) =>
+        list.some((c) => c.id === res.college.id)
+          ? list
+          : [...list, res.college]
+      );
+      this.meta.update((m) => ({
+        ...m,
+        totalColleges: this.colleges().length,
+      }));
+    }
+    return res;
+  }
+
+  async bulkImportColleges(
+    colleges: {
+      name: string;
+      shortName?: string;
+      city: string;
+      state: string;
+      ownership: 'Government' | 'Private' | 'Public-Private';
+      officialWebsite?: string;
+      nirfRank?: number | null;
+      tuitionPerYearInr?: number | null;
+      medianSalaryInr?: number | null;
+      examName?: string;
+    }[]
+  ): Promise<{
+    importedCount: number;
+    totalColleges: number;
+    colleges: College[];
+    message: string;
+  }> {
+    const res = await this.requestJson(
+      '/api/colleges/import',
+      {
+        method: 'POST',
+        body: JSON.stringify({colleges}),
+      },
+      () => {
+        const built = colleges.map((row) => {
+          const slug = row.name
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-|-$/g, '')
+            .slice(0, 60);
+          return buildPanIndiaCollegeRecord({
+            id: slug,
+            name: row.name.trim(),
+            shortName: row.shortName?.trim() || row.name.trim().slice(0, 20),
+            city: row.city.trim(),
+            state: row.state.trim(),
+            ownership: row.ownership,
+            officialWebsite:
+              row.officialWebsite || 'https://www.aicte-india.org',
+            nirfRank: row.nirfRank ?? null,
+            naacGrade: null,
+            tuitionPerYearInr: row.tuitionPerYearInr ?? null,
+            hostelPerYearInr: null,
+            medianSalaryInr: row.medianSalaryInr ?? null,
+            placementRatePercent: null,
+            routeType:
+              row.ownership === 'Government'
+                ? 'national_exam'
+                : 'college_process',
+            examName: row.examName || 'JEE Main / State CET',
+            counsellingPortalUrl:
+              row.officialWebsite || 'https://www.aicte-india.org',
+          });
+        });
+        const merged = [...this.colleges(), ...built];
+        return {
+          importedCount: built.length,
+          totalColleges: merged.length,
+          colleges: merged,
+          message: `Imported ${built.length} colleges into the directory.`,
+        };
+      }
+    );
+
+    this.colleges.set(res.colleges);
+    this.meta.update((m) => ({
+      ...m,
+      totalColleges: res.colleges.length,
+    }));
+    return res;
   }
 }

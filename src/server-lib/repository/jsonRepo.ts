@@ -19,7 +19,14 @@ import {
   SEED_SCHOLARSHIPS,
 } from '../../shared/seed-data';
 
-const DATA_DIR = path.resolve(process.cwd(), 'data');
+const IS_SERVERLESS = Boolean(
+  process.env['VERCEL'] || process.env['AWS_LAMBDA_FUNCTION_NAME']
+);
+const DATA_DIR = IS_SERVERLESS
+  ? path.join('/tmp', 'search-kro-data')
+  : path.resolve(process.cwd(), 'data');
+const SEED_DATA_DIR = path.resolve(process.cwd(), 'data');
+const memoryStore = new Map<string, unknown>();
 
 function ensureDataDir(): void {
   if (!fs.existsSync(DATA_DIR)) {
@@ -28,6 +35,7 @@ function ensureDataDir(): void {
 }
 
 export function atomicWriteJson<T>(filename: string, data: T): void {
+  memoryStore.set(filename, data);
   try {
     ensureDataDir();
     const targetPath = path.join(DATA_DIR, filename);
@@ -35,7 +43,7 @@ export function atomicWriteJson<T>(filename: string, data: T): void {
     fs.writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf-8');
     fs.renameSync(tempPath, targetPath);
   } catch {
-    // Fallback if filesystem is read-only in a hermetic container
+    // Fallback to in-memory store if filesystem is read-only
   }
 }
 
@@ -43,13 +51,28 @@ export function readJsonOrDefault<T>(filename: string, defaultData: T): T {
   try {
     ensureDataDir();
     const targetPath = path.join(DATA_DIR, filename);
-    if (!fs.existsSync(targetPath)) {
-      atomicWriteJson(filename, defaultData);
-      return defaultData;
+    if (fs.existsSync(targetPath)) {
+      const raw = fs.readFileSync(targetPath, 'utf-8');
+      const parsed = JSON.parse(raw) as T;
+      memoryStore.set(filename, parsed);
+      return parsed;
     }
-    const raw = fs.readFileSync(targetPath, 'utf-8');
-    return JSON.parse(raw) as T;
+    const seedPath = path.join(SEED_DATA_DIR, filename);
+    if (fs.existsSync(seedPath)) {
+      const raw = fs.readFileSync(seedPath, 'utf-8');
+      const parsed = JSON.parse(raw) as T;
+      memoryStore.set(filename, parsed);
+      return parsed;
+    }
+    if (memoryStore.has(filename)) {
+      return memoryStore.get(filename) as T;
+    }
+    atomicWriteJson(filename, defaultData);
+    return defaultData;
   } catch {
+    if (memoryStore.has(filename)) {
+      return memoryStore.get(filename) as T;
+    }
     return defaultData;
   }
 }
@@ -66,11 +89,37 @@ export class DataRepository {
   }
 
   public bootstrapFilesIfNeeded(): void {
-    readJsonOrDefault('colleges.json', SEED_COLLEGES);
+    const existingColleges = readJsonOrDefault('colleges.json', SEED_COLLEGES);
+    const existingIds = new Set(existingColleges.map((c) => c.id));
+    const mergedColleges = [...existingColleges];
+    let addedSeed = false;
+    for (const seedCollege of SEED_COLLEGES) {
+      if (!existingIds.has(seedCollege.id)) {
+        mergedColleges.push(seedCollege);
+        existingIds.add(seedCollege.id);
+        addedSeed = true;
+      }
+    }
+    if (addedSeed) {
+      atomicWriteJson('colleges.json', mergedColleges);
+      this.collegesCache = mergedColleges;
+    }
+
     readJsonOrDefault('exams.json', SEED_EXAMS);
     readJsonOrDefault('scholarships.json', SEED_SCHOLARSHIPS);
     readJsonOrDefault('cutoffs.json', SEED_CUTOFFS);
-    readJsonOrDefault('meta.json', SEED_META);
+
+    const currentMeta = readJsonOrDefault('meta.json', SEED_META);
+    if (currentMeta.totalColleges !== mergedColleges.length) {
+      const updatedMeta: MetaInfo = {
+        ...currentMeta,
+        totalColleges: mergedColleges.length,
+        lastRefreshed: new Date().toISOString(),
+      };
+      atomicWriteJson('meta.json', updatedMeta);
+      this.metaCache = updatedMeta;
+    }
+
     readJsonOrDefault<ApplicationRecord[]>('applications.json', []);
     readJsonOrDefault<FraudReport[]>('reports.json', [
       {
@@ -109,6 +158,35 @@ export class DataRepository {
 
   public getCollegeById(id: string): College | undefined {
     return this.getColleges().find((c) => c.id === id);
+  }
+
+  public upsertColleges(newColleges: College[]): College[] {
+    const current = [...this.getColleges()];
+    const indexById = new Map<string, number>();
+    current.forEach((c, idx) => indexById.set(c.id, idx));
+
+    for (const incoming of newColleges) {
+      const existingIdx = indexById.get(incoming.id);
+      if (existingIdx !== undefined) {
+        current[existingIdx] = incoming;
+      } else {
+        current.push(incoming);
+        indexById.set(incoming.id, current.length - 1);
+      }
+    }
+
+    this.collegesCache = current;
+    atomicWriteJson('colleges.json', current);
+
+    const updatedMeta: MetaInfo = {
+      ...this.getMeta(),
+      totalColleges: current.length,
+      lastRefreshed: new Date().toISOString(),
+    };
+    this.metaCache = updatedMeta;
+    atomicWriteJson('meta.json', updatedMeta);
+
+    return current;
   }
 
   public getExams(): Exam[] {

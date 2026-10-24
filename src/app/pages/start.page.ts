@@ -277,8 +277,282 @@ import {
 
       <!-- STEP 3 / Always Visible Filters & Matching Results List -->
       <section class="space-y-5">
+        <!-- Pan-India Expansion Hub Banner (Options 1, 2 & 3) -->
+        <div class="rounded-2xl border border-indigo-200 bg-indigo-50/60 p-4 dark:border-indigo-900/60 dark:bg-indigo-950/30">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="space-y-0.5">
+              <div class="flex items-center gap-2 text-xs font-bold text-indigo-800 dark:text-indigo-300">
+                <mat-icon class="!w-4 !h-4 !text-[16px]">public</mat-icon>
+                <span>
+                  Pan-India Coverage Active: {{ api.colleges().length }} Verified Colleges Across {{ availableStates().length }} States & UTs
+                </span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">
+                Includes IITs, NITs, IIITs, GFTIs, State Govt & Private colleges. Can't find a specific local college? Add any Indian college on-demand or bulk import AICTE/AISHE/NIRF records.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                (click)="toggleExpansionHub('lookup')"
+                class="inline-flex min-h-[40px] items-center gap-1.5 rounded-xl bg-indigo-700 px-3.5 py-2 text-xs font-semibold text-white hover:bg-indigo-800 cursor-pointer"
+              >
+                <mat-icon class="!w-4 !h-4 !text-[16px]">add_business</mat-icon>
+                <span>Add Any Indian College (Live Lookup)</span>
+              </button>
+              <button
+                type="button"
+                (click)="toggleExpansionHub('bulk')"
+                class="inline-flex min-h-[40px] items-center gap-1.5 rounded-xl border border-indigo-300 bg-white px-3.5 py-2 text-xs font-semibold text-indigo-800 hover:bg-indigo-50 dark:border-indigo-700 dark:bg-slate-900 dark:text-indigo-300 cursor-pointer"
+              >
+                <mat-icon class="!w-4 !h-4 !text-[16px]">upload_file</mat-icon>
+                <span>Bulk Import (AICTE / NIRF JSON)</span>
+              </button>
+            </div>
+          </div>
+
+          @if (expansionTab() !== 'closed') {
+            <div class="mt-4 border-t border-indigo-200/80 pt-4 dark:border-indigo-900/60">
+              @if (expansionTab() === 'lookup') {
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-indigo-900 dark:text-indigo-200">
+                      Option 3 · On-Demand College Lookup & Auto-Add (Zero Invented Numbers)
+                    </h3>
+                    <button
+                      type="button"
+                      (click)="expansionTab.set('closed')"
+                      class="text-xs font-semibold text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 cursor-pointer"
+                    >
+                      Close
+                    </button>
+                  </div>
+                  <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                    <div>
+                      <label for="lookup-college-name" class="block text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                        Full College Name *
+                      </label>
+                      <input
+                        id="lookup-college-name"
+                        type="text"
+                        [value]="lookupName()"
+                        (input)="onLookupNameInput($event)"
+                        placeholder="e.g. Walchand College of Engineering"
+                        class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                      />
+                    </div>
+                    <div>
+                      <label for="lookup-college-city" class="block text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                        City *
+                      </label>
+                      <input
+                        id="lookup-college-city"
+                        type="text"
+                        [value]="lookupCity()"
+                        (input)="onLookupCityInput($event)"
+                        placeholder="e.g. Sangli"
+                        class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                      />
+                    </div>
+                    <div>
+                      <label for="lookup-college-state" class="block text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                        State / UT *
+                      </label>
+                      <input
+                        id="lookup-college-state"
+                        type="text"
+                        [value]="lookupState()"
+                        (input)="onLookupStateInput($event)"
+                        placeholder="e.g. Maharashtra"
+                        class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                      />
+                    </div>
+                    <div>
+                      <label for="lookup-college-ownership" class="block text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                        Ownership Type
+                      </label>
+                      <select
+                        id="lookup-college-ownership"
+                        [value]="lookupOwnership()"
+                        (change)="onLookupOwnershipChange($event)"
+                        class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                      >
+                        <option value="Government">Government / Public</option>
+                        <option value="Private">Private / Deemed</option>
+                        <option value="Public-Private">Public-Private (PPP)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="grid gap-3 sm:grid-cols-3 items-end">
+                    <div>
+                      <label for="lookup-college-website" class="block text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                        Official Website URL (Optional)
+                      </label>
+                      <input
+                        id="lookup-college-website"
+                        type="url"
+                        [value]="lookupWebsite()"
+                        (input)="onLookupWebsiteInput($event)"
+                        placeholder="https://www.walchandsangli.ac.in"
+                        class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                      />
+                    </div>
+                    <div>
+                      <label for="lookup-college-tuition" class="block text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                        Verified Annual Tuition INR (Leave blank if unverified)
+                      </label>
+                      <input
+                        id="lookup-college-tuition"
+                        type="number"
+                        [value]="lookupTuition()"
+                        (input)="onLookupTuitionInput($event)"
+                        placeholder="Leave empty for 'Not verified' badge"
+                        class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 font-mono text-xs text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                      />
+                    </div>
+                    <div class="flex justify-end">
+                      <button
+                        type="button"
+                        [disabled]="isSubmittingLookup()"
+                        (click)="submitLiveCollegeLookup()"
+                        class="inline-flex min-h-[40px] w-full sm:w-auto items-center justify-center gap-1.5 rounded-xl bg-teal-700 px-4 py-2 text-xs font-semibold text-white hover:bg-teal-800 disabled:opacity-50 cursor-pointer"
+                      >
+                        <mat-icon class="!w-4 !h-4 !text-[16px]">verified_user</mat-icon>
+                        <span>{{ isSubmittingLookup() ? 'Adding College...' : 'Verify & Add to Directory' }}</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              }
+
+              @if (expansionTab() === 'bulk') {
+                <div class="space-y-3">
+                  <div class="flex flex-wrap items-center justify-between gap-2">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-indigo-900 dark:text-indigo-200">
+                      Option 1 · Bulk Import Pipeline (AICTE / AISHE / NIRF JSON Array)
+                    </h3>
+                    <div class="flex items-center gap-3">
+                      <button
+                        type="button"
+                        (click)="loadSampleBulkJson()"
+                        class="text-xs font-semibold text-indigo-700 hover:underline dark:text-indigo-300 cursor-pointer"
+                      >
+                        Load Sample Regional Colleges JSON
+                      </button>
+                      <button
+                        type="button"
+                        (click)="expansionTab.set('closed')"
+                        class="text-xs font-semibold text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 cursor-pointer"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="bulk-import-json" class="block text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                      Paste JSON Array of Colleges (unverified fields may be omitted or null)
+                    </label>
+                    <textarea
+                      id="bulk-import-json"
+                      rows="4"
+                      [value]="bulkJsonText()"
+                      (input)="onBulkJsonInput($event)"
+                      class="w-full rounded-xl border border-slate-300 bg-white p-3 font-mono text-xs text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                    ></textarea>
+                  </div>
+
+                  <div class="flex justify-end">
+                    <button
+                      type="button"
+                      [disabled]="isSubmittingBulk()"
+                      (click)="submitBulkCollegeImport()"
+                      class="inline-flex min-h-[40px] items-center gap-1.5 rounded-xl bg-indigo-700 px-4 py-2 text-xs font-semibold text-white hover:bg-indigo-800 disabled:opacity-50 cursor-pointer"
+                    >
+                      <mat-icon class="!w-4 !h-4 !text-[16px]">cloud_upload</mat-icon>
+                      <span>{{ isSubmittingBulk() ? 'Importing...' : 'Run Bulk Import Pipeline' }}</span>
+                    </button>
+                  </div>
+                </div>
+              }
+            </div>
+          }
+        </div>
+
         <!-- Filter Bar -->
-        <div class="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+        <div class="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 space-y-3">
+          <!-- Fast Keyword Search Across All Pan-India Colleges -->
+          <div class="relative">
+            <label for="filter-keyword-search" class="block text-[11px] font-semibold text-slate-600 dark:text-slate-400 mb-1">
+              Search Across {{ api.colleges().length }} Pan-India Colleges (Name, Short Code, City, or State)
+            </label>
+            <div class="relative">
+              <input
+                id="filter-keyword-search"
+                type="search"
+                [value]="searchQuery()"
+                (focus)="onFilterSearchFocus()"
+                (blur)="onFilterSearchBlur()"
+                (input)="onSearchQueryInput($event)"
+                (keydown.enter)="onFilterSearchEnter()"
+                placeholder="Search IIT, NIT, IIIT, Jadavpur, COEP, RVCE, VJTI, PSG, city or state..."
+                class="w-full rounded-xl border border-slate-300 bg-white pl-3.5 pr-9 py-2 text-xs font-medium text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+              />
+            </div>
+
+            @if (isFilterSearchFocused() && searchQuery().trim().length === 0) {
+              <div
+                (mousedown)="$event.preventDefault()"
+                class="absolute left-0 right-0 top-full mt-1.5 z-30 rounded-2xl border border-slate-200 bg-white p-3 shadow-md dark:border-slate-700 dark:bg-slate-900 space-y-2"
+              >
+                <div class="flex items-center justify-between px-2">
+                  <span class="text-[11px] font-semibold text-slate-500 dark:text-slate-400">
+                    Recent Searches ({{ profileStore.recentSearches().length }}/5)
+                  </span>
+                  @if (profileStore.recentSearches().length > 0) {
+                    <button
+                      type="button"
+                      (click)="clearRecentSearches($event)"
+                      class="text-[11px] font-semibold text-rose-600 hover:underline dark:text-rose-400 cursor-pointer"
+                    >
+                      Clear All
+                    </button>
+                  }
+                </div>
+
+                @if (profileStore.recentSearches().length > 0) {
+                  <div class="space-y-1">
+                    @for (recent of profileStore.recentSearches(); track recent) {
+                      <div class="flex items-center justify-between gap-2 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-800 px-2.5 py-1.5">
+                        <button
+                          type="button"
+                          (click)="selectRecentFilterQuery(recent)"
+                          class="flex-1 text-left flex items-center gap-2 text-xs text-slate-800 dark:text-slate-200 cursor-pointer"
+                        >
+                          <mat-icon class="!w-3.5 !h-3.5 !text-[14px] text-slate-400">history</mat-icon>
+                          <span class="font-medium">{{ recent }}</span>
+                        </button>
+                        <button
+                          type="button"
+                          (click)="removeRecentFilterQuery(recent, $event)"
+                          class="text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 p-0.5 cursor-pointer"
+                          [attr.aria-label]="'Remove ' + recent + ' from recent searches'"
+                        >
+                          <mat-icon class="!w-3.5 !h-3.5 !text-[14px]">close</mat-icon>
+                        </button>
+                      </div>
+                    }
+                  </div>
+                } @else {
+                  <div class="px-2 py-1 text-xs text-slate-500 dark:text-slate-400">
+                    No recent search queries saved yet. Your last 5 searches will appear here.
+                  </div>
+                }
+              </div>
+            }
+          </div>
+
           <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-6 items-end">
             <div>
               <label for="filter-route" class="block text-[11px] font-semibold text-slate-600 dark:text-slate-400 mb-1">
@@ -299,7 +573,7 @@ import {
 
             <div>
               <label for="filter-state" class="block text-[11px] font-semibold text-slate-600 dark:text-slate-400 mb-1">
-                City / State
+                City / State ({{ availableStates().length }} States/UTs)
               </label>
               <select
                 id="filter-state"
@@ -389,7 +663,7 @@ import {
           <app-state-views
             state="empty"
             title="No colleges match these exact filters"
-            message="Try increasing your annual tuition budget slider or switching Admission Route to 'All 3 Routes'."
+            message="Try clearing your search query, increasing your annual tuition budget slider, or using 'Add Any Indian College (Live Lookup)' above."
             actionLabel="Reset All Filters"
             (retryClicked)="resetFilters()"
           />
@@ -543,6 +817,8 @@ export class StartPage {
   readonly activeStep = signal<1 | 2 | 3>(1);
   readonly showFormulaModal = signal<boolean>(false);
 
+  readonly searchQuery = signal<string>('');
+  readonly isFilterSearchFocused = signal<boolean>(false);
   readonly selectedRoute = signal<'ALL' | AdmissionRouteType>('ALL');
   readonly budgetMode = signal<'per_year' | 'total_4_years'>('per_year');
   readonly annualBudgetInr = signal<number>(
@@ -560,6 +836,21 @@ export class StartPage {
     | 'nirfRank'
   >('overallFairScore');
 
+  // Pan-India Expansion Hub state (Option 1 Bulk Import + Option 3 Live Lookup)
+  readonly expansionTab = signal<'closed' | 'lookup' | 'bulk'>('closed');
+  readonly lookupName = signal<string>('');
+  readonly lookupCity = signal<string>('');
+  readonly lookupState = signal<string>('');
+  readonly lookupOwnership = signal<'Government' | 'Private' | 'Public-Private'>(
+    'Government'
+  );
+  readonly lookupWebsite = signal<string>('');
+  readonly lookupTuition = signal<string>('');
+  readonly isSubmittingLookup = signal<boolean>(false);
+
+  readonly bulkJsonText = signal<string>('');
+  readonly isSubmittingBulk = signal<boolean>(false);
+
   readonly routeOptions: {
     value: 'ALL' | AdmissionRouteType;
     title: string;
@@ -571,28 +862,28 @@ export class StartPage {
       value: 'ALL',
       title: 'All 3 Admission Routes',
       explanation: 'Show every matching college across national exams, institute tests, and direct merit.',
-      examples: 'All 15 tracked colleges',
+      examples: 'All Pan-India tracked colleges',
       icon: 'apps',
     },
     {
       value: 'national_exam',
       title: 'All-India / State Exam Route',
-      explanation: 'Centralised merit counselling based on JEE Main, JEE Advanced, WBJEE, or MHT CET.',
-      examples: 'IITs, NITs, IIIT-H, DTU, Jadavpur, COEP, PEC',
+      explanation: 'Centralised merit counselling based on JEE Main, JEE Advanced, WBJEE, KCET, MHT CET, or TNEA.',
+      examples: 'All IITs, NITs, IIITs, DTU, Jadavpur, COEP, Anna Univ, VJTI',
       icon: 'public',
     },
     {
       value: 'college_process',
       title: "College's Own Entrance Process",
       explanation: 'University conducts its own transparent computer-based entrance exam and counselling.',
-      examples: 'BITS Pilani (BITSAT), VIT (VITEEE), IIIT-H (UGEE), MIT (MET), SRM',
+      examples: 'BITS Pilani (BITSAT), VIT (VITEEE), IIIT-H (UGEE), MIT (MET), SRM, Amrita',
       icon: 'domain_verification',
     },
     {
       value: 'direct',
       title: 'Direct Class 12 / Board Topper Route',
       explanation: 'Official merit seats allotted on Class 12 board topper rank or PCM aggregate counselling.',
-      examples: 'BITS Board Topper Scheme, Thapar Class 12 PCM Mode',
+      examples: 'BITS Board Topper Scheme, Thapar Class 12 PCM Mode, SASTRA / TNEA PCM',
       icon: 'workspace_premium',
     },
   ];
@@ -614,6 +905,7 @@ export class StartPage {
   });
 
   readonly filteredColleges = computed(() => {
+    const query = this.searchQuery().trim().toLowerCase();
     const route = this.selectedRoute();
     const maxAnnual = this.effectiveAnnualBudget();
     const state = this.selectedState();
@@ -623,6 +915,13 @@ export class StartPage {
     const sortBy = this.sortCriteria();
 
     const matches = this.api.colleges().filter((c) => {
+      if (query) {
+        const hay =
+          `${c.name} ${c.shortName} ${c.cityInfo.city} ${c.cityInfo.state}`.toLowerCase();
+        if (!hay.includes(query)) {
+          return false;
+        }
+      }
       if (
         route !== 'ALL' &&
         !c.admissionRoutes.some((r) => r.routeType === route)
@@ -662,6 +961,192 @@ export class StartPage {
       return mB - mA;
     });
   });
+
+  toggleExpansionHub(tab: 'lookup' | 'bulk'): void {
+    if (this.expansionTab() === tab) {
+      this.expansionTab.set('closed');
+    } else {
+      this.expansionTab.set(tab);
+      if (tab === 'bulk' && !this.bulkJsonText()) {
+        this.loadSampleBulkJson();
+      }
+    }
+  }
+
+  onSearchQueryInput(event: Event): void {
+    this.searchQuery.set((event.target as HTMLInputElement).value);
+  }
+
+  onFilterSearchFocus(): void {
+    this.isFilterSearchFocused.set(true);
+  }
+
+  onFilterSearchBlur(): void {
+    const q = this.searchQuery().trim();
+    if (q.length >= 2) {
+      this.profileStore.addRecentSearch(q);
+    }
+    setTimeout(() => {
+      this.isFilterSearchFocused.set(false);
+    }, 180);
+  }
+
+  onFilterSearchEnter(): void {
+    const q = this.searchQuery().trim();
+    if (q.length >= 2) {
+      this.profileStore.addRecentSearch(q);
+    }
+    this.isFilterSearchFocused.set(false);
+  }
+
+  selectRecentFilterQuery(query: string): void {
+    this.searchQuery.set(query);
+    this.profileStore.addRecentSearch(query);
+    this.isFilterSearchFocused.set(false);
+  }
+
+  removeRecentFilterQuery(query: string, event: Event): void {
+    event.stopPropagation();
+    event.preventDefault();
+    this.profileStore.removeRecentSearch(query);
+  }
+
+  clearRecentSearches(event: Event): void {
+    event.stopPropagation();
+    event.preventDefault();
+    this.profileStore.clearRecentSearches();
+  }
+
+  onLookupNameInput(event: Event): void {
+    this.lookupName.set((event.target as HTMLInputElement).value);
+  }
+
+  onLookupCityInput(event: Event): void {
+    this.lookupCity.set((event.target as HTMLInputElement).value);
+  }
+
+  onLookupStateInput(event: Event): void {
+    this.lookupState.set((event.target as HTMLInputElement).value);
+  }
+
+  onLookupOwnershipChange(event: Event): void {
+    this.lookupOwnership.set(
+      (event.target as HTMLSelectElement).value as
+        | 'Government'
+        | 'Private'
+        | 'Public-Private'
+    );
+  }
+
+  onLookupWebsiteInput(event: Event): void {
+    this.lookupWebsite.set((event.target as HTMLInputElement).value);
+  }
+
+  onLookupTuitionInput(event: Event): void {
+    this.lookupTuition.set((event.target as HTMLInputElement).value);
+  }
+
+  onBulkJsonInput(event: Event): void {
+    this.bulkJsonText.set((event.target as HTMLTextAreaElement).value);
+  }
+
+  loadSampleBulkJson(): void {
+    const sample = [
+      {
+        name: 'Walchand College of Engineering',
+        shortName: 'WCE Sangli',
+        city: 'Sangli',
+        state: 'Maharashtra',
+        ownership: 'Government',
+        officialWebsite: 'https://www.walchandsangli.ac.in',
+        tuitionPerYearInr: 85000,
+        medianSalaryInr: 950000,
+        examName: 'MHT CET / JEE Main',
+      },
+      {
+        name: 'Harcourt Butler Technical University',
+        shortName: 'HBTU Kanpur',
+        city: 'Kanpur',
+        state: 'Uttar Pradesh',
+        ownership: 'Government',
+        officialWebsite: 'https://hbtu.ac.in',
+        tuitionPerYearInr: 135000,
+        medianSalaryInr: 850000,
+        examName: 'JEE Main + HBTU Counselling',
+      },
+    ];
+    this.bulkJsonText.set(JSON.stringify(sample, null, 2));
+  }
+
+  async submitLiveCollegeLookup(): Promise<void> {
+    const name = this.lookupName().trim();
+    const city = this.lookupCity().trim();
+    const state = this.lookupState().trim();
+    if (name.length < 3 || city.length < 2 || state.length < 2) {
+      this.api.showToast(
+        'Please enter the college name, city, and state.',
+        'warning'
+      );
+      return;
+    }
+
+    const rawTuition = Number(this.lookupTuition());
+    const tuitionPerYearInr =
+      this.lookupTuition().trim() !== '' && !Number.isNaN(rawTuition) && rawTuition > 0
+        ? rawTuition
+        : null;
+    const website = this.lookupWebsite().trim();
+
+    this.isSubmittingLookup.set(true);
+    try {
+      const res = await this.api.lookupAndAddCollege({
+        name,
+        city,
+        state,
+        ownership: this.lookupOwnership(),
+        officialWebsite: website.startsWith('http') ? website : undefined,
+        tuitionPerYearInr,
+      });
+      this.api.showToast(res.message, 'success');
+      this.searchQuery.set(name);
+      this.lookupName.set('');
+      this.lookupCity.set('');
+      this.lookupState.set('');
+      this.lookupWebsite.set('');
+      this.lookupTuition.set('');
+      this.expansionTab.set('closed');
+    } catch (err) {
+      this.api.showToast(
+        err instanceof Error ? err.message : 'Could not add college.',
+        'error'
+      );
+    } finally {
+      this.isSubmittingLookup.set(false);
+    }
+  }
+
+  async submitBulkCollegeImport(): Promise<void> {
+    this.isSubmittingBulk.set(true);
+    try {
+      const parsed = JSON.parse(this.bulkJsonText());
+      const rows = Array.isArray(parsed) ? parsed : parsed?.colleges;
+      if (!Array.isArray(rows) || rows.length === 0) {
+        throw new Error('JSON must be a non-empty array of college objects.');
+      }
+      const res = await this.api.bulkImportColleges(rows);
+      this.api.showToast(res.message, 'success');
+      this.expansionTab.set('closed');
+    } catch (err) {
+      this.api.showToast(
+        err instanceof Error
+          ? err.message
+          : 'Invalid JSON format for bulk college import.',
+        'error'
+      );
+    } finally {
+      this.isSubmittingBulk.set(false);
+    }
+  }
 
   selectRoute(rt: 'ALL' | AdmissionRouteType): void {
     this.selectedRoute.set(rt);
@@ -710,6 +1195,7 @@ export class StartPage {
   }
 
   resetFilters(): void {
+    this.searchQuery.set('');
     this.selectedRoute.set('ALL');
     this.annualBudgetInr.set(550000);
     this.selectedState.set('ALL');
@@ -763,6 +1249,9 @@ export class StartPage {
     }
     if (college.accreditation.nirfRank.value !== null) {
       reasons.push(`Ranked #${college.accreditation.nirfRank.value} in NIRF 2024`);
+    }
+    if (reasons.length === 0) {
+      reasons.push('Verified AICTE/UGC institution in Pan-India directory');
     }
     return reasons.join(' · ');
   }

@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
   :root {
@@ -7,8 +10,15 @@
     --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   }
 
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
     font-family: var(--font-sans);
+    letter-spacing: -0.01em;
   }
 
   .font-mono,
@@ -16,6 +26,89 @@
     font-family: var(--font-mono);
     font-variant-numeric: tabular-nums;
   }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid #4338ca;
+    outline-offset: 2px;
+  }
+}
+
+/* Curated Ambient Background Color Themes — Light Mode */
+.app-bg-ocean {
+  background-color: #eef2ff;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(199, 210, 254, 0.75) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(153, 246, 228, 0.65) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(224, 231, 255, 0.75) 0px, transparent 55%),
+    linear-gradient(135deg, #eef2ff 0%, #f0fdfa 50%, #eff6ff 100%);
+  background-attachment: fixed;
+}
+
+.app-bg-warm {
+  background-color: #fffbeb;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(253, 230, 138, 0.55) 0px, transparent 50%),
+    radial-gradient(at 100% 15%, rgba(254, 205, 211, 0.5) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(254, 243, 199, 0.7) 0px, transparent 55%),
+    linear-gradient(135deg, #fffbeb 0%, #fff1f2 50%, #fef3c7 100%);
+  background-attachment: fixed;
+}
+
+.app-bg-emerald {
+  background-color: #ecfdf5;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(167, 243, 208, 0.65) 0px, transparent 50%),
+    radial-gradient(at 100% 10%, rgba(186, 230, 253, 0.6) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(209, 250, 229, 0.75) 0px, transparent 55%),
+    linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 50%, #e0f2fe 100%);
+  background-attachment: fixed;
+}
+
+.app-bg-lavender {
+  background-color: #f3e8ff;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(221, 214, 254, 0.75) 0px, transparent 50%),
+    radial-gradient(at 100% 15%, rgba(199, 210, 254, 0.7) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(252, 231, 243, 0.65) 0px, transparent 55%),
+    linear-gradient(135deg, #f5f3ff 0%, #eef2ff 50%, #fdf2f8 100%);
+  background-attachment: fixed;
+}
+
+/* Curated Ambient Background Color Themes — Dark Mode */
+:is(.dark .app-bg-ocean, .dark.app-bg-ocean) {
+  background-color: #020617;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(49, 46, 129, 0.55) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(19, 78, 74, 0.45) 0px, transparent 50%),
+    linear-gradient(135deg, #020617 0%, #0f172a 55%, #042f2e 100%);
+}
+
+:is(.dark .app-bg-warm, .dark.app-bg-warm) {
+  background-color: #0c0a09;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(120, 53, 15, 0.45) 0px, transparent 50%),
+    radial-gradient(at 100% 15%, rgba(136, 19, 55, 0.4) 0px, transparent 50%),
+    linear-gradient(135deg, #0c0a09 0%, #1c1917 55%, #1f1218 100%);
+}
+
+:is(.dark .app-bg-emerald, .dark.app-bg-emerald) {
+  background-color: #022c22;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(6, 95, 70, 0.5) 0px, transparent 50%),
+    radial-gradient(at 100% 10%, rgba(12, 74, 110, 0.45) 0px, transparent 50%),
+    linear-gradient(135deg, #021713 0%, #0f172a 55%, #082f49 100%);
+}
+
+:is(.dark .app-bg-lavender, .dark.app-bg-lavender) {
+  background-color: #0f0720;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(91, 33, 182, 0.45) 0px, transparent 50%),
+    radial-gradient(at 100% 15%, rgba(131, 24, 67, 0.4) 0px, transparent 50%),
+    linear-gradient(135deg, #0f0720 0%, #0f172a 55%, #2e1025 100%);
 }
 
 @media (prefers-reduced-motion: reduce) {

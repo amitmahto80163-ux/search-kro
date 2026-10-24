@@ -13,6 +13,7 @@ import {ApplicationRecord, ApplicationStage} from '../../shared/schemas';
 import {ApiService} from '../services/api.service';
 import {ProfileStorageService} from '../services/storage.service';
 import {StateViews} from '../components/ui';
+import {AcademicDocumentScanner} from '../components/document-scanner';
 
 /**
  * FEATURE 7: Common Application (/apply)
@@ -552,20 +553,25 @@ export class ApplicationTrackerPage implements OnInit {
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-document-checker-page',
-  imports: [MatIconModule],
+  imports: [MatIconModule, AcademicDocumentScanner],
   template: `
     <div class="space-y-8 pb-12">
       <div class="border-b border-slate-200 pb-5 dark:border-slate-800">
         <span class="text-xs font-semibold text-teal-700 dark:text-teal-400">
-          Feature #9 · 100% Client-Side HTML5 Canvas Document Resizer
+          Feature #9 · Camera Scanner, Cropper, Document Manager & Exam Resizer
         </span>
         <h1 class="mt-1 text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100">
-          Exam Document Checker, Photo & Signature Resizer
+          Academic Document Camera Scanner, Manager & Exam Resizer
         </h1>
         <p class="mt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-          Resize and compress photos and signatures to exact JEE Main, BITSAT, VITEEE, and State CET specifications. <strong>Privacy guarantee: Files are processed inside your browser and are never uploaded to any server.</strong>
+          Scan and crop marksheets, admit cards, and certificates using your device camera, save them to your Document Manager, and resize photos/signatures to exact JEE Main, BITSAT, VITEEE, and State CET specifications. <strong>Privacy guarantee: Files are processed inside your browser and are never uploaded to any server.</strong>
         </p>
       </div>
+
+      <!-- Camera Scanner, Interactive Cropper & Saved Document Manager -->
+      <app-academic-document-scanner
+        (sendToResizer)="loadScannedImageIntoResizer($event)"
+      />
 
       <div class="grid gap-6 lg:grid-cols-2">
         <!-- Left Column: Canvas Resizer & Presets -->
@@ -670,7 +676,7 @@ export class ApplicationTrackerPage implements OnInit {
                   alt="Resized exam-ready preview"
                   class="max-h-36 rounded-lg border border-teal-500 object-contain"
                 />
-                <div class="pt-1">
+                <div class="pt-1 flex flex-wrap items-center gap-2">
                   <a
                     [href]="resizedDataUrl()!"
                     [download]="activePreset().id + '-resized.jpg'"
@@ -679,6 +685,14 @@ export class ApplicationTrackerPage implements OnInit {
                     <mat-icon class="!w-4 !h-4 !text-[16px]">download</mat-icon>
                     <span>Download Exam-Ready JPG</span>
                   </a>
+                  <button
+                    type="button"
+                    (click)="saveResizedToVault()"
+                    class="inline-flex min-h-[40px] items-center gap-1.5 rounded-xl border border-indigo-300 bg-white px-3 py-1.5 font-semibold text-indigo-800 hover:bg-indigo-50 dark:border-indigo-700 dark:bg-slate-900 dark:text-indigo-300 cursor-pointer"
+                  >
+                    <mat-icon class="!w-4 !h-4 !text-[16px]">save</mat-icon>
+                    <span>Save to Document Manager</span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -711,6 +725,8 @@ export class ApplicationTrackerPage implements OnInit {
   `,
 })
 export class DocumentCheckerPage {
+  readonly api = inject(ApiService);
+  readonly profileStore = inject(ProfileStorageService);
   protected readonly Math = Math;
 
   readonly presets = [
@@ -867,5 +883,33 @@ export class DocumentCheckerPage {
       this.outputSizeKb.set(Math.round((bytes / 1024) * 10) / 10);
     };
     img.src = dataUrl;
+  }
+
+  loadScannedImageIntoResizer(dataUrl: string): void {
+    const base64Len = dataUrl.split(',')[1]?.length || 0;
+    const bytes = (base64Len * 3) / 4;
+    this.originalSizeKb.set(Math.round((bytes / 1024) * 10) / 10);
+    this.originalDataUrl.set(dataUrl);
+    this.processImageDataUrl(dataUrl);
+  }
+
+  saveResizedToVault(): void {
+    const outUrl = this.resizedDataUrl();
+    if (!outUrl) return;
+    const preset = this.activePreset();
+    this.profileStore.addSavedDocument({
+      title: `${preset.label} (${preset.width}×${preset.height} px)`,
+      docType: 'Passport Photo / Signature',
+      examTag: preset.label,
+      dataUrl: outUrl,
+      width: preset.width,
+      height: preset.height,
+      sizeKb: this.outputSizeKb(),
+      filterApplied: 'colour',
+    });
+    this.api.showToast(
+      `Saved ${preset.label} to your Document Manager.`,
+      'success'
+    );
   }
 }

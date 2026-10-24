@@ -1,0 +1,82 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Cloud-synced admission profile, college shortlist, and checklist state for an authenticated Search Kro student.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Firebase Auth UID of the profile owner."
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "Display name of the authenticated student."
+        },
+        "homeState": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 80,
+          "description": "Student home state for quota matching."
+        },
+        "category": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 30,
+          "description": "Admission reservation category."
+        },
+        "annualBudgetInr": {
+          "type": "number",
+          "description": "Maximum annual tuition budget in INR."
+        },
+        "class12Percent": {
+          "type": "number",
+          "description": "Class 12 PCM aggregate percentage."
+        },
+        "compareIds": {
+          "type": "array",
+          "description": "Up to 4 shortlisted college IDs for comparison."
+        },
+        "checklistCompletedIds": {
+          "type": "array",
+          "description": "Completed admission checklist item IDs."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the cloud profile was first created."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the cloud profile was last updated."
+        }
+      },
+      "required": [
+        "uid",
+        "displayName",
+        "homeState",
+        "category",
+        "annualBudgetInr",
+        "class12Percent",
+        "compareIds",
+        "checklistCompletedIds",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/UserProfile"
+      },
+      "description": "Private per-user admission profile and shortlist synced across devices, accessible strictly by the authenticated owner."
+    }
+  }
+}

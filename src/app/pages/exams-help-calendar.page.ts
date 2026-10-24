@@ -12,6 +12,7 @@ import {ApiService} from '../services/api.service';
 import {I18nService} from '../services/i18n.service';
 import {ProfileStorageService} from '../services/storage.service';
 import {DataBadge, StateViews} from '../components/ui';
+import {ExamCountdownTicker} from '../components/exam-countdown';
 
 function downloadIcsFile(
   filename: string,
@@ -25,9 +26,9 @@ function downloadIcsFile(
   const icsContent = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//AdmitWise//Engineering Admission Deadlines//EN',
+    'PRODID:-//Search Kro//Engineering Admission Deadlines//EN',
     'BEGIN:VEVENT',
-    `UID:${filename}-${Date.now()}@admitwise.local`,
+    `UID:${filename}-${Date.now()}@searchkro.local`,
     `DTSTAMP:${cleanDate}T090000Z`,
     `DTSTART;VALUE=DATE:${cleanDate}`,
     `SUMMARY:${title}`,
@@ -52,7 +53,7 @@ function downloadIcsFile(
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-exams-page',
-  imports: [MatIconModule, DataBadge, StateViews],
+  imports: [MatIconModule, DataBadge, StateViews, ExamCountdownTicker],
   template: `
     <div class="space-y-8 pb-12">
       <div class="flex flex-wrap items-start justify-between gap-4 border-b border-slate-200 pb-5 dark:border-slate-800">
@@ -72,6 +73,9 @@ function downloadIcsFile(
           {{ i18n.t('banner.lastUpdated') }}: <span class="font-mono tabular-nums">{{ api.meta().lastRefreshed }}</span> (Marked Refresh-Weekly)
         </div>
       </div>
+
+      <!-- Live Exam Countdown Ticker -->
+      <app-exam-countdown-ticker />
 
       <!-- "Eligible For Me" Interactive Check & Filters -->
       <section class="rounded-2xl border border-slate-200 bg-white p-5 space-y-4 dark:border-slate-800 dark:bg-slate-900">

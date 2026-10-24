@@ -1183,7 +1183,7 @@ export async function handleAiFamily(
           collegeName: c.name,
           fitExplanation: `Annual tuition ₹${(c.fees.tuitionPerYearInr.value ?? 0).toLocaleString('en-IN')}/yr · NIRF 2024 Median Salary ₹${((c.placements.medianSalaryInr.value ?? 0) / 100000).toFixed(2)} LPA · Gated Hostel: ${c.hasHostel ? 'Yes' : 'No'}.`,
         })),
-        shareableSummaryText: `AdmitWise Family Decision Summary — Alignment: ${alignmentScorePercent}%. Max Annual Budget: ₹${input.maxAnnualBudgetInr.toLocaleString('en-IN')}. Top Balanced Matches: ${selected.map((c) => c.shortName).join(', ')}.`,
+        shareableSummaryText: `Search Kro Family Decision Summary — Alignment: ${alignmentScorePercent}%. Max Annual Budget: ₹${input.maxAnnualBudgetInr.toLocaleString('en-IN')}. Top Balanced Matches: ${selected.map((c) => c.shortName).join(', ')}.`,
         disclaimer: AI_DISCLAIMER_TEXT,
       };
     },
